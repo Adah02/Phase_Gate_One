@@ -4,6 +4,7 @@ import java.time.LocalDate;
 public class MenstrualCalculator {
 
 	public static LocalDate nextMenstCycle(int menstMonth, int prevDay, int nextMenst){
+
 	int currentYear = 2025;
 	LocalDate flowDate = LocalDate.of(currentYear, menstMonth, prevDay);
 	int menstDay = nextMenst;
@@ -22,13 +23,20 @@ public class MenstrualCalculator {
 	}
 
 	public static LocalDate ovulationPeriod (int prevDay, int menstMonth){
+
 	int currentYear = 2025;
 	LocalDate today = LocalDate.of(currentYear, menstMonth, prevDay);
 	int ovulationDay = prevDay + 14;
 	int daysLeft = today.lengthOfMonth() - prevDay;
+
 	if (ovulationDay > daysLeft){
 		ovulationDay = 14 - daysLeft;
 		menstMonth += 1;
+		}
+		else if (ovulationDay > daysLeft && menstMonth == 12){
+		ovulationDay = 14 - daysLeft;
+		menstMonth = 1;
+		currentYear += 1;
 		}
 	LocalDate ovulationDate = LocalDate.of(currentYear, menstMonth, ovulationDay);
 	return ovulationDate;
@@ -48,6 +56,7 @@ public class MenstrualCalculator {
 	System.out.print("Enter Days before next cycle: ");
 	int nextMenst = input.nextInt();
 	
+	System.out.println();
 	System.out.println("Date of next menstruation is " + nextMenstCycle(menstMonth, prevDay, nextMenst));
 	System.out.println("Next ovulation is " + ovulationPeriod (prevDay, menstMonth));
 	}

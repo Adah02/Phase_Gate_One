@@ -4,6 +4,7 @@ todaysDate = date.today()
 def nextFlow(day_of_flow, flow_month, flow_length):
 	#To calculate the next menstrual flow.
 	
+	flow_date = date()
 
 	print(todaysDate)
 	
