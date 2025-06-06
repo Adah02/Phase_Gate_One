@@ -4,19 +4,22 @@ import java.time.LocalDate;
 public class MenstrualCalculator {
 
 	public static LocalDate nextMenstCycle(int menstMonth, int prevDay, int lengthOfFlow, int nextMenst){
-	LocalDate today = LocalDate.of(2025, menstMonth, prevDay);
+	int currentYear = 2025;
+	LocalDate today = LocalDate.of(currentYear, menstMonth, prevDay);
 	int menstDay = nextMenst;
 	int monthLength = today.lengthOfMonth();
 	int remainingDays = (monthLength - prevDay);
 
-	if (menstDay > remainingDays){
+	if (menstDay > remainingDays && menstMonth != 12){
 		menstDay -= remainingDays; menstMonth += 1;
-	} else{
+	}else if (menstMonth == 12 && menstDay > remainingDays){
+		menstDay -= remainingDays; menstMonth = 1;
+	}else{
 		menstDay += prevDay;
 		}
 	int endPeriod = (menstDay + lengthOfFlow);
-	if (endPeriod > monthLength && menstDay < monthLength){
-			endPeriod = endPeriod - remainingDays; menstMonth += 1;
+	if (endPeriod > remainingDays && menstDay < remainingDays){
+			endPeriod -= remainingDays; menstMonth += 1;
 		}
 	System.out.printf("Next Menstruation is %d - %d of %d%n", menstDay, endPeriod, menstMonth);	
 	return today;

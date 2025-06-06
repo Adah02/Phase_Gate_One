@@ -12,7 +12,7 @@ function nextFlowDate(monthOfFlow, dayOfFlow, flowLength, nextFlow){
 	} else{
 		nextFlow += dayOfFlow;
 		}
-	console.log("Next menstruation is  ", nextFlow, " of ", monthOfFlow)
+	console.log("Next menstruation is", nextFlow, "of", monthOfFlow)
 	return monthLength;
 };
 
