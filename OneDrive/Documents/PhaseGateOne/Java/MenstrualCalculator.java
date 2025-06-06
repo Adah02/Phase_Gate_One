@@ -3,6 +3,15 @@ import java.util.Date;
 import java.time.LocalDate;
 public class MenstrualCalculator {
 
+	
+	public static LocalDate previousFlowDate(int menstMonth, int prevDay){
+
+	int currentYear = 2025;
+	LocalDate flowDate = LocalDate.of(currentYear, menstMonth, prevDay);
+	return flowDate;
+	}
+
+
 	public static LocalDate nextMenstCycle(int menstMonth, int prevDay, int nextMenst){
 
 	int currentYear = 2025;
@@ -57,8 +66,9 @@ public class MenstrualCalculator {
 	int nextMenst = input.nextInt();
 	
 	System.out.println();
-	System.out.println("Date of next menstruation is " + nextMenstCycle(menstMonth, prevDay, nextMenst));
+	System.out.println("Date of previous flow is " + previousFlowDate(menstMonth, prevDay));
 	System.out.println("Next ovulation is " + ovulationPeriod (prevDay, menstMonth));
+	System.out.println("Date of next menstruation is " + nextMenstCycle(menstMonth, prevDay, nextMenst));
 	}
 }
 
