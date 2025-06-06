@@ -4,34 +4,36 @@ import java.time.LocalDate;
 public class MenstrualCalculator {
 
 	public static LocalDate nextMenstCycle(int mensMonth, int prevDay, int lengthOfFlow, int nextMenst){
-
 	LocalDate today = LocalDate.of(2025, mensMonth, prevDay);
-
-	int year = today.getYear();
-	int month = today.getMonthValue();
-	int day = today.getDayOfMonth();
-
-	int menstDay = nextMenst + lengthOfFlow;
+	int menstDay = nextMenst;
 	int daysInMonth = today.lengthOfMonth();
 	int remainingDays = (daysInMonth - prevDay);
+
 	if (menstDay > remainingDays){
 		menstDay -= remainingDays; mensMonth += 1;
-	}
-	else{
+	} else{
 		menstDay += prevDay;
 		}
 	int endPeriod = (menstDay + lengthOfFlow);
 	if (endPeriod > daysInMonth && menstDay < daysInMonth){
 			endPeriod = endPeriod - remainingDays; mensMonth += 1;
 		}
-	
 	System.out.printf("Next Menstruation is %d - %d of %d%n", menstDay, endPeriod, mensMonth);	
-	System.out.printf("Days in current month %d%n", daysInMonth);
-	
 	return today;
 	}
 
-	
+	public static long ovulationPeriod (int prevDay, int endPeriod, int mensMonth){
+	LocalDate today = LocalDate.of(2025, mensMonth, prevDay);
+	int ovulation = prevDay + 14;
+	int daysLeft = today.lengthOfMonth() - prevDay;
+	if (ovulation > daysLeft){
+		ovulation = 14 - daysLeft;
+		mensMonth += 1;
+		}
+		
+	return ovulation;
+	}
+
 
 	public static void main(String[] args){
 
