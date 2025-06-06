@@ -3,34 +3,34 @@ import java.util.Date;
 import java.time.LocalDate;
 public class MenstrualCalculator {
 
-	public static LocalDate nextMenstCycle(int mensMonth, int prevDay, int lengthOfFlow, int nextMenst){
-	LocalDate today = LocalDate.of(2025, mensMonth, prevDay);
+	public static LocalDate nextMenstCycle(int menstMonth, int prevDay, int lengthOfFlow, int nextMenst){
+	LocalDate today = LocalDate.of(2025, menstMonth, prevDay);
 	int menstDay = nextMenst;
-	int daysInMonth = today.lengthOfMonth();
-	int remainingDays = (daysInMonth - prevDay);
+	int monthLength = today.lengthOfMonth();
+	int remainingDays = (monthLength - prevDay);
 
 	if (menstDay > remainingDays){
-		menstDay -= remainingDays; mensMonth += 1;
+		menstDay -= remainingDays; menstMonth += 1;
 	} else{
 		menstDay += prevDay;
 		}
 	int endPeriod = (menstDay + lengthOfFlow);
-	if (endPeriod > daysInMonth && menstDay < daysInMonth){
-			endPeriod = endPeriod - remainingDays; mensMonth += 1;
+	if (endPeriod > monthLength && menstDay < monthLength){
+			endPeriod = endPeriod - remainingDays; menstMonth += 1;
 		}
-	System.out.printf("Next Menstruation is %d - %d of %d%n", menstDay, endPeriod, mensMonth);	
+	System.out.printf("Next Menstruation is %d - %d of %d%n", menstDay, endPeriod, menstMonth);	
 	return today;
 	}
 
-	public static long ovulationPeriod (int prevDay, int endPeriod, int mensMonth){
-	LocalDate today = LocalDate.of(2025, mensMonth, prevDay);
+	public static long ovulationPeriod (int prevDay, int menstMonth){
+	LocalDate today = LocalDate.of(2025, menstMonth, prevDay);
 	int ovulation = prevDay + 14;
 	int daysLeft = today.lengthOfMonth() - prevDay;
 	if (ovulation > daysLeft){
 		ovulation = 14 - daysLeft;
-		mensMonth += 1;
-		}
-		
+		menstMonth += 1;
+		}	
+	System.out.printf("The next ovulation is %d of %d%n", ovulation, menstMonth);
 	return ovulation;
 	}
 
@@ -40,7 +40,7 @@ public class MenstrualCalculator {
 	Scanner input = new Scanner(System.in);
 
 	System.out.print("Enter Month of last Menstruation: ");
-	int mensMonth = input.nextInt();
+	int menstMonth = input.nextInt();
 
 	System.out.print("Enter Day of last Menstruation: ");
 	int prevDay = input.nextInt();
@@ -51,7 +51,8 @@ public class MenstrualCalculator {
 	System.out.print("Enter Days before next cycle: ");
 	int nextMenst = input.nextInt();
 	
-	nextMenstCycle(mensMonth, prevDay, lengthOfFlow, nextMenst);
+	nextMenstCycle(menstMonth, prevDay, lengthOfFlow, nextMenst);
+	ovulationPeriod (prevDay, menstMonth);
 	}
 }
 
