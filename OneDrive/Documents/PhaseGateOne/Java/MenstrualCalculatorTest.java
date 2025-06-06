@@ -1,16 +1,19 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.time.LocalDate;
 
 public class MenstrualCalculatorTest {
 
 	MenstrualCalculator quiz = new MenstrualCalculator();
 
 	@Test
-	public void calculatorCheckForMonth(){
+	public void calculatorCheckForDateOfPreviousFlow(){
 
-	int menstMonth = 5; int prevDay = 5; int lengthOfFlow = 3; int menstCycleLength = 27;
-	int check = quiz.nextMenstCycle(menstMonth, prevDay, lengthOfFlow, menstCycleLength)
+	int day = 6;
+	int month = 5;
+	long expected = 2025-05-06;
 	
+	assertEquals(expected, quiz.previousFlowDate(day, month));
 	}
 
 }

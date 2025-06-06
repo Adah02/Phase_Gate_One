@@ -5,7 +5,7 @@ public class MenstrualCalculator {
 
 	
 	
-	public static LocalDate previousFlowDate(int menstMonth, int prevDay){
+	public static LocalDate previousFlowDate(int prevDay, int menstMonth){
 	Calendar calendar = Calendar.getInstance();
 
 	int year = calendar.get(Calendar.YEAR);
