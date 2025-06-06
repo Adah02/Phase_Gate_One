@@ -1,8 +1,10 @@
 from datetime import date
+todaysDate = date.today()
 
 def nextFlow(day_of_flow, flow_month, flow_length):
 	#To calculate the next menstrual flow.
-	todaysDate = date.today()
+	
+
 	print(todaysDate)
 	
 	return todaysDate
