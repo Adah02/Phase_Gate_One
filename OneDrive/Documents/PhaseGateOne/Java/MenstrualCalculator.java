@@ -12,12 +12,13 @@ public class MenstrualCalculator {
 	int day = today.getDayOfMonth();
 
 	int menstDay = (day - prevDay) + nextMenst + mensFlow;
-	int daysInMonth = LocalDate.lengthOfMonth();
+	int daysInMonth = today.lengthOfMonth();
 	int remainingDays = (daysInMonth - prevDay);
 	if (menstDay > daysInMonth){
-		month += 1;
-		System.out.printf("Next Menstruation is %d - %d %d%n", menstDay, (menstDay +mensFlow), month);	
+		menstDay -= remainingDays;
+		mensMonth += 1;
 	}
+	System.out.printf("Next Menstruation is %d - %d of %d%n", menstDay, (menstDay +mensFlow), mensMonth);	
 	System.out.printf("Days in current month %d%n", daysInMonth);
 	return today;
 	}
