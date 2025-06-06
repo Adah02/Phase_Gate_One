@@ -1,32 +1,29 @@
 import java.util.Scanner;
 import java.util.Date;
-import java.util.Calendar;
+import java.time.LocalDate;
 public class MenstrualCalculator {
 
-	public static Date gettingDateOf () {
+	public static void main(String[] args){
 
-	Calendar calendar = Calendar.getInstance();
+	LocalDate today = LocalDate.now();
 
-	calendar.set(Calendar.YEAR, 2025);
-	calendar.set(Calendar.MONTH, Calendar.JUNE);
-	calendar.set(Calendar.DAY_OF_MONTH, 6);
+	int year = today.getYear();
+	int month = today.getMonthValue();
+	int day = today.getDayOfMonth();
 
-	Date date = calendar.getTime();
 
-	int year = calendar.get(Calendar.YEAR);
-	int month = calendar.get(Calendar.MONTH);
-	int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-	System.out.printf("%d/%d/%d%n",year, month, day);
-	return date;
+	System.out.printf("%d %d %d%n", day, month, year);
+	
 	}
-
-
+	
+/*
 	public static void main(String[] args){
 
 	Scanner input =  new Scanner(System.in);
 
-	gettingDateOf ();
-	}
+	System.out.print(gettingDateOf());
 
+	}
+*/
 }
+
