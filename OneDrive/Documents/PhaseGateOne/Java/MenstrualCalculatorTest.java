@@ -11,7 +11,7 @@ public class MenstrualCalculatorTest {
 
 	int day = 6;
 	int month = 5;
-	long expected = 2025-05-06;
+	String expected = "2025-05-06";
 	
 	assertEquals(expected, quiz.previousFlowDate(day, month));
 	}

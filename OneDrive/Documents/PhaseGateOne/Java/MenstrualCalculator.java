@@ -5,16 +5,17 @@ public class MenstrualCalculator {
 
 	
 	
-	public static LocalDate previousFlowDate(int prevDay, int menstMonth){
+	public static String previousFlowDate(int prevDay, int menstMonth){
 	Calendar calendar = Calendar.getInstance();
 
 	int year = calendar.get(Calendar.YEAR);
 	LocalDate flowDate = LocalDate.of(year, menstMonth, prevDay);
 
-	return flowDate;
+	String lastFlowDate = flowDate.toString();
+	return lastFlowDate;
 	}
 
-	public static LocalDate nextMenstCycle(int menstMonth, int prevDay, int nextMenst){
+	public static String nextMenstCycle(int menstMonth, int prevDay, int nextMenst){
 	Calendar calendar = Calendar.getInstance();
 
 	int year = calendar.get(Calendar.YEAR);
@@ -31,10 +32,11 @@ public class MenstrualCalculator {
 		menstDay += prevDay;
 		}
 	LocalDate nextMenstruation = LocalDate.of(year, menstMonth, menstDay);
-	return nextMenstruation;
+	String nextFlowDate = nextMenstruation.toString();
+	return nextFlowDate;
 	}
 
-	public static LocalDate ovulationPeriod (int prevDay, int menstMonth){
+	public static String ovulationPeriod (int prevDay, int menstMonth){
 	
 	Calendar calendar = Calendar.getInstance();
 
@@ -46,13 +48,13 @@ public class MenstrualCalculator {
 	if (ovulationDay > daysLeft){
 		ovulationDay = 14 - daysLeft;
 		menstMonth += 1;
-		}
-		else if (ovulationDay > daysLeft && menstMonth == 12){
+		} else if (ovulationDay > daysLeft && menstMonth == 12){
 		ovulationDay = 14 - daysLeft;
 		menstMonth = 1;
 		year += 1;
 		}
-	LocalDate ovulationDate = LocalDate.of(year, menstMonth, ovulationDay);
+	LocalDate ovulation = LocalDate.of(year, menstMonth, ovulationDay);
+	String ovulationDate = ovulation.toString();
 	return ovulationDate;
 	}
 
