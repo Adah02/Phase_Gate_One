@@ -18,18 +18,17 @@ public class MenstrualCalculator {
 
 	int year = calendar.get(Calendar.YEAR);
 	LocalDate flowDate = LocalDate.of(year, menstMonth, prevDay);
-	int menstDay = nextMenst;
 	int monthLength = flowDate.lengthOfMonth();
 	int remainingDays = (monthLength - prevDay);
 
-	if (menstDay > remainingDays && menstMonth != 12){
-		menstDay -= remainingDays; menstMonth += 1;
-	}else if (menstMonth == 12 && menstDay > remainingDays){
-		menstDay -= remainingDays; menstMonth = 1; year += 1;
+	if (nextMenst > remainingDays && menstMonth != 12){
+		nextMenst -= remainingDays; menstMonth += 1;
+	}else if (menstMonth == 12 && nextMenst > remainingDays){
+		nextMenst -= remainingDays; menstMonth = 1; year += 1;
 	}else{
-		menstDay += prevDay;
+		nextMenst += prevDay;
 		}
-	LocalDate nextMenstruation = LocalDate.of(year, menstMonth, menstDay);
+	LocalDate nextMenstruation = LocalDate.of(year, menstMonth, nextMenst);
 	String nextFlowDate = nextMenstruation.toString();
 	return nextFlowDate;
 	}
