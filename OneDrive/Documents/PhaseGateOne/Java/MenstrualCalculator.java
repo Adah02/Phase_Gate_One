@@ -15,7 +15,7 @@ public class MenstrualCalculator {
 	return lastFlowDate;
 	}
 
-	public static String nextMenstCycle(int menstMonth, int prevDay, int nextMenst){
+	public static String nextMenstCycle(int prevDay, int menstMonth, int nextMenst){
 	Calendar calendar = Calendar.getInstance();
 
 	int year = calendar.get(Calendar.YEAR);
@@ -36,7 +36,7 @@ public class MenstrualCalculator {
 	return nextFlowDate;
 	}
 
-	public static String ovulationPeriod (int prevDay, int menstMonth){
+	public static String ovulationDate (int prevDay, int menstMonth){
 	
 	Calendar calendar = Calendar.getInstance();
 
@@ -45,14 +45,11 @@ public class MenstrualCalculator {
 	int ovulationDay = prevDay + 14;
 	int daysLeft = today.lengthOfMonth() - prevDay;
 
-	if (ovulationDay > daysLeft){
-		ovulationDay = 14 - daysLeft;
-		menstMonth += 1;
-		} else if (ovulationDay > daysLeft && menstMonth == 12){
-		ovulationDay = 14 - daysLeft;
-		menstMonth = 1;
-		year += 1;
-		}
+	if (ovulationDay > daysLeft && menstMonth != 12){
+		ovulationDay = 14 - daysLeft;  menstMonth += 1;
+	} else if (ovulationDay > daysLeft && menstMonth == 12){
+		ovulationDay = 14 - daysLeft;  menstMonth = 1;  year += 1;
+	}
 	LocalDate ovulation = LocalDate.of(year, menstMonth, ovulationDay);
 	String ovulationDate = ovulation.toString();
 	return ovulationDate;
@@ -74,7 +71,7 @@ public class MenstrualCalculator {
 	
 	System.out.println();
 	System.out.println("Date of previous flow is " + previousFlowDate(menstMonth, prevDay));
-	System.out.println("Next ovulation is " + ovulationPeriod (prevDay, menstMonth));
+	System.out.println("Next ovulation is " + ovulationDate (prevDay, menstMonth));
 	System.out.println("Date of next menstruation is " + nextMenstCycle(menstMonth, prevDay, nextMenst));
 	}
 }
