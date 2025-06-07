@@ -12,7 +12,6 @@ public class MenstrualCalculatorTest {
 	int day = 6;
 	int month = 5;
 	String expected = "2025-05-06";
-	
 	assertEquals(expected, quiz.previousFlowDate(month, day));
 	}
 
@@ -23,7 +22,6 @@ public class MenstrualCalculatorTest {
 	int month = 5;
 	int nextMenst = 28;
 	String expected = "2025-05-29";
-	
 	assertEquals(expected, quiz.nextMenstCycle(month, day, nextMenst));
 	}
 
@@ -34,7 +32,6 @@ public class MenstrualCalculatorTest {
 	int month = 5;
 	int nextMenst = 28;
 	String expected = "2025-06-04";
-	
 	assertEquals(expected, quiz.nextMenstCycle(month, day, nextMenst));
 	}
 
@@ -45,7 +42,6 @@ public class MenstrualCalculatorTest {
 	int month = 12;
 	int nextMenst = 28;
 	String expected = "2026-01-04";
-	
 	assertEquals(expected, quiz.nextMenstCycle(month, day, nextMenst));
 	}
 
@@ -55,7 +51,6 @@ public class MenstrualCalculatorTest {
 	int day = 7;
 	int month = 12;
 	String expected = "2025-12-21";
-	
 	assertEquals(expected, quiz.ovulationDate(day, month));
 	}
 
@@ -65,7 +60,6 @@ public class MenstrualCalculatorTest {
 	int day = 25;
 	int month = 5;
 	String expected = "2025-06-08";
-	
 	assertEquals(expected, quiz.ovulationDate(day, month));
 	}
 
@@ -75,8 +69,6 @@ public class MenstrualCalculatorTest {
 	int day = 27;
 	int month = 12;
 	String expected = "2026-01-10";
-	
 	assertEquals(expected, quiz.ovulationDate(day, month));
 	}
-
 }
