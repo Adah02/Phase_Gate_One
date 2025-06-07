@@ -2,10 +2,8 @@ import java.util.Scanner;
 import java.util.Calendar;
 import java.time.LocalDate;
 public class MenstrualCalculator {
-
 	
-	
-	public static String previousFlowDate(int prevDay, int menstMonth){
+	public static String previousFlowDate(int menstMonth, int prevDay){
 	Calendar calendar = Calendar.getInstance();
 
 	int year = calendar.get(Calendar.YEAR);
@@ -15,7 +13,7 @@ public class MenstrualCalculator {
 	return lastFlowDate;
 	}
 
-	public static String nextMenstCycle(int prevDay, int menstMonth, int nextMenst){
+	public static String nextMenstCycle(int menstMonth, int prevDay, int nextMenst){
 	Calendar calendar = Calendar.getInstance();
 
 	int year = calendar.get(Calendar.YEAR);
