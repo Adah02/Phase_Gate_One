@@ -22,10 +22,10 @@ public class CreditCardValidator {
 	public static String validityStatus(String cardNumber){
 	int sum = 0;  int sumOdd = 0;
 	for (int index = cardNumber.length() - 1; index >= 0; index--){
-		sumOdd = Integer.valueOf(cardNumber.charAt(index));
-
+		sumOdd += Integer.parseInt(String.valueOf(cardNumber.charAt(index)));
+	
 		index -= 1;
-		int integerValue = Integer.valueOf(cardNumber.charAt(index)) * 2;
+		int integerValue = Integer.parseInt(String.valueOf(cardNumber.charAt(index))) * 2;
 			if (integerValue > 9){
 				int firstDigit = integerValue / 10;  int secondDigit =  integerValue % 10;
 				sum += (firstDigit + secondDigit);	
@@ -34,7 +34,16 @@ public class CreditCardValidator {
 			}
 		}
 	int total = sum + sumOdd;
-	String validator = (total / 10 == 0) ? "Valid" : "Invalid";
+	String validator = (total % 10 == 0) ? "Valid" : "Invalid";
 	return validator;
-	}	
+	}
+
+	public static int cardNumberLength(String cardNumber){
+
+	int digitLength = cardNumber.length();
+
+	return digitLength;
+	}
+	
 }
+
