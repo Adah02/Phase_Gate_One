@@ -8,6 +8,7 @@ public class CheckOutApp {
 
 	for (int index = 0; index < productPrice.size(); index++){
 		totalProductPrice[index] = (productPrice.get(index) * productQuantity.get(index));
+		System.out.println(totalProductPrice);
 		}
 	return totalProductPrice;
 	}
@@ -32,6 +33,12 @@ public class CheckOutApp {
 	double vat = (total / PERCENTAGE) * taxPercentage;
 	
 	return vat;
+	}
+
+	public static double amountToPay(double taxToPay, double subTotal){
+	double sum = taxToPay + subTotal;
+
+	return sum;
 	}
 
 	public static void main(String[] args){
@@ -89,8 +96,8 @@ public class CheckOutApp {
 			purchase = false;
 			break;
 			}
-	
 	}
-
+	double taxToPay = valueAddedTax (priceOfProducts);
+	double subTotal = productTotal (ArrayList productPrice, ArrayList productQuantity);
 	}
 }
