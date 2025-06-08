@@ -1,11 +1,20 @@
 import java.util.Scanner;
-import java.util.Arrays;
 import java.util.ArrayList;
 public class CheckOutApp {
 
-	public static double totalPurchaseAmount (ArrayList<Double> priceOfProducts){
+	public static double[] productTotal (ArrayList<Double> productPrice, ArrayList<Double> productQuantity){
 	
+	double[] totalProductPrice = new double[productPrice.size()];
+
+	for (int index = 0; index < productPrice.size(); index++){
+		totalProductPrice[index] = (productPrice.get(index) * productQuantity.get(index));
+		}
+	return totalProductPrice;
+	}
+
+	public static double totalPurchaseAmount (ArrayList<Double> priceOfProducts){
 	double total = 0;
+
 	for (double price : priceOfProducts){
 		total += price;
 		}
@@ -51,7 +60,8 @@ public class CheckOutApp {
 	double[] prices = {50000, 2500, 1600, 4500, 3750, 6000, 1500, 3000, 1000, 1900, 7400, 2500};
 
 	ArrayList<String> purchasedproducts = new ArrayList<>();
-	ArrayList<Double> priceOfProducts = new ArrayList<>();
+	ArrayList<Double> productPrice = new ArrayList<>();
+	ArrayList<Integer> productQuantity = new ArrayList<>();
 
 	System.out.println(availableProducts);
 	boolean purchase = true;
@@ -63,7 +73,8 @@ public class CheckOutApp {
 
 	System.out.print("How many pieces/bags? : ");
 	int quantity = input.nextInt(); 
-	priceOfProducts.add(prices[goods - 1] * quantity);
+	productPrice.add(prices[goods - 1]);
+	productQuantity.add(quantity);
 
 		boolean proceedPurchase = true;
 		while (proceedPurchase == true){
