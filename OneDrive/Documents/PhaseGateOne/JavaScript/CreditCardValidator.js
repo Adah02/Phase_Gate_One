@@ -19,7 +19,6 @@ function cardValidity(cardNumber){
 
 function creditCardType(cardNumber){
 	let cardType = "";
-
 	if (cardNumber.length() >= 13 && cardNumber.length() <= 16){
 		if (cardNumber.charAt(0) == '4'){
 			cardType = "VisaCard";
@@ -33,6 +32,5 @@ function creditCardType(cardNumber){
 	} else { 
 		cardType = "Invalid Card";
 	}
-
 	return cardType;
 	}

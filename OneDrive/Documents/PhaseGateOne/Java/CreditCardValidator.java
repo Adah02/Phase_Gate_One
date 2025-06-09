@@ -20,8 +20,9 @@ public class CreditCardValidator {
 	}
 
 	public static String myCardNumber(String cardNumber){
-	String number = cardNumber;
-	return number;
+	String myNumber = cardNumber.replaceAll("\\s+", "");
+
+	return myNumber;
 	}
 
 	public static String creditCardType(String cardNumber){
@@ -40,7 +41,6 @@ public class CreditCardValidator {
 	} else { 
 		cardType = "Invalid Card";
 	}
-
 	return cardType;
 	}
 
@@ -49,7 +49,7 @@ public class CreditCardValidator {
 	for (int index = cardNumber.length() - 1; index >= 0; index--){
 		sumOdd += Integer.parseInt(String.valueOf(cardNumber.charAt(index)));
 	
-		index -= 1;
+		if (index > 0){ index -= 1; } else { break; }
 		int integerValue = Integer.parseInt(String.valueOf(cardNumber.charAt(index))) * 2;
 			if (integerValue > 9){
 				int firstDigit = integerValue / 10;  int secondDigit =  integerValue % 10;

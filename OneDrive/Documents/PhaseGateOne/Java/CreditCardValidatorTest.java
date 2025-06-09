@@ -14,13 +14,24 @@ public class CreditCardValidatorTest {
 	}
 
 	@Test
-	public void checkForCardValidity() {
+	public void checkIfCardNumberIsTheSame() {
 
-	String check = "4773437473784656";
+	String check = "4388 5760 1841 0707";
+	String expected = "4388576018410707";
+
+	assertEquals(expected, quiz.myCardNumber(check));
+	}
+
+	@Test
+	public void checkForValidCardNumberValidityStatus() {
+
+	String check = "4388 5760 1841 0707";
 	String expected = "Valid";
 
-	assertEquals(expected, quiz.cardValidity(check));
+	assertEquals(expected, quiz.validityStatus(check));
 	}
+
+
 
 	@Test
 	public void checkForCardNumberLength() {

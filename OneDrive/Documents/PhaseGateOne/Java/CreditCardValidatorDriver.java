@@ -6,14 +6,11 @@ public class CreditCardValidatorDriver {
 	Scanner input = new Scanner(System.in);
 
 	CreditCardValidator quiz = new CreditCardValidator();
-
+	
 	System.out.print("Enter card number to verify: ");
 	String cardNumbers = input.nextLine();
 
 	String cardNumber = cardNumbers.replaceAll("\\s+", "");
-
-	quiz.cardValidity(cardNumber);
-	quiz.validityStatus(cardNumber);
 
 	for (int index = 0; index < 42; index++){ System.out.print("*"); } System.out.println();
 	System.out.println("** Credit Card Type: " + quiz.creditCardType(cardNumber));
