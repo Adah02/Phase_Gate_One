@@ -39,6 +39,7 @@ public class MenstrualCalculator {
 
 	int year = calendar.get(Calendar.YEAR);
 	LocalDate today = LocalDate.of(year, menstMonth, prevDay);
+
 	int ovulationDay = prevDay + 14;
 	int daysLeft = today.lengthOfMonth() - prevDay;
 

@@ -1,6 +1,8 @@
 public class CreditCardValidator {
 
-	public static String cardValidity(String cardNumber){
+	public static String cardValidity(String myCardNumber){
+	String cardNumber = myCardNumber.replaceAll("\\s+", "");
+
 	boolean cardValid = false;
 		if (cardNumber.charAt(0) > '2' && cardNumber.charAt(0) < '7'){
 			if (cardNumber.length() >= 13 && cardNumber.length() <= 16){
@@ -19,14 +21,15 @@ public class CreditCardValidator {
 	return validity;
 	}
 
-	public static String myCardNumber(String cardNumber){
-	String myNumber = cardNumber.replaceAll("\\s+", "");
+	public static String myCardNumber(String myCardNumber){
+	String myNumber = myCardNumber.replaceAll("\\s+", "");
 
 	return myNumber;
 	}
 
-	public static String creditCardType(String cardNumber){
+	public static String creditCardType(String myCardNumber){
 	String cardType = "";
+	String cardNumber = myCardNumber.replaceAll("\\s+", "");
 
 	if (cardNumber.length() >= 13 && cardNumber.length() <= 16){
 		if (cardNumber.charAt(0) == '4'){
@@ -44,8 +47,10 @@ public class CreditCardValidator {
 	return cardType;
 	}
 
-	public static String validityStatus(String cardNumber){
+	public static String validityStatus(String myCardNumber){
 	int sum = 0;  int sumOdd = 0;
+	String cardNumber = myCardNumber.replaceAll("\\s+", "");
+
 	for (int index = cardNumber.length() - 1; index >= 0; index--){
 		sumOdd += Integer.parseInt(String.valueOf(cardNumber.charAt(index)));
 	
@@ -63,7 +68,8 @@ public class CreditCardValidator {
 	return validator;
 	}
 
-	public static int cardNumberLength(String cardNumber){
+	public static int cardNumberLength(String myCardNumber){
+	String cardNumber = myCardNumber.replaceAll("\\s+", "");
 
 	int digitLength = cardNumber.length();
 
