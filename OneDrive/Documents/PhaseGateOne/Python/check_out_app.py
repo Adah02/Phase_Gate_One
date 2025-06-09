@@ -17,6 +17,8 @@ def tax_to_pay(price_of_product, quantity_of_product):
 
 	tax_amount = (total / PERCENTAGE) * tax_percentage;
 	return tax_amount;
+
+
 	
 
 

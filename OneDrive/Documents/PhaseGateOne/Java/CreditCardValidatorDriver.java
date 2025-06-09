@@ -8,12 +8,18 @@ public class CreditCardValidatorDriver {
 	CreditCardValidator quiz = new CreditCardValidator();
 
 	System.out.print("Enter card number to verify: ");
-	String cardNumber = input.nextLine();
+	String cardNumbers = input.nextLine();
+
+	String cardNumber = cardNumbers.replaceAll("\\s+", "");
 
 	quiz.cardValidity(cardNumber);
 	quiz.validityStatus(cardNumber);
 
-	System.out.println(quiz.cardValidity(cardNumber));
-	System.out.println(quiz.validityStatus(cardNumber));
+	for (int index = 0; index < 42; index++){ System.out.print("*"); } System.out.println();
+	System.out.println("** Credit Card Type: " + quiz.creditCardType(cardNumber));
+	System.out.println("** Credit Card Number: " + quiz.myCardNumber(cardNumber));
+	System.out.println("** Credit Card Digit Length: " + quiz.cardNumberLength(cardNumber));
+	System.out.println("** Credit Card Validity Status: " + quiz.validityStatus(cardNumber));
+	for (int index = 0; index < 42; index++){ System.out.print("*"); } System.out.println();
 	}
 }

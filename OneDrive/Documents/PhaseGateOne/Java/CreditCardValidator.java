@@ -19,6 +19,31 @@ public class CreditCardValidator {
 	return validity;
 	}
 
+	public static String myCardNumber(String cardNumber){
+	String number = cardNumber;
+	return number;
+	}
+
+	public static String creditCardType(String cardNumber){
+	String cardType = "";
+
+	if (cardNumber.length() >= 13 && cardNumber.length() <= 16){
+		if (cardNumber.charAt(0) == '4'){
+			cardType = "VisaCard";
+		} else if (cardNumber.charAt(0) == '5'){
+			cardType = "MasterCard";
+		} else if (cardNumber.charAt(0) == '6'){
+			cardType = "DiscoverCard";
+		} else if (cardNumber.charAt(0) == '3' && cardNumber.charAt(1) == '7'){
+			cardType = "AmericanExpressCard";
+		} else { cardType = "Invalid Card"; }
+	} else { 
+		cardType = "Invalid Card";
+	}
+
+	return cardType;
+	}
+
 	public static String validityStatus(String cardNumber){
 	int sum = 0;  int sumOdd = 0;
 	for (int index = cardNumber.length() - 1; index >= 0; index--){
