@@ -20,25 +20,37 @@ function cardValidity(cardNumber){
 	};
 
 function cardNumberVerifier(myCardNumber){
-	let myNumber = myCardNumber.replaceAll("\\s+", "");
+	let myNumber = myCardNumber.replaceAll(" ", "");
 
+	if (myNumber.length <13 || myNumber.length > 16) myNumber = "Invalid";
+	for (let index = 0; index < myNumber.length; index++){
+		if (myNumber.charAt(index) < '0' || myNumber.charAt(index) > '9' &&  myNumber.charAt(index) != ' '){
+			myNumber = "Invalid";
+		} 
+		if (myNumber == "Invalid") break;
+	}
 	return myNumber
 	};
 
 function cardNumberLength(myCardNumber){
-	let cardNumber = myCardNumber.replaceAll("\\s+", "");
+	let cardNumber = myCardNumber.replaceAll(" ", "");
 
 	let digitLength = cardNumber.length;
 
 	return digitLength;
 	};
 	
-
 function creditCardType(myCardNumber){
 	let cardType = "";
-	let cardNumber = myCardNumber.replaceAll("\\s+", "");
+	let cardNumber = myCardNumber.replaceAll(" ", "");
 
-	if (cardNumber.length >= 13 && cardNumber.length <= 16){
+	for (let index = 0; index < cardNumber.length; index++){
+		if (cardNumber.charAt(index) < '0' || cardNumber.charAt(index) > '9' &&  cardNumber.charAt(index) != ' '){
+			cardType = "Invalid";
+			break;
+			}
+		}
+	if (cardNumber.length >= 13 && cardNumber.length <= 16 && cardType != "Invalid"){
 		if (cardNumber.charAt(0) == '4'){
 			cardType = "VisaCard";
 		} else if (cardNumber.charAt(0) == '5'){
@@ -56,7 +68,7 @@ function creditCardType(myCardNumber){
 
 function validityStatus(myCardNumber){
 	let sum = 0;  let sumOdd = 0;
-	let cardNumber = myCardNumber.replaceAll("\\s+", "");
+	let cardNumber = myCardNumber.replaceAll(" ", "");
 
 	for (let index = cardNumber.length - 1; index >= 0; index--){
 		sumOdd += Number(cardNumber.charAt(index));
@@ -64,7 +76,7 @@ function validityStatus(myCardNumber){
 		if (index > 0){ index -= 1; } else { break; };
 		let integerValue = Number(cardNumber.charAt(index)) * 2;
 			if (integerValue > 9){
-				let firstDigit = integerValue / 10;  let secondDigit =  integerValue % 10;
+				let firstDigit = Math.floor(integerValue / 10);  let secondDigit =  integerValue % 10;
 				sum += (firstDigit + secondDigit);	
 			} else{
 				sum += integerValue;

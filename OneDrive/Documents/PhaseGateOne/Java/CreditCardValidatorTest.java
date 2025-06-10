@@ -22,7 +22,6 @@ public class CreditCardValidatorTest {
 	assertEquals(expected, quiz.cardValidity(check));
 	}
 
-
 	@Test
 	public void visaCardCheck() {
 
@@ -33,12 +32,31 @@ public class CreditCardValidatorTest {
 	}
 
 	@Test
+	public void checkForValidVisaCardValidityStatus() {
+
+	String check = "4388 5760 1841 0707";
+	String expected = "Valid";
+
+	assertEquals(expected, quiz.validityStatus(check));
+	}
+
+
+	@Test
 	public void masterCardCheck() {
 
 	String check = "5399 5760 1261 2463";
 	String expected = "MasterCard";
 
 	assertEquals(expected, quiz.creditCardType(check));
+	}
+
+	@Test
+	public void checkForValidMasterCardValidityStatus() {
+
+	String check = "5399 2371 2539 2486";
+	String expected = "Valid";
+
+	assertEquals(expected, quiz.validityStatus(check));
 	}
 
 	@Test
@@ -66,15 +84,6 @@ public class CreditCardValidatorTest {
 	String expected = "4388576018410707";
 
 	assertEquals(expected, quiz.myCardNumber(check));
-	}
-
-	@Test
-	public void checkForValidCardNumberValidityStatus() {
-
-	String check = "4388 5760 1841 0707";
-	String expected = "Valid";
-
-	assertEquals(expected, quiz.validityStatus(check));
 	}
 
 	@Test
