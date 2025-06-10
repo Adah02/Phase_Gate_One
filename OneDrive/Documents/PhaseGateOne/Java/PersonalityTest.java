@@ -11,7 +11,7 @@ public class PersonalityTest {
 	String yourName = input.nextLine();
 
 	String[] a = { "Comfortable with walking to someone to start conversations", 
-				"Little mistakes causes doubt in your abilities",
+				"Not moved by past mistakes",
 				"Prioritizes facts in the course of actions",
 				 "Often compare efforts to others",
 				"Very productive in team work", 
@@ -21,19 +21,19 @@ public class PersonalityTest {
 				"Loud and outgoing",
 				"Authority over honesty",
 				"Prioritizes proving points over feelings",
-				"Logical and questioning",
-				"Enjoy solitary hobbies and activities",
+				"Empathical and accommodating",
+				"Enjoy networking and promoting yourself around people",
 				"Work according to schedule",
 				"Love eploring unfamiliar ideas & viewpoints",
 				"Complete task before deadline",
-				"A good listener & highly observant",
+				"Not observant",
 				"Do chores before relaxation",
-				"Stay calm under pressure",
-				"Not interested in discussions"
+				"Highly unstable under pressure",
+				"Overly interested in discussing with others"
 				};
 
 	String[] b = {"Love being by yourself always", 
-				"Not moved by past mistakes",
+				"Little mistakes causes doubt in your abilities",
 				"Allows feelings drive decision makings",
 				"Not bothered by other's achievements",
 				"Highly productive alone", 
@@ -43,15 +43,15 @@ public class PersonalityTest {
 				"Lonely and indoor lifestyle",
 				"Honesty over other things",
 				"Considers effects of decisions on others",
-				"Empathical and accommodating",
-				"Enjoy networking and promoting yourself around people",
+				"Logical and questioning",
+				"Enjoy solitary hobbies and activities",
 				"Work without actual plan",
 				"Work on pre-existing inventions",
 				"Abandon complex tasks",
-				"Not observant",
+				"A good listener & highly observant",
 				"Allow things come in the way",
-				"Highly unstable under pressure",
-				"Overly interested in discussing with others"
+				"Stay calm under pressure",
+				"Not interested in discussions"
 				};
 
 	ArrayList<String> selections = new ArrayList<>();
@@ -69,15 +69,33 @@ public class PersonalityTest {
 		String choice = input.next();
 
 		if (choice.equalsIgnoreCase("a")){
-			selections.add(optionA);
 			options = false;
 		} else if (choice.equalsIgnoreCase("b")){
-			selections.add(optionB);
 			options = false;
 		} else {
 				System.out.println("Enter a valid option");
 				options = true;
 				}
+		if (optionA == (a[0])  && choice.equalsIgnoreCase("a") || optionA == (a[4])  && choice.equalsIgnoreCase("a") ||
+		optionA == (a[8])  && choice.equalsIgnoreCase("a") || optionA == (a[12])  && choice.equalsIgnoreCase("a") || 
+		optionA == (a[16])  && choice.equalsIgnoreCase("a")){  extrovert += 1  selections.add(optionA);;	
+			} else { introvert += 1;  selections.add(optionB);}
+
+		if (optionA == (a[1])  && choice.equalsIgnoreCase("a") || optionA == (a[5])  && choice.equalsIgnoreCase("a") ||
+		optionA == (a[9])  && choice.equalsIgnoreCase("a") || optionA == (a[13])  && choice.equalsIgnoreCase("a") || 
+		optionA == (a[17])  && choice.equalsIgnoreCase("a")){  intuitive += 1;	
+			} else { sensing += 1;}
+
+		if (optionA == (a[2])  && choice.equalsIgnoreCase("a") || optionA == (a[6])  && choice.equalsIgnoreCase("a") ||
+		optionA == (a[10])  && choice.equalsIgnoreCase("a") || optionA == (a[14])  && choice.equalsIgnoreCase("a") || 
+		optionA == (a[18])  && choice.equalsIgnoreCase("a")){  thinking += 1;	
+			} else { feeling += 1;}
+
+			if (optionA == (a[3])  && choice.equalsIgnoreCase("a") || optionA == (a[7])  && choice.equalsIgnoreCase("a") ||
+		optionA == (a[11])  && choice.equalsIgnoreCase("a") || optionA == (a[15])  && choice.equalsIgnoreCase("a") || 
+		optionA == (a[19])  && choice.equalsIgnoreCase("a")){  thinking += 1;	
+			} else { feeling += 1;}
+
 			}
 		}
 
