@@ -54,7 +54,10 @@ public class PersonalityTest {
 				"Not interested in discussions"
 				};
 
-	ArrayList<String> selections = new ArrayList<>();
+	ArrayList<String> energy = new ArrayList<>();
+	ArrayList<String> mind = new ArrayList<>();
+	ArrayList<String> nature = new ArrayList<>();
+	ArrayList<String> tactics = new ArrayList<>();
 	
 	int introvert = 0;   int extrovert = 0; 		int sensing = 0;   int intuitive = 0;
 	int thinking = 0; 	int feeling = 0;		int judging = 0;   int perception = 0;
@@ -78,23 +81,23 @@ public class PersonalityTest {
 				}
 		if (optionA == (a[0])  && choice.equalsIgnoreCase("a") || optionA == (a[4])  && choice.equalsIgnoreCase("a") ||
 		optionA == (a[8])  && choice.equalsIgnoreCase("a") || optionA == (a[12])  && choice.equalsIgnoreCase("a") || 
-		optionA == (a[16])  && choice.equalsIgnoreCase("a")){  extrovert += 1  selections.add(optionA);;	
-			} else { introvert += 1;  selections.add(optionB);}
+		optionA == (a[16])  && choice.equalsIgnoreCase("a")){  extrovert += 1  energy.add(optionA);	
+			} else { introvert += 1;  energy.add(optionB);	}
 
 		if (optionA == (a[1])  && choice.equalsIgnoreCase("a") || optionA == (a[5])  && choice.equalsIgnoreCase("a") ||
 		optionA == (a[9])  && choice.equalsIgnoreCase("a") || optionA == (a[13])  && choice.equalsIgnoreCase("a") || 
-		optionA == (a[17])  && choice.equalsIgnoreCase("a")){  intuitive += 1;	
-			} else { sensing += 1;}
+		optionA == (a[17])  && choice.equalsIgnoreCase("a")){  intuitive += 1;	mind.add(optionA);	
+			} else { sensing += 1; 	mind.add(optionB); 	}
 
 		if (optionA == (a[2])  && choice.equalsIgnoreCase("a") || optionA == (a[6])  && choice.equalsIgnoreCase("a") ||
 		optionA == (a[10])  && choice.equalsIgnoreCase("a") || optionA == (a[14])  && choice.equalsIgnoreCase("a") || 
-		optionA == (a[18])  && choice.equalsIgnoreCase("a")){  thinking += 1;	
-			} else { feeling += 1;}
+		optionA == (a[18])  && choice.equalsIgnoreCase("a")){  thinking += 1;	nature.add(optionA);
+			} else { feeling += 1;	nature.add(optionB);	}
 
 			if (optionA == (a[3])  && choice.equalsIgnoreCase("a") || optionA == (a[7])  && choice.equalsIgnoreCase("a") ||
 		optionA == (a[11])  && choice.equalsIgnoreCase("a") || optionA == (a[15])  && choice.equalsIgnoreCase("a") || 
-		optionA == (a[19])  && choice.equalsIgnoreCase("a")){  thinking += 1;	
-			} else { feeling += 1;}
+		optionA == (a[19])  && choice.equalsIgnoreCase("a")){  thinking += 1;	tactics.add(optionA);
+			} else { feeling += 1;	tactics.add(optionB);	}
 
 			}
 		}
