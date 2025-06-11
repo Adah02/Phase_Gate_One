@@ -118,6 +118,9 @@ public class MbtiPersonality {
 		optionA == (a[19])  && choice.equalsIgnoreCase("b")){ perception += 1;	tactics.add(optionB);	}
 			}
 		}
+	String type = quiz.personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception);
+
+	System.out.printf("%n Hello %s, you selected the following;- %n",quiz.usersName(myName));
 	System.out.println(quiz.energyDetails(energy, introvert, extrovert));
 	System.out.println(quiz.mindDetails(mind, sensing, intuitive));
 	System.out.println(quiz.natureDetails(nature, thinking, feeling));
