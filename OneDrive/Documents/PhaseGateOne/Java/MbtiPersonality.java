@@ -1,10 +1,12 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-public class PersonalityTestDriver {
+public class MbtiPersonality {
 
 	public static void main(String[] args){
 
 	Scanner input = new Scanner(System.in);
+
+	PersonalityTestFunctions quiz = new PersonalityTestFunctions();
 
 	System.out.println("what is your name?");
 	String yourName = input.nextLine();
@@ -61,7 +63,6 @@ public class PersonalityTestDriver {
 	int introvert = 0;   int extrovert = 0; 		int sensing = 0;   int intuitive = 0;
 	int thinking = 0; 	int feeling = 0;		int judging = 0;   int perception = 0;
 
-	String choicesInEnergy = String.format("Number of A selected: %d%nNumber of B selected: %d%n", extrovert, introvert);
 	String choicesInMind = String.format("Number of A selected: %d%nNumber of B selected: %d%n", sensing, intuitive);
 	String choicesInNature = String.format("Number of A selected: %d%nNumber of B selected: %d%n", thinking, feeling);
 	String choicesInTactics = String.format("Number of A selected: %d%nNumber of B selected: %d%n", judging, perception);
@@ -86,25 +87,38 @@ public class PersonalityTestDriver {
 		if (optionA == (a[0])  && choice.equalsIgnoreCase("a") || optionA == (a[4])  && choice.equalsIgnoreCase("a") ||
 		optionA == (a[8])  && choice.equalsIgnoreCase("a") || optionA == (a[12])  && choice.equalsIgnoreCase("a") || 
 		optionA == (a[16])  && choice.equalsIgnoreCase("a")){  extrovert += 1;  energy.add(optionA);	
-			} else { introvert += 1;  energy.add(optionB);	}
+			} 
+		else if (optionA == (a[0])  && choice.equalsIgnoreCase("b") || optionA == (a[4])  && choice.equalsIgnoreCase("b") ||
+		optionA == (a[8])  && choice.equalsIgnoreCase("b") || optionA == (a[12])  && choice.equalsIgnoreCase("b") || 
+		optionA == (a[16])  && choice.equalsIgnoreCase("b")){ introvert += 1;  energy.add(optionB);	}
+
 
 		if (optionA == (a[1])  && choice.equalsIgnoreCase("a") || optionA == (a[5])  && choice.equalsIgnoreCase("a") ||
 		optionA == (a[9])  && choice.equalsIgnoreCase("a") || optionA == (a[13])  && choice.equalsIgnoreCase("a") || 
 		optionA == (a[17])  && choice.equalsIgnoreCase("a")){  intuitive += 1;	mind.add(optionA);	
-			} else { sensing += 1; 	mind.add(optionB); 	}
+			} 
+		else if (optionA == (a[1])  && choice.equalsIgnoreCase("b") || optionA == (a[5])  && choice.equalsIgnoreCase("b") ||
+		optionA == (a[9])  && choice.equalsIgnoreCase("b") || optionA == (a[13])  && choice.equalsIgnoreCase("b") || 
+		optionA == (a[17])  && choice.equalsIgnoreCase("b")){  sensing += 1; 	mind.add(optionB); 	}
+
 
 		if (optionA == (a[2])  && choice.equalsIgnoreCase("a") || optionA == (a[6])  && choice.equalsIgnoreCase("a") ||
 		optionA == (a[10])  && choice.equalsIgnoreCase("a") || optionA == (a[14])  && choice.equalsIgnoreCase("a") || 
 		optionA == (a[18])  && choice.equalsIgnoreCase("a")){  thinking += 1;	nature.add(optionA);
-			} else { feeling += 1;	nature.add(optionB);	}
+			} else if (optionA == (a[2])  && choice.equalsIgnoreCase("b") || optionA == (a[6])  && choice.equalsIgnoreCase("b") ||
+		optionA == (a[10])  && choice.equalsIgnoreCase("b") || optionA == (a[14])  && choice.equalsIgnoreCase("b") || 
+		optionA == (a[18])  && choice.equalsIgnoreCase("b")){ feeling += 1;	nature.add(optionB);	}
 
-			if (optionA == (a[3])  && choice.equalsIgnoreCase("a") || optionA == (a[7])  && choice.equalsIgnoreCase("a") ||
+
+		if (optionA == (a[3])  && choice.equalsIgnoreCase("a") || optionA == (a[7])  && choice.equalsIgnoreCase("a") ||
 		optionA == (a[11])  && choice.equalsIgnoreCase("a") || optionA == (a[15])  && choice.equalsIgnoreCase("a") || 
-		optionA == (a[19])  && choice.equalsIgnoreCase("a")){  thinking += 1;	tactics.add(optionA);
-			} else { feeling += 1;	tactics.add(optionB);	}
-
+		optionA == (a[19])  && choice.equalsIgnoreCase("a")){  judging += 1;	tactics.add(optionA);
+			} else if (optionA == (a[3])  && choice.equalsIgnoreCase("b") || optionA == (a[7])  && choice.equalsIgnoreCase("b") ||
+		optionA == (a[11])  && choice.equalsIgnoreCase("b") || optionA == (a[15])  && choice.equalsIgnoreCase("b") || 
+		optionA == (a[19])  && choice.equalsIgnoreCase("b")){ perception += 1;	tactics.add(optionB);	}
 			}
 		}
+	System.out.print(quiz.energyDetails(energy, introvert, extrovert));
 
 	}
 }
