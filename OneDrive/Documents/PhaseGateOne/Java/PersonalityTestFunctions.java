@@ -201,19 +201,157 @@ public class PersonalityTestFunctions {
 	return esfp;
 	}
 
-	public static String personalityTrait (String type){
-	
-	String trait = "";
-	if (type == "ENTJ"){ 	trait = commander();
-	} else if (type == "INTP"){	trait = logician();
-	} else if (type == "INTJ"){	trait = architect ();
-	} else if (type == "ENTP"){	trait = debater ();
-	} else if (type == "ISFP"){	trait = adventurer ();
-	} else if (type == "ISTP"){	trait = virtuoso ();
-	} else if (type == "ESTP"){	trait = entrepreneur ();
-	} else if (type == "ESFP"){	trait = entertainer ();
+	public static String advocate (){
+	String infj = """
+			INFJ (Advocate) is a personality type with the Introverted, Intuitive, Feeling, and Judging traits. They tend to approach life with deep 
+			thoughtfulness and imagination. Their inner vision, personal values, and a quiet, principled version of humanism guide them in all things.
+			Idealistic and principled, people with the INFJ personality type (Advocates) aren’t content to coast through life – they want to stand up 
+			and make a difference. For these compassionate personalities, success doesn’t come from money or status but from seeking fulfillment, 
+			helping others, and being a force for good in the world.
+			While they have lofty goals and ambitions, INFJs shouldn’t be mistaken for idle dreamers. People with this personality type care about 
+			integrity, and they’re rarely satisfied until they’ve done what they know to be right. Conscientious to the core, they move through life 
+			with a clear sense of their values, and they aim to never lose sight of what truly matters – not according to other people or society at 
+			large but according to their own wisdom and intuition.
+			Perhaps because their personality type is so uncommon, INFJs tend to carry around a sense – whether conscious or not – of being 
+			different from most people. With their rich inner lives and their deep, abiding desire to find their life purpose, they don’t always fit in 
+			with those around them. This isn’t to say that INFJ personalities can’t enjoy social acceptance or close relationships – only that they 
+			sometimes feel misunderstood or at odds with the world.
+			""";
+	return infj;
 	}
-	return trait;
+
+	public static String mediator (){
+	String infp = """
+			INFP (Mediator) is a personality type with the Introverted, Intuitive, Feeling, and Prospecting traits. These rare personality types 
+			tend to be quiet, open-minded, and imaginative, and they apply a caring and creative approach to everything they do.
+			Although they may seem quiet or unassuming, people with the INFP personality type (Mediators) have vibrant, passionate inner 
+			lives. Creative and imaginative, they happily lose themselves in daydreams, inventing all sorts of stories and conversations in their 
+			mind. INFPs are known for their sensitivity – these personalities can have profound emotional responses to music, art, nature, and 
+			the people around them. They are known to be extremely sentimental and nostalgic, often holding onto special keepsakes and
+			 memorabilia that brighten their days and fill their heart with joy.
+			Idealistic and empathetic, people with the INFP personality type long for deep, soulful relationships, and they feel called to help 
+			others. Due to the fast-paced and competitive nature of our society, they may sometimes feel lonely or invisible, adrift in a world 
+			that doesn’t seem to appreciate the traits that make them unique. Yet it is precisely because INFPs brim with such rich sensitivity 
+			and profound creativity that they possess the unique potential to connect deeply and initiate positive change.
+			""";
+	return infp;
+	}
+
+	public static String protagonist (){
+	String enfj = """
+			ENFJ (Protagonist) is a personality type with the Extraverted, Intuitive, Feeling, and Judging traits. These warm, forthright 
+			types love helping others, and they tend to have strong ideas and values. They back their perspective with the creative 
+			energy to achieve their goals.
+			ENFJs are born leaders, which explains why these personalities can be found among many notable politicians, coaches, and 
+			teachers. Their passion and charisma allow them to inspire others not just in their careers but in every arena of their lives, 
+			including their relationships. Few things bring people with the ENFJ personality type a deeper sense of joy and fulfillment 
+			than guiding friends and loved ones to grow into their best selves.
+			ENFJs tend to be vocal about their values, including authenticity and altruism. When something strikes them as unjust or 
+			wrong, they speak up. But they rarely come across as brash or pushy, as their sensitivity and insight guide them to speak in 
+			ways that resonate with others.
+			ENFJ personalities have not only an uncanny ability to pick up on people’s underlying motivations and beliefs but also a knack 
+			for understanding how others are feeling just by looking at them. At times, they may not even understand how they come to 
+			grasp another person’s mind and heart so quickly. These flashes of insight can make ENFJs incredibly persuasive and inspiring 
+			communicators.
+			""";
+	return enfj;
+	}
+
+	public static String campaigner (){
+	String enfp = """
+			ENFP (Campaigner) is a personality type with the Extraverted, Intuitive, Feeling, and Prospecting traits. These people 
+			tend to embrace big ideas and actions that reflect their sense of hope and goodwill toward others. Their vibrant energy 
+			can flow in many directions.
+			People with the ENFP personality type (Campaigners) are true free spirits – outgoing, openhearted, and open-minded. 
+			With their lively, upbeat approach to life, ENFPs stand out in any crowd. But even though they can be the life of the party, 
+			they don’t just care about having a good time. These personalities have profound depths that are fueled by their intense 
+			desire for meaningful, emotional connections with others.
+			ENFP personalities carry an interesting blend of carefree sociability, sparkling imagination, and deep, contemplative 
+			introspection. They regularly use their natural curiosity and expansive creativity to try to better understand themselves 
+			and the complex dynamics of human relationships. And they are truly devoted to nurturing their relationships with and 
+			their understanding of the world at large.
+			In their unique way, ENFPs’ introspective nature is driven by their imagination, wonder, and belief in things that cannot 
+			always be explained rationally. People with this personality type truly believe that everything – and everyone – is connected, 
+			and they live for the glimmers of insight that they can gain from these connections. They believe that how we treat one another 
+			really matters. In fact, ENFPs are the most likely personality type to believe in the concept of karma.
+			""";
+	return enfp;
+	}
+
+	public static String logistician (){
+	String istj = """
+			ISTJ (Logistician) is a personality type with the Introverted, Observant, Thinking, and Judging traits. These people tend to be 
+			reserved yet willful, with a rational outlook on life. They compose their actions carefully and carry them out with methodical 
+			purpose.
+			People with the ISTJ personality type (Logisticians) mean what they say and say what they mean, and when they commit to 
+			doing something, they make sure to follow through. With their responsible and dependable nature, it might not be so surprising 
+			that ISTJ personalities also tend to have a deep respect for structure and tradition. They are often drawn to organizations, 
+			workplaces, and educational settings that offer clear hierarchies and expectations.
+			While ISTJs may not be particularly flashy or attention seeking, they do more than their share to keep society on a sturdy, stable 
+			foundation. In their families and their communities, people with this personality type often earn respect for their reliability, their 
+			practicality, and their ability to stay grounded and logical in even the most stressful situations.
+			""";
+	return istj;
+	}
+
+	public static String executive (){
+	String estj = """
+			ESTJ (Executive) is a personality type with the Extraverted, Observant, Thinking, and Judging traits. They possess great fortitude, 
+			emphatically following their own sensible judgment. They often serve as a stabilizing force among others, able to offer solid 
+			direction amid adversity.
+			People with the ESTJ personality type (Executives) are representatives of tradition and order, utilizing their understanding of 
+			what is right, wrong, and socially acceptable to bring families and communities together. Embracing the values of honesty and 
+			dedication, ESTJs are valued for their mentorship mindset and their ability to create and follow through on plans in a diligent 
+			and efficient manner. They will happily lead the way on difficult paths, and they won’t give up when things become stressful.
+			Strong believers in the rule of law and authority that must be earned, ESTJ personalities lead by example, demonstrating 
+			dedication and purposeful honesty and an utter rejection of laziness and cheating. If anyone declares hard, manual work to 
+			be an excellent way to build character, it’s ESTJs.
+			This personality type is aware of their surroundings and lives in a world of clear, verifiable facts. Their surety of their knowledge 
+			means that, even against heavy resistance, they stick to their principles and push an unclouded vision of what is and is not 
+			acceptable. And their opinions aren’t just empty talk either, as ESTJs are more than willing to dive into the most challenging 
+			projects, improving action plans and sorting details along the way, making even the most complicated tasks seem easy and 
+			approachable.
+			""";
+	return estj;
+	}
+
+	public static String defender (){
+	String isfj = """
+			ISFJ (Defender) is a personality type with the Introverted, Observant, Feeling, and Judging traits. These people tend to be 
+			warm and unassuming in their own steady way. They’re efficient and responsible, giving careful attention to practical 
+			details in their daily lives.
+			In their unassuming, understated way, people with the ISFJ personality type (Defenders) help make the world go round. 
+			Hardworking and devoted, these personalities feel a deep sense of responsibility to those around them. ISFJs can be 
+			counted on to meet deadlines, remember birthdays and special occasions, uphold traditions, and shower their loved 
+			ones with gestures of care and support. But they rarely demand recognition for all that they do, preferring instead to 
+			operate behind the scenes.
+			This is a capable, can-do personality type with a wealth of versatile gifts. Though sensitive and caring, ISFJs also have 
+			excellent analytical abilities and an eye for detail. And despite their reserve, they tend to have well-developed people 
+			skills and robust social relationships. These personalities are truly more than the sum of their parts, and their varied 
+			strengths shine in even the most ordinary aspects of their daily lives.
+			""";
+	return isfj;
+	}
+
+	public static String consul (){
+	String esfj = """
+			ESFJ (Consul) is a personality type with the Extraverted, Observant, Feeling, and Judging traits. They are attentive and 
+			people-focused, and they enjoy taking part in their social community. Their achievements are guided by decisive values, 
+			and they willingly offer guidance to others.
+			For people with the ESFJ personality type (Consuls), life is sweetest when it’s shared with others. These social individuals 
+			form the bedrock of many communities, opening their homes – and their hearts – to friends, loved ones, and neighbors.
+			This doesn’t mean that they are saints or that they like everyone. In fact, they are much more likely to form close bonds 
+			with people who share their same values and opinions. But regardless of other people’s beliefs, ESFJ personalities still 
+			strongly believe in the power of hospitality and good manners, and they tend to feel a sense of duty to those around 
+			them. Generous and reliable, they often take it upon themselves – in ways both large and small – to hold their families 
+			and their communities together.
+			People with the ESFJ personality type are altruists. They take seriously their responsibility to give back, serve others, 
+			and do the right thing. And they believe that there is a clear right thing to do in nearly every situation. While some 
+			personality types adopt a more lenient, live-and-let-live attitude, ESFJs may find it difficult to not judge when someone 
+			takes a path that strikes them as misguided. As a result, they often struggle to accept it when someone – particularly 
+			someone they care about – disagrees with them or chooses to walk a path that they do not understand.
+			""";
+	return esfj;
 	}
 
 }

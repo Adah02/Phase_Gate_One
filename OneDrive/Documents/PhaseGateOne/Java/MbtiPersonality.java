@@ -36,7 +36,7 @@ public class MbtiPersonality {
 	String[] b = {"B. Love being by yourself always", 
 				"B. Little mistakes causes doubt in your abilities",
 				"B. Allow feelings drive decision makings",
-				"B. Not bothered by other's achievements",
+				"B. Not bothered by efforts of others",
 				"B. Highly productive alone", 
 				"B. Prioritizes making good impressions",
 				"B. Worried for negative outcomes",
@@ -126,6 +126,27 @@ public class MbtiPersonality {
 	System.out.println(quiz.natureDetails(nature, thinking, feeling));
 	System.out.println(quiz.tacticsDetails(tactics, judging, perception));
 	System.out.println("Your PersonalityType: " + quiz.personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception));
+
+	String trait = "";
+	if (type == "ENTJ"){ 	trait = quiz.commander();
+	} else if (type == "INTP"){	trait = quiz.logician();
+	} else if (type == "INTJ"){	trait = quiz.architect ();
+	} else if (type == "ENTP"){	trait = quiz.debater ();
+	} else if (type == "ISFP"){	trait = quiz.adventurer ();
+	} else if (type == "ISTP"){	trait = quiz.virtuoso ();
+	} else if (type == "ESTP"){	trait = quiz.entrepreneur ();
+	} else if (type == "ESFP"){	trait = quiz.entertainer ();
+	} else if (type == "INFJ"){	trait = quiz.advocate ();
+	} else if (type == "INFP"){	trait = quiz.mediator ();
+	} else if (type == "ENFJ"){	trait = quiz.protagonist ();
+	} else if (type == "ENFP"){	trait = quiz.campaigner ();
+	} else if (type == "ISTJ"){	trait = quiz.logistician ();
+	} else if (type == "ESTJ"){	trait = quiz.executive ();
+	} else if (type == "ISFJ"){	trait = quiz.defender ();
+	} else if (type == "ESFJ"){	trait = quiz.consul ();  }
+	else { System.out.printf("%n %s%n", trait);  }
+
+	System.out.print("%n %s%n", trait);
 
 	}
 }
