@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class PersonalityTestFunctions {
 
-	public static String personalityType (int introvert,  int extrovert, int sensing, int intuitive, int thinking, int feeling, int judging, int perception){
+	public static String personalityType(int introvert,  int extrovert, int sensing, int intuitive, int thinking, int feeling, int judging, int perception){
 	
 	String personality = "";
 
@@ -35,5 +35,42 @@ public class PersonalityTestFunctions {
 	return choicesInMind;
 	}
 
+	public static String natureDetails(ArrayList<String> nature, int thinking, int feeling){
+		
+		String choicesInNature = "";
+
+		for (String item : nature){
+		choicesInNature += String.format("%s%n", item);
+		}
+		choicesInNature += String.format("Number of A selected: %d%nNumber of B selected: %d%n", thinking, feeling);
+	return choicesInNature;
+	}
+
+	public static String tacticsDetails(ArrayList<String> tactics, int judging, int perception){
+		
+		String choicesInTactics = "";
+
+		for (String item : tactics){
+		choicesInTactics += String.format("%s%n", item);
+		}
+		choicesInTactics += String.format("Number of A selected: %d%nNumber of B selected: %d%n", judging, perception);
+	return choicesInTactics;
+	}
+
+	public static String usersName(String myName){
+
+	String refinedName = "";
+	
+	for (int index = 0; index < myName.length(); index++){
+
+		if (myName.charAt(index) >= 'a' && myName.charAt(index) <= 'z' && myName.charAt(index) != ' ' || 
+		myName.charAt(index) >= 'A' && myName.charAt(index) <= 'Z' && myName.charAt(index) != ' '){
+				refinedName += myName.charAt(index);
+			} else { myName.replaceAll(String.valueOf(myName.charAt(index)), "");  }
+		}
+	return refinedName;
+	}
+
 
 }
+

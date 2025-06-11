@@ -9,7 +9,7 @@ public class MbtiPersonality {
 	PersonalityTestFunctions quiz = new PersonalityTestFunctions();
 
 	System.out.println("what is your name?");
-	String yourName = input.nextLine();
+	String myName = input.nextLine();
 
 	String[] a = { "A. Comfortable with walking to someone to start conversations", 
 				"A. Not moved by past mistakes",
@@ -118,7 +118,11 @@ public class MbtiPersonality {
 		optionA == (a[19])  && choice.equalsIgnoreCase("b")){ perception += 1;	tactics.add(optionB);	}
 			}
 		}
-	System.out.print(quiz.energyDetails(energy, introvert, extrovert));
+	System.out.println(quiz.energyDetails(energy, introvert, extrovert));
+	System.out.println(quiz.mindDetails(mind, sensing, intuitive));
+	System.out.println(quiz.natureDetails(nature, thinking, feeling));
+	System.out.println(quiz.tacticsDetails(tactics, judging, perception));
+	System.out.println("Your PersonalityType: " + quiz.personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception));
 
 	}
 }
