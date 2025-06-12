@@ -8,6 +8,8 @@ public class CheckOutAppDriver {
 
 	CheckOutApp quiz = new CheckOutApp();
 
+
+
 	String availableProducts = 
 """
 ===================================
@@ -58,8 +60,12 @@ public class CheckOutAppDriver {
 					purchase = true;
 					break;
 				}
-			default : {
+			case "0": {
 					purchase = false;
+					break;
+				}
+			default : {
+					purchase = true;
 					break;
 				} 
 			}
@@ -77,11 +83,15 @@ public class CheckOutAppDriver {
 		3 > Eze-Kiel C. A
 		4 > Olawole R. O
 		""";
+
+	String cashiersName = "";
 	System.out.println(cashiers);
+
 	boolean cashier = true;
 	while(cashier == true){
+
 	System.out.println("Select name of cashier on duty: ");
-	String cashiersName = input.nextLine(); 
+	cashiersName = input.nextLine(); 
 
 	switch(cashiersName){
 		case "1":{
@@ -108,6 +118,25 @@ public class CheckOutAppDriver {
 				cashier = true;
 			}
 		}
+	}
+	String dashes = "";
+	for (int dash = 0; dash < 56; dash++){
+		dashes += "=";
+	}
+
+	System.out.println(dashes);
+	System.out.println(quiz.storeAddress());
+	System.out.println("Date: ");
+	System.out.println("Cashier: " + cashiersName);
+	System.out.println("Customers Name: " +customersName);
+	System.out.println(dashes);
+	System.out.printf("%15s %8s  %11s %15s%n", "ITEM", "QTY", "PRICE", "TOTAL(NGN)");
+	System.out.println(dashes);
+	for (int count = 0; count < productPrice.size(); count++ ){
+	System.out.printf("%14s \t%d\t%.2f %n", purchasedproducts.get(count), productQuantity.get(count), productPrice.get(count));
+
+	System.out.println(dashes);
+
 	}
 
 	}	
