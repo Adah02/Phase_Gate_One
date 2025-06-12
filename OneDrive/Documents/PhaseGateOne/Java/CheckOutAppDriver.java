@@ -123,21 +123,24 @@ public class CheckOutAppDriver {
 	for (int dash = 0; dash < 56; dash++){
 		dashes += "=";
 	}
+	ArrayList<Double> totalProductPrice = new ArrayList<>();
 
-	System.out.println(dashes);
-	System.out.println(quiz.storeAddress());
-	System.out.println("Date: ");
-	System.out.println("Cashier: " + cashiersName);
-	System.out.println("Customers Name: " +customersName);
-	System.out.println(dashes);
-	System.out.printf("%15s %8s  %11s %15s%n", "ITEM", "QTY", "PRICE", "TOTAL(NGN)");
-	System.out.println(dashes);
-	for (int count = 0; count < productPrice.size(); count++ ){
-	System.out.printf("%14s \t%d\t%.2f %n", purchasedproducts.get(count), productQuantity.get(count), productPrice.get(count));
+	for (int index = 0; index < productPrice.size(); index++){
+		totalProductPrice.add(productPrice.get(index) * productQuantity.get(index));
+		}
 
-	System.out.println(dashes);
-
-	}
-
+		System.out.println(dashes);
+		System.out.println(quiz.storeAddress());
+		System.out.println("Date: ");
+		System.out.println("Cashier: " + cashiersName);
+		System.out.println("Customers Name: " +customersName);
+		System.out.println(dashes);
+		System.out.printf("%15s %8s  %11s %15s%n", "ITEM", "QTY", "PRICE", "TOTAL(NGN)");
+		System.out.println(dashes);
+		for (int count = 0; count < productPrice.size(); count++ ){
+		System.out.printf("%15s \t%d\t%.2f \t%.2f%n", purchasedproducts.get(count), productQuantity.get(count), productPrice.get(count), totalProductPrice.get(count));
+		}
+		System.out.println(dashes);
+		System.out.println(" \t Sub-Total: " );
 	}	
 }

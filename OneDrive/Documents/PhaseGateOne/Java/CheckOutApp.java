@@ -2,17 +2,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class CheckOutApp {
 
-	public static double[] productTotal (ArrayList<Double> productPrice, ArrayList<Double> productQuantity){
-	
-	double[] totalProductPrice = new double[productPrice.size()];
-
-	for (int index = 0; index < productPrice.size(); index++){
-		totalProductPrice[index] = (productPrice.get(index) * productQuantity.get(index));
-		System.out.println(totalProductPrice);
-		}
-	return totalProductPrice;
-	}
-
 	public static double totalPurchaseAmount (ArrayList<Double> productPrice, ArrayList<Double> productQuantity){
 	double purchaseAmount = 0;
 
@@ -73,7 +62,7 @@ public class CheckOutApp {
 	return customersBalance;
 	}
 	
-	public static String storeAddress (){
+	public static String storeAddress(){
 
 		String StoreDetails = """
 	SEMICOLON STORES
