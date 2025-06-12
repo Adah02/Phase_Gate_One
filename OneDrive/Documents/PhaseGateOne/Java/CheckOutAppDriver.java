@@ -34,6 +34,7 @@ public class CheckOutAppDriver {
 	ArrayList<Integer> productQuantity = new ArrayList<>();
 
 	System.out.println(availableProducts);
+
 	boolean purchase = true;
 	while (purchase == true){
 	
@@ -46,29 +47,68 @@ public class CheckOutAppDriver {
 	productPrice.add(prices[goods - 1]);
 	productQuantity.add(quantity);
 
-			System.out.print("Would you like to continue. Press \"1\" > Yes or \"0\" > No: ");
-			int usersChoice = input.nextInt();
-			switch (usersChoice){
-				case 1:{
-						purchase = true;
-						}
-				case 0:{
-						purchase = false;
-						}
-				default: {
-						purchase = false;
-						}
+	System.out.println("Would you like to continue. Press \"1\" > Yes or \"0\" > No: ");
+		String usersChoice = input.next();
+		switch (usersChoice){
+			case "1":{
+				 	purchase = true;
+					break;
 				}
+			case "yes": {
+					purchase = true;
+					break;
+				}
+			default : {
+					purchase = false;
+					break;
+				} 
+			}
 		}
-	System.out.print("How much did the customer pay? : ");
+	System.out.println("How much did the customer pay? ");
 	double amountPaid = input.nextDouble(); 
 
-	System.out.print("Enter customer's name: ");
-	String amountPaid = input.nextLine(); 
+	System.out.println("Enter customer's name: ");
+	String customersName = input.next(); 
 
-	String cashier = """
+	String cashiers = """
 		Cashier on duty;-
-		1 > Sikiru 
+		1 > Sikiru I. J
+		2 > Emmanuel  K. A
+		3 > Eze-Kiel C. A
+		4 > Olawole R. O
+		""";
+	System.out.println(cashiers);
+	boolean cashier = true;
+	while(cashier == true){
+	System.out.println("Select name of cashier on duty: ");
+	String cashiersName = input.nextLine(); 
 
+	switch(cashiersName){
+		case "1":{
+				cashiersName = "Sikiru I. J";
+				cashier = false;
+				break;
+			}
+		case "2":{
+				cashiersName = "Emmanuel  K. A";
+				cashier = false;
+				break;
+			}
+		case "3":{
+				cashiersName = "Eze-Kiel C. A";
+				cashier = false;
+				break;
+			}
+		case "4":{
+				cashiersName = "Olawole R. O";
+				cashier = false;
+				break;
+			}
+		default : {
+				cashier = true;
+			}
+		}
 	}
+
+	}	
 }

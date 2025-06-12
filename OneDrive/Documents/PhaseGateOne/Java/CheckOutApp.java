@@ -62,8 +62,15 @@ public class CheckOutApp {
 	return totalToPay;
 	}
 
-	public static String balance (){
+	public static double balance(ArrayList<Double> productPrice, ArrayList<Double> productQuantity, double amountPaid){
 
+	double totalPurchase = 0;
+		for (int index = 0; index < productPrice.size(); index++){
+		totalPurchase += (productPrice.get(index) * productQuantity.get(index));
+		}
+		double customersBalance = (amountPaid - totalPurchase);
+
+	return customersBalance;
 	}
 	
 	public static String storeAddress (){
