@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 public class studentGrade {
 
 	public static void main(String[] args){
@@ -32,7 +33,7 @@ public class studentGrade {
 				}
 			}
 		}
-	System.out.print();
+	System.out.println(Arrays.toString(quiz.studentScoreTotal(scores)));
 
 	}
 }
