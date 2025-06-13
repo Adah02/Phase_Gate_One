@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 public class studentGrade {
 	public static void main(String[] args){
 
@@ -32,6 +33,38 @@ public class studentGrade {
 		double[] studentTotal = new double[students];
 		double[] studentAverage = new double[students];
 
+		double[] sortedScores = new double[students];
+		int[] positions = new int[students];
+
+		int counter = 0;
+		for (int count =2000; count >= 0; count--){
+			for (int index = 0; index < students; index++){
+				if (studentTotal[index] == count){
+					sortedScores[counter] = studentTotal[index];
+					counter += 1;
+				} break;
+			}
+		}
+
+		int position = 1;
+		for (int sorted = 0; sorted < students; sorted++){
+			for (int index = 0; index < students; index++){
+				if (sortedScores[sorted] == studentTotal[index]){
+					positions[index] = position;  
+					position += 1;
+					break;
+				} 
+/*  	else if (sortedScores[sorted] == studentTotal[index] && sorted > 1 && sortedScores[sorted] == sortedScores[sorted - 1]){
+					positions[index] = position - 1;
+					position += 1;
+					break;
+					} else {	positions[index] = position;
+							position += 1;
+							break;
+							}
+*/
+				}
+			}
 		for (int index = 0; index < scores.length; index++){
 			double total = 0; 
 			System.out.printf("Student %d \t", (index + 1));
@@ -48,13 +81,15 @@ public class studentGrade {
 			}
 		System.out.println("TOTAL \tAVERAGE\tPOSITION");
 		}
+
 		for (int index = 0; index < scores.length; index++){
 			System.out.printf("Student %d \t", (index + 1));
 			for (int count = 0; count < scores[index].length; count++){
 				System.out.printf("%.0f \t", (scores[index][count]));
 			}
-		System.out.printf("%.0f \t%.1f%n", studentTotal[index], studentAverage[index]);
+		System.out.printf("%.0f \t%.1f \t%d%n", studentTotal[index], studentAverage[index], positions[index]);
 		}
+
 		System.out.println("\n SUBJECT SUMMARY");
 		
 		for (int subj = 0; subj < scores[0].length; subj++){
