@@ -62,8 +62,9 @@ public class MbtiPersonality {
 	
 	int introvert = 0;   int extrovert = 0; 		int sensing = 0;   int intuitive = 0;
 	int thinking = 0; 	int feeling = 0;		int judging = 0;   int perception = 0;
-
-	String choicesInMind = String.format("Number of A selected: %d%nNumber of B selected: %d%n", sensing, intuitive);
+	
+	String choicesInEnergy = String.format("Number of A selected: %d%nNumber of B selected: %d%n", extrovert, introvert);
+	String choicesInMind = String.format("Number of A selected: %d%nNumber of B selected: %d%n", intuitive, sensing);
 	String choicesInNature = String.format("Number of A selected: %d%nNumber of B selected: %d%n", thinking, feeling);
 	String choicesInTactics = String.format("Number of A selected: %d%nNumber of B selected: %d%n", judging, perception);
 	
@@ -126,7 +127,28 @@ public class MbtiPersonality {
 	System.out.println(quiz.tacticsDetails(tactics, judging, perception));
 	System.out.println("Your PersonalityType: " + quiz.personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception));
 
-	System.out.print(quiz.personalityTrait());
+	String type = quiz.personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception);
+
+		String trait = "";
+	
+		if (type == "ENTJ"){ 	trait = quiz.commander();
+		} else if (type == "INTP"){	trait = quiz.logician();
+		} else if (type == "INTJ"){	trait = quiz.architect();
+		} else if (type == "ENTP"){	trait = quiz.debater();
+		} else if (type == "ISFP"){	trait = quiz.adventurer();
+		} else if (type == "ISTP"){	trait = quiz.virtuoso();
+		} else if (type == "ESTP"){	trait = quiz.entrepreneur();
+		} else if (type == "ESFP"){	trait = quiz.entertainer();
+		} else if (type == "INFJ"){	trait = quiz.advocate();
+		} else if (type == "INFP"){	trait = quiz.mediator();
+		} else if (type == "ENFJ"){	trait = quiz.protagonist();
+		} else if (type == "ENFP"){	trait = quiz.campaigner();
+		} else if (type == "ISTJ"){	trait = quiz.logistician();
+		} else if (type == "ESTJ"){	trait = quiz.executive();
+		} else if (type == "ISFJ"){	trait = quiz.defender();
+		} else if (type == "ESFJ"){	trait = quiz.consul();  }
+
+	System.out.println(trait);
 
 	
 	}

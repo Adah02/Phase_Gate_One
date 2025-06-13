@@ -45,7 +45,7 @@ public class studentGrade {
 				} break;
 			}
 		}
-
+/*
 		int position = 1;
 		for (int sorted = 0; sorted < students; sorted++){
 			for (int index = 0; index < students; index++){
@@ -54,7 +54,7 @@ public class studentGrade {
 					position += 1;
 					break;
 				} 
-/*  	else if (sortedScores[sorted] == studentTotal[index] && sorted > 1 && sortedScores[sorted] == sortedScores[sorted - 1]){
+  	else if (sortedScores[sorted] == studentTotal[index] && sorted > 1 && sortedScores[sorted] == sortedScores[sorted - 1]){
 					positions[index] = position - 1;
 					position += 1;
 					break;
@@ -62,9 +62,9 @@ public class studentGrade {
 							position += 1;
 							break;
 							}
-*/
 				}
 			}
+*/
 		for (int index = 0; index < scores.length; index++){
 			double total = 0; 
 			System.out.printf("Student %d \t", (index + 1));
@@ -87,7 +87,7 @@ public class studentGrade {
 			for (int count = 0; count < scores[index].length; count++){
 				System.out.printf("%.0f \t", (scores[index][count]));
 			}
-		System.out.printf("%.0f \t%.1f \t%d%n", studentTotal[index], studentAverage[index], positions[index]);
+		System.out.printf("%.0f \t%.1f \t%f%n", studentTotal[index], studentAverage[index], sortedScores[index]);
 		}
 
 		System.out.println("\n SUBJECT SUMMARY");
