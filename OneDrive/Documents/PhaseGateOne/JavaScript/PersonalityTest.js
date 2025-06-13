@@ -30,33 +30,31 @@ function mindDetails(mind, sensing, intuitive){
 		for (let item in mind){
 		choicesInMind += console.log(item);
 		}
-		choicesInMind += console.log("Number of A selected: ",intuitive,"\nNumber of B selected: ", sensing,\n");
+		choicesInMind += console.log("Number of A selected: ",intuitive,"\nNumber of B selected: ", sensing,"\n");
 	return choicesInMind;
 	};
 
 function natureDetails(nature, thinking, feeling){
 		
-		String choicesInNature = "";
+		let choicesInNature = "";
 
-		for (String item : nature){
-		choicesInNature += String.format("%s%n", item);
+		for (let item in nature){
+		choicesInNature += console.log(item);
 		}
-		choicesInNature += String.format("Number of A selected: %d%nNumber of B selected: %d%n", thinking, feeling);
+		choicesInNature += console.log("Number of A selected: ", thinking, "\nNumber of B selected: ", feeling,"\n");
 	return choicesInNature;
-	}
+	};
 
 function tacticsDetails(tactics, judging, perception){
 		
 		let choicesInTactics = "";
 
 		for (let item in tactics){
-		choicesInTactics += console.log("%s%n", item);
+		choicesInTactics += console.log(item);
 		}
-		choicesInTactics += console.log("Number of A selected: %d%nNumber of B selected: %d%n", judging, perception);
+		choicesInTactics += console.log("Number of A selected: ", judging, "\nNumber of B selected: ", perception, "\n");
 	return choicesInTactics;
 	}
-
-
 
 function usersName(myName){
 
@@ -79,156 +77,85 @@ function usersName(myName){
 function commander(){
 
 	let entj = `
-			ENTJ (Commander) is a personality type with the Extraverted, Intuitive, Thinking, and Judging traits.
-			They are decisive people who love momentum and accomplishment. They gather information to construct their
-			 creative visions but rarely hesitate for long before acting on them.
-			People with the ENTJ personality type (Commanders) are natural-born leaders. Embodying the gifts of charisma 
-			and confidence, ENTJs project authority in a way that draws crowds together behind a common goal. However, these 
-			personalities are also characterized by an often ruthless level of rationality, using theirdrive, determination, and 
-			sharp mind to achieve whatever objectives they’ve set for themselves. Their intensitymight sometimes rub people 
-			the wrong way, but ultimately, ENTJs take pride in both their work ethic and theirimpressive level of self-discipline.
-			`;
+ENTJ (Commander) is a personality type with the Extraverted, Intuitive, Thinking, and Judging traits. They are decisive people who love momentum and accomplishment. They gather information to construct their creative visions but rarely hesitate for long before acting on them.
+People with the ENTJ personality type (Commanders) are natural-born leaders. Embodying the gifts of charisma and confidence, ENTJs project authority in a way that draws crowds together behind a common goal. However, these personalities are also characterized by an often ruthless level of rationality, using theirdrive, determination, and sharp mind to achieve whatever objectives they’ve set for themselves. Their intensitymight sometimes rub people the wrong way, but ultimately, ENTJs take pride in both their work ethic and theirimpressive level of self-discipline.
+`;
 	return entj;
 	};
 
 function logician(){
 
 	let intp = `
-			INTP (Logician) is a personality type with the Introverted, Intuitive, Thinking, and Prospecting traits. These flexible 
-			thinkers enjoy taking an unconventional approach to many aspects of life. They often seek out unlikely paths, mixing 
-			willingness to experiment with personal creativity.
-			People with the INTP personality type (Logicians) pride themselves on their unique perspective and vigorous intellect. 
-			They can’t help but puzzle over the mysteries of the universe – which may explain why some of the most influential 
-			philosophers and scientists of all time have been INTPs. People with this personality type tend to prefer solitude, as 
-			they can easily become immersed in their thoughts when they are left to their own devices. They are also incredibly 
-			creative and inventive, and they are not afraid to express their novel ways of thinking or to stand out from the crowd.
-			`;
+INTP (Logician) is a personality type with the Introverted, Intuitive, Thinking, and Prospecting traits. These flexible thinkers enjoy taking an unconventional approach to many aspects of life. They often seek out unlikely paths, mixing willingness to experiment with personal creativity.
+People with the INTP personality type (Logicians) pride themselves on their unique perspective and vigorous intellect. They can’t help but puzzle over the mysteries of the universe – which may explain why some of the most influential philosophers and scientists of all time have been INTPs. People with this personality type tend to prefer solitude, as they can easily become immersed in their thoughts when they are left to their own devices. They are also incredibly creative and inventive, and they are not afraid to express their novel ways of thinking or to stand out from the crowd.
+`;
 	return intp;
 	};
 
 function architect(){
 
 	let intj = `
-			INTJ (Architect) is a personality type with the Introverted, Intuitive, Thinking, and Judging traits. These thoughtful 
-			tacticians love perfecting the details of life, applying creativity and rationality to everything they do. Their inner 
-			world is often a private, complex one.
-			People with the INTJ personality type (Architects) are intellectually curious individuals with a deep-seated thirst 
-			for knowledge. 
-			INTJs tend to value creative ingenuity, straightforward rationality, and self-improvement. They consistently work 
-			toward enhancing intellectual abilities and are often driven by an intense desire to master any and every topic 
-			that piques their interest.
-			`;
+INTJ (Architect) is a personality type with the Introverted, Intuitive, Thinking, and Judging traits. These thoughtful tacticians love perfecting the details of life, applying creativity and rationality to everything they do. Their inner world is often a private, complex one.
+People with the INTJ personality type (Architects) are intellectually curious individuals with a deep-seated thirst for knowledge. INTJs tend to value creative ingenuity, straightforward rationality, and self-improvement. They consistently work toward enhancing intellectual abilities and are often driven by an intense desire to master any and every topic that piques their interest.
+`;
 	return intj;
 	}
 	
 function debater(){
 
 		let entp = `
-			ENTP (Debater) is a personality type with the Extraverted, Intuitive, Thinking, and Prospecting traits. They tend to
-			be bold and creative, deconstructing and rebuilding ideas with great mental agility. They pursue their goals vigorously 
-			despite any resistance they might encounter.
-			Quick-witted and audacious, people with the ENTP personality type (Debaters) aren’t afraid to disagree with the status 
-			quo. In fact, they’re not afraid to disagree with pretty much anything or anyone. Few things light up these personalities 
-			more than a bit of verbal sparring – and if the conversation veers into controversial terrain, so much the better.
-			It would be a mistake, though, to think of ENTPs as disagreeable or mean-spirited. Instead, people with this personality 
-			type are knowledgeable and curious with a playful sense of humor, and they can be incredibly entertaining. They simply 
-			have an offbeat, contrarian idea of fun – one that usually involves a healthy dose of spirited debate.
-			`;
+ENTP (Debater) is a personality type with the Extraverted, Intuitive, Thinking, and Prospecting traits. They tend to be bold and creative, deconstructing and rebuilding ideas with great mental agility. They pursue their goals vigorously despite any resistance they might encounter.
+Quick-witted and audacious, people with the ENTP personality type (Debaters) aren’t afraid to disagree with the status quo. In fact, they’re not afraid to disagree with pretty much anything or anyone. Few things light up these personalities more than a bit of verbal sparring – and if the conversation veers into controversial terrain, so much the better. It would be a mistake, though, to think of ENTPs as disagreeable or mean-spirited. Instead, people with this personality type are knowledgeable and curious with a playful sense of humor, and they can be incredibly entertaining. They simply have an offbeat, contrarian idea of fun – one that usually involves a healthy dose of spirited debate.
+`;
 	return entp;
 	};
 
 function adventurer(){
 
 		let isfp = `
-			ISFP (Adventurer) is a personality type with the Introverted, Observant, Feeling, and Prospecting traits. They tend to 
-			have open minds, approaching life, new experiences, and people with grounded warmth. Their ability to stay in the 
-			moment helps them uncover exciting potentials.
-			People with the ISFP personality type (Adventurers) are true artists – although not necessarily in the conventional 
-			sense. For these types, life itself is a canvas for self-expression. From what they wear to how they spend their free 
-			time, they act in ways that vividly reflect who they are as unique individuals. With their exploratory spirit and their 
-			ability to find joy in everyday life, ISFPs can be among the most interesting people you’ll ever meet.
-			Driven by their sense of fairness and their open-mindedness, people with this personality type move through life 
-			with an infectiously encouraging attitude. They love motivating those close to them to follow their passions and usually 
-			follow their own interests with the same unhindered enthusiasm. The only irony? Unassuming and humble, ISFPs tend 
-			to see themselves as “just doing their own thing,” so they may not even realize how remarkable they really are.
-			`;
+ISFP (Adventurer) is a personality type with the Introverted, Observant, Feeling, and Prospecting traits. They tend to have open minds, approaching life, new experiences, and people with grounded warmth. Their ability to stay in the moment helps them uncover exciting potentials.
+People with the ISFP personality type (Adventurers) are true artists – although not necessarily in the conventional sense. For these types, life itself is a canvas for self-expression. From what they wear to how they spend their free time, they act in ways that vividly reflect who they are as unique individuals. With their exploratory spirit and their ability to find joy in everyday life, ISFPs can be among the most interesting people you’ll ever meet.
+Driven by their sense of fairness and their open-mindedness, people with this personality type move through life with an infectiously encouraging attitude. They love motivating those close to them to follow their passions and usually follow their own interests with the same unhindered enthusiasm. The only irony? Unassuming and humble, ISFPs tend to see themselves as “just doing their own thing,” so they may not even realize how remarkable they really are.
+`;
 	return isfp;
 	}
 
 function virtuoso(){
 
 		let istp = `
-			ISTP (Virtuoso) is a personality type with the Introverted, Observant, Thinking, and Prospecting traits. They tend to have 
-			an individualistic mindset, pursuing goals without needing much external connection. They engage in life with inquisitiveness 
-			and personal skill, varying their approach as needed.
-			People with the ISTP personality type (Virtuosos) love to explore with their hands and their eyes, touching and examining 
-			the world around them with an impressive diligence, a casual curiosity, and a healthy dose of skepticism. They are natural 
-			makers, moving from project to project, building the useful and the superfluous for the fun of it and learning from their 
-			environment as they go. They find no greater joy than in getting their hands dirty pulling things apart and putting them back 
-			together, leaving them just a little bit better than they were before.
-			ISTPs prefer to approach problems directly, seeking straightforward solutions over convoluted troubleshooting methods. 
-			People with this personality type rely heavily on firsthand experience and trial and error as they execute their ideas and 
-			projects. And as they do so, they usually prefer to work at their own pace, on their own terms, and without unnecessary 
-			interruptions.
-			`;
+ISTP (Virtuoso) is a personality type with the Introverted, Observant, Thinking, and Prospecting traits. They tend to have an individualistic mindset, pursuing goals without needing much external connection. They engage in life with inquisitiveness and personal skill, varying their approach as needed.
+People with the ISTP personality type (Virtuosos) love to explore with their hands and their eyes, touching and examining the world around them with an impressive diligence, a casual curiosity, and a healthy dose of skepticism. They are natural makers, moving from project to project, building the useful and the superfluous for the fun of it and learning from their environment as they go. They find no greater joy than in getting their hands dirty pulling things apart and putting them back together, leaving them just a little bit better than they were before. ISTPs prefer to approach problems directly, seeking straightforward solutions over convoluted troubleshooting methods. 
+People with this personality type rely heavily on firsthand experience and trial and error as they execute their ideas and projects. And as they do so, they usually prefer to work at their own pace, on their own terms, and without unnecessary interruptions.
+`;
 	return istp;
 	}
 
 function entrepreneur(){
 
 	let estp = `
-			ESTP (Entrepreneur) is a personality type with the Extraverted, Observant, Thinking, and Prospecting traits. They tend to 
-			be energetic and action-oriented, deftly navigating whatever is in front of them. They love uncovering life’s opportunities, 
-			whether socializing with others or in more personal pursuits.
-			People with the ESTP personality type (Entrepreneurs) are vibrant individuals brimming with an enthusiastic and 
-			spontaneous energy. They tend to be on the competitive side, often assuming that a competitive mindset is a necessity in 
-			order to achieve success in life. With their driven, action-oriented attitudes, they rarely waste time thinking about the past. 
-			In fact, they excel at keeping their attention rooted in their present – so much so that they rarely find themselves fixated on 
-			the time throughout the day.
-			Theory, abstract concepts, and plodding discussions about global issues and their implications don’t keep ESTP personalities 
-			interested for long. They keep their conversations energetic, with a good dose of intelligence, but they like to talk about what 
-			is – or better yet, to just go out and do it. They often leap before they look, fixing their mistakes as they go rather than sitting 
-			idle and preparing contingencies and escape clauses.
-			`;
+ESTP (Entrepreneur) is a personality type with the Extraverted, Observant, Thinking, and Prospecting traits. They tend to be energetic and action-oriented, deftly navigating whatever is in front of them. They love uncovering life’s opportunities, whether socializing with others or in more personal pursuits.
+People with the ESTP personality type (Entrepreneurs) are vibrant individuals brimming with an enthusiastic and spontaneous energy. They tend to be on the competitive side, often assuming that a competitive mindset is a necessity in order to achieve success in life. With their driven, action-oriented attitudes, they rarely waste time thinking about the past. In fact, they excel at keeping their attention rooted in their present – so much so that they rarely find themselves fixated on the time throughout the day.
+Theory, abstract concepts, and plodding discussions about global issues and their implications don’t keep ESTP personalities interested for long. They keep their conversations energetic, with a good dose of intelligence, but they like to talk about what is – or better yet, to just go out and do it. They often leap before they look, fixing their mistakes as they go rather than sitting idle and preparing contingencies and escape clauses.
+`;
 	return estp;
-	}
+	};
 
 function entertainer(){
 
 	let esfp = `
-			ESFP (Entertainer) is a personality type with the Extraverted, Observant, Feeling, and Prospecting traits. These people love 
-			vibrant experiences, engaging in life eagerly and taking pleasure in discovering the unknown. They can be very social, often 
-			encouraging others into shared activities.
-			If anyone is to be found spontaneously breaking into song and dance, it is people with the ESFP personality type (Entertainers). 
-			They get caught up in the excitement of the moment and want everyone else to feel that way too. No other type is as generous 
-			with their time and energy when it comes to encouraging others, and no other type does it with such irresistible style.
-			ESFP personalities are inclined toward putting on a show for others and generally appear to be very comfortable in the spotlight. 
-			However, it is not their love for being the center of attention that drives this sense of confidence but their knack for sensing what’s 
-			appropriate in certain situations. They have an uncanny ability to mirror the behaviors of those around them.
-			ESFPs truly enjoy the simplest things, and there’s no greater joy for them than just having fun with a good group of friends. People 
-			with this personality type would almost always choose to be with friends over spending time alone. With their unique and earthy 
-			wit, they love soaking up attention and making every get-together feel a bit like a party.
-			`;
+ESFP (Entertainer) is a personality type with the Extraverted, Observant, Feeling, and Prospecting traits. These people love vibrant experiences, engaging in life eagerly and taking pleasure in discovering the unknown. They can be very social, often encouraging others into shared activities. If anyone is to be found spontaneously breaking into song and dance, it is people with the ESFP personality type (Entertainers). They get caught up in the excitement of the moment and want everyone else to feel that way too. No other type is as generous with their time and energy when it comes to encouraging others, and no other type does it with such irresistible style.
+ESFP personalities are inclined toward putting on a show for others and generally appear to be very comfortable in the spotlight. However, it is not their love for being the center of attention that drives this sense of confidence but their knack for sensing what’s appropriate in certain situations. They have an uncanny ability to mirror the behaviors of those around them. ESFPs truly enjoy the simplest things, and there’s no greater joy for them than just having fun with a good group of friends. People with this personality type would almost always choose to be with friends over spending time alone. With their unique and earthy wit, they love soaking up attention and making every get-together feel a bit like a party.
+`;
 	return esfp;
-	}
+	};
 
 function advocate(){
 
 	let infj = `
-			INFJ (Advocate) is a personality type with the Introverted, Intuitive, Feeling, and Judging traits. They tend to approach life with deep 
-			thoughtfulness and imagination. Their inner vision, personal values, and a quiet, principled version of humanism guide them in all things.
-			Idealistic and principled, people with the INFJ personality type (Advocates) aren’t content to coast through life – they want to stand up 
-			and make a difference. For these compassionate personalities, success doesn’t come from money or status but from seeking fulfillment, 
-			helping others, and being a force for good in the world.
-			While they have lofty goals and ambitions, INFJs shouldn’t be mistaken for idle dreamers. People with this personality type care about 
-			integrity, and they’re rarely satisfied until they’ve done what they know to be right. Conscientious to the core, they move through life 
-			with a clear sense of their values, and they aim to never lose sight of what truly matters – not according to other people or society at 
-			large but according to their own wisdom and intuition.
-			Perhaps because their personality type is so uncommon, INFJs tend to carry around a sense – whether conscious or not – of being 
-			different from most people. With their rich inner lives and their deep, abiding desire to find their life purpose, they don’t always fit in 
-			with those around them. This isn’t to say that INFJ personalities can’t enjoy social acceptance or close relationships – only that they 
-			sometimes feel misunderstood or at odds with the world.
-			`;
+INFJ (Advocate) is a personality type with the Introverted, Intuitive, Feeling, and Judging traits. They tend to approach life with deep thoughtfulness and imagination. Their inner vision, personal values, and a quiet, principled version of humanism guide them in all things.Idealistic and principled, people with the INFJ personality type (Advocates) aren’t content to coast through life – they want to stand up and make a difference. For these compassionate personalities, success doesn’t come from money or status but from seeking fulfillment, helping others, and being a force for good in the world. 
+While they have lofty goals and ambitions, INFJs shouldn’t be mistaken for idle dreamers. People with this personality type care about integrity, and they’re rarely satisfied until they’ve done what they know to be right. Conscientious to the core, they move through life with a clear sense of their values, and they aim to never lose sight of what truly matters – not according to other people or society at large but according to their own wisdom and intuition. 
+Perhaps because their personality type is so uncommon, INFJs tend to carry around a sense – whether conscious or not – of being different from most people. With their rich inner lives and their deep, abiding desire to find their life purpose, they don’t always fit in with those around them. This isn’t to say that INFJ personalities can’t enjoy social acceptance or close relationships – only that they sometimes feel misunderstood or at odds with the world.
+`;
 	return infj;
 	}
 
@@ -513,7 +440,6 @@ let b = ["B. Love being by yourself always",
 	console.log(mindDetails(mind, sensing, intuitive));
 	console.log(natureDetails(nature, thinking, feeling));
 	console.log(tacticsDetails(tactics, judging, perception));
-	console.log("Your PersonalityType: ", personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception));
-
+	console.log("Your PersonalityType: ", personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception), "\n");
 	console.log(personalityTrait());
 
