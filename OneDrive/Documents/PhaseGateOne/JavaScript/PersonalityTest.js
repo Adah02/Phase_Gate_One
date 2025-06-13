@@ -17,9 +17,9 @@ function energyDetails(energy, introvert, extrovert){
 		let choicesInEnergy = "";
 
 		for (let item in energy){
-		choicesInEnergy += console.log("${item} \n");
+		choicesInEnergy += console.log(item, "\n");
 		}
-		choicesInEnergy += console.log("Number of A selected: ${extrovert}\n Number of B selected: ${introvert}\n");
+		choicesInEnergy += console.log("Number of A selected: ", extrovert,"\nNumber of B selected: ", introvert,"\n");
 	return choicesInEnergy;
 	};
 
@@ -28,11 +28,53 @@ function mindDetails(mind, sensing, intuitive){
 		let choicesInMind = "";
 
 		for (let item in mind){
-		choicesInMind += console.log("${item}");
+		choicesInMind += console.log(item);
 		}
-		choicesInMind += console.log("Number of A selected: ${intuitive}\n Number of B selected: ${sensing}\n");
+		choicesInMind += console.log("Number of A selected: ",intuitive,"\nNumber of B selected: ", sensing,\n");
 	return choicesInMind;
 	};
+
+function natureDetails(nature, thinking, feeling){
+		
+		String choicesInNature = "";
+
+		for (String item : nature){
+		choicesInNature += String.format("%s%n", item);
+		}
+		choicesInNature += String.format("Number of A selected: %d%nNumber of B selected: %d%n", thinking, feeling);
+	return choicesInNature;
+	}
+
+function tacticsDetails(tactics, judging, perception){
+		
+		let choicesInTactics = "";
+
+		for (let item in tactics){
+		choicesInTactics += console.log("%s%n", item);
+		}
+		choicesInTactics += console.log("Number of A selected: %d%nNumber of B selected: %d%n", judging, perception);
+	return choicesInTactics;
+	}
+
+
+
+function usersName(myName){
+
+	let refinedName = "";
+	for (let index = 0; index < myName.length(); index++){
+
+		if (myName.charAt(index) >= 'a' && myName.charAt(index) <= 'z' || 
+		myName.charAt(index) >= 'A' && myName.charAt(index) <= 'Z'){
+			if (index > 1 && myName.charAt(index - 1) == ' '){
+				refinedName += String.valueOf(myName.charAt(index)).toUpperCase();
+			} else { 	refinedName += myName.charAt(index);	
+				};
+		}else if (myName.charAt(index) == ' ' ){ refinedName += myName.charAt(index);
+		} else { myName.replaceAll(String.valueOf(myName.charAt(index)), "");  }
+	}
+	return refinedName;
+	};
+
 
 function commander(){
 
@@ -410,16 +452,16 @@ let b = ["B. Love being by yourself always",
 	let thinking = 0; 	let feeling = 0;		let judging = 0;   let perception = 0;
 
 	for (let index = 0; index < 20; index++){
-		let optionA = (a(index));		 let optionB = (b(index))
+		let optionA = (a[index]);		 let optionB = (b[index])
 		
 		let options = true;
 		while (options == true){
-		console.log("${index + 1} ${optionA} 	${optionB} \n");
+		console.log( index + 1,".", optionA, "   " , optionB);
 		let choice = prompt("Choose option A or B: ");
 
-		if (choice.equalsIgnoreCase("a")){
+		if (choice == "a"){
 			options = false;
-		} else if (choice.equalsIgnoreCase("b")){
+		} else if (choice == "b"){
 			options = false;
 		} else {
 				console.log("Enter a valid option")
@@ -458,19 +500,20 @@ let b = ["B. Love being by yourself always",
 		optionA == (a[11])  && choice == "b" || optionA == (a[15])  && choice == "b" || 
 		optionA == (a[19])  && choice == "b"){ perception += 1;	tactics.push(optionB);	}
 			}
-		}
-	let choicesInEnergy = console.log("Number of A selected: ${extrovert} \n Number of B selected: %d%n", sensing, intuitive);
-	let choicesInMind = console.log("Number of A selected: ${intuitive} \n Number of B selected: ${sensing} \n");
-	let choicesInNature = String.format("Number of A selected: %d%nNumber of B selected: %d%n", thinking, feeling);
-	let choicesInTactics = console.log("Number of A selected: %d%nNumber of B selected: %d%n", judging, perception);
+		};
+
+	let choicesInEnergy = console.log("Number of A selected: ",extrovert, "\n", "Number of B selected: ", introvert, "\n");
+	let choicesInMind = console.log("Number of A selected: ", intuitive, "\n" , "Number of B selected: ", sensing, "\n");
+	let choicesInNature = console.log("Number of A selected: ", thinking, "\n", "Number of B selected: ", feeling, "\n");
+	let choicesInTactics = console.log("Number of A selected: ", judging, "\n", "Number of B selected: ", perception, "\n");
 	
 
-	System.out.printf("%n Hello %s, you selected the following;- %n",quiz.usersName(myName));
-	System.out.println(quiz.energyDetails(energy, introvert, extrovert));
-	System.out.println(quiz.mindDetails(mind, sensing, intuitive));
-	System.out.println(quiz.natureDetails(nature, thinking, feeling));
-	System.out.println(quiz.tacticsDetails(tactics, judging, perception));
-	System.out.println("Your PersonalityType: " + quiz.personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception));
+	console.log("\n Hello", myName ,"you selected the following;- \n");
+	console.log(energyDetails(energy, introvert, extrovert));
+	console.log(mindDetails(mind, sensing, intuitive));
+	console.log(natureDetails(nature, thinking, feeling));
+	console.log(tacticsDetails(tactics, judging, perception));
+	console.log("Your PersonalityType: ", personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception));
 
-	System.out.print(quiz.personalityTrait());
+	console.log(personalityTrait());
 
