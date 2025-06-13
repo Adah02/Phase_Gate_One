@@ -29,11 +29,42 @@ public class studentGrade {
 				} else {
 					System.out.println("Enter a valid score between 0 and 100");
 					 validScore = true;
-					}	
+					}
 				}
 			}
 		}
-	System.out.println(Arrays.toString(quiz.studentScoreTotal(scores)));
+		double[] studentTotal = new double[students];
+	
+		double[] studentAverage = new double[students];
+
+		for (int index = 0; index < scores.length; index++){
+			double total = 0; 
+			System.out.printf("Student %d \t", (index + 1));
+			for (int count = 0; count < scores[index].length; count++){
+				total += scores[index][count];
+			}
+			studentTotal[index] = total; 
+		studentAverage[index] = total / subjects;
+		}
+
+		
+		
+		for (int header = 0; header < 1; header++){
+			System.out.print("\nSTUDENTS \t");
+			for (int subj = 0; subj < subjects; subj++){
+			System.out.printf("SUB%d \t", (subj + 1));
+			}
+		System.out.println("TOTAL \tAVERAGE\tPOSITION");
+		}
+		
+		for (int index = 0; index < scores.length; index++){
+			System.out.printf("Student %d \t", (index + 1));
+			for (int count = 0; count < scores[index].length; count++){
+				System.out.printf("%.0f \t", (scores[index][count]));
+			}
+		System.out.printf("%.0f \t%.1f", studentTotal[index], studentAverage[index]);
+		System.out.println(" ");
+		}
 
 	}
 }

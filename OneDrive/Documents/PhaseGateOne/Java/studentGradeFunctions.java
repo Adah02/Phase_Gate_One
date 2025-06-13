@@ -1,9 +1,9 @@
 import java.util.Arrays;
 public class studentGradeFunctions {
 
-	public static double[] studentScoreTotal(double[][] scores){
+	public static int[] studentScoreTotal(double[][] scores){
 
-		double[] studentTotal = new double[scores.length];
+		int[] studentTotal = new int[scores.length];
 
 		for (int index = 0; index < scores.length; index++){
 			int total = 0;
