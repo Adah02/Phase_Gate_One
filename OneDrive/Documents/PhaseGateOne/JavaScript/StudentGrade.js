@@ -4,9 +4,9 @@ const prompt = require("prompt-sync")()
 
 	let subjects = prompt("How many do they offer? : ");
 
-	let scores = [][];
+	let scores = [[],[]];
 
-	for (int index = 0; index < scores.length; index++){
+	for (let index = 0; index < scores.length; index++){
 		for (let count = 0; count < scores[index].length; count++){
 			let validScore = true;
 			while (validScore = true){
@@ -21,14 +21,14 @@ const prompt = require("prompt-sync")()
 				}
 			}
 		}
-		let studentTotal = new double[students];
-		let studentAverage = new double[students];
+		let studentTotal = [];
+		let studentAverage = [];
 
 		let sortedScores = [];
 		let positions = [];
 
 		for (let index = 0; index < scores.length; index++){
-			double total = 0; 
+			let total = 0; 
 			for (let count = 0; count < scores[index].length; count++){
 				total += scores[index][count];
 			}
@@ -37,13 +37,13 @@ const prompt = require("prompt-sync")()
 		}	
 
 		for (let header = 0; header < 1; header++){
-			console.log("\nSTUDENTS \t");
+			let printSub = "";
 			for (let subj = 0; subj < subjects; subj++){
-			console.log("SUB ${subj + 1} \t");
+				printSub += "SUB",(subj + 1),"\t";
 			}
-		console.log("TOTAL \tAVERAGE\tPOSITION");
+		console.log("STUDENTS \t",printSub,"TOTAL \tAVERAGE\tPOSITION");
 		}
-
+				
 		let studentScoreTotal = [];
 		
 		for (let sorted = 0; sorted < students; sorted++){
@@ -70,20 +70,20 @@ const prompt = require("prompt-sync")()
 		} 
 
 		for (let index = 0; index < scores.length; index++){
-			console.log("Student ",(index + 1),"\t");
+			console.log(`Student ${index + 1}\t`);
 			for (let count = 0; count < scores[index].length; count++){
 				console.log(scores[index][count],"\t");
 			}
-		System.out.printf("%.0f \t%.1f \t%d%n", studentTotal[index], studentAverage[index], positions[index]);
+		console.log(`${studentTotal[index]} \t ${studentAverage[index]} \t ${positions[index]}\n`);
 		}
 
-		System.out.println("\n \t SUBJECT SUMMARY");
+		console.log("\n \t SUBJECT SUMMARY");
 		
-		for (int subj = 0; subj < scores[0].length; subj++){
+		for (let subj = 0; subj < scores[0].length; subj++){
 			System.out.println("Subject " + (subj + 1));
-			double total = 0;    double highestScore = 0;	int highestStudent = 0; 
-			double LowestScore = Integer.MAX_VALUE;	int lowestStudent = 0;  int pass = 0;   int fail = 0;
-			for (int score = 0; score < scores.length; score++){
+			let total = 0;    let highestScore = 0;	let highestStudent = 0; 
+			let LowestScore = Integer.MAX_VALUE;	let lowestStudent = 0;  let pass = 0;   let fail = 0;
+			for (let score = 0; score < scores.length; score++){
 			if (scores[score][subj] > highestScore) {
 				highestScore = scores[score][subj];
 				highestStudent = score + 1;
@@ -98,11 +98,9 @@ const prompt = require("prompt-sync")()
 				}
 			total += scores[score][subj];
 			}
-		System.out.printf("Highest scoring student is :  Student %d  scoring %.0f%n", highestStudent, highestScore);
-		System.out.printf("Lowest scoring student is :  Student %d  scoring %.0f%n", lowestStudent, LowestScore);
-		System.out.printf("Total score is: %.0f%nThe average score is: %.2f%n", total, (total / subjects));
-		System.out.printf("Number of passes %d%nNumber of fails %d%n", pass, fail);
-		System.out.println("");
+		console.log(`Highest scoring student is :  Student ${highestStudent} scoring ${highestScore} \n`);
+		console.log(`Lowest scoring student is :  Student ${lowestStudent}  scoring ${LowestScore}\n`);
+		console.log(`Total score is: ${total} \nThe average score is: ${total / subjects} \n`);
+		console.log("Number of passes %d%nNumber of fails %d%n", pass, fail);
+		console.log("");
 		}
-	}
-}
