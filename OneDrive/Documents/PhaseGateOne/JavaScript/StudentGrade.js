@@ -6,14 +6,14 @@ const prompt = require("prompt-sync")()
 
 	let scores = [[],[]];
 
-	for (let index = 0; index < scores.length; index++){
-		for (let count = 0; count < scores[index].length; count++){
+	for (let index = 0; index < students; index++){
+		for (let count = 0; count < subjects; count++){
 			let validScore = true;
 			while (validScore = true){
-				let score = prompt("Enter score for student ${index + 1} \n Subject ${count + 1} : ");
+				let score = prompt("Enter score for student" + (index + 1) + "\n Subject" + (count + 1))
 				if (score >= 0 && score <= 100){
 					scores[index][count] = score;
-					validScore = false;    break;
+					validScore = false;
 				} else {
 					console.log("Enter a valid score between 0 and 100");
 					 validScore = true;
@@ -39,9 +39,9 @@ const prompt = require("prompt-sync")()
 		for (let header = 0; header < 1; header++){
 			let printSub = "";
 			for (let subj = 0; subj < subjects; subj++){
-				printSub += "SUB",(subj + 1),"\t";
+				printSub += "SUB"+(subj+1)+"\t";
 			}
-		console.log("STUDENTS \t",printSub,"TOTAL \tAVERAGE\tPOSITION");
+		console.log("STUDENTS\t",printSub,"TOTAL \tAVERAGE\tPOSITION");
 		}
 				
 		let studentScoreTotal = [];
@@ -49,7 +49,9 @@ const prompt = require("prompt-sync")()
 		for (let sorted = 0; sorted < students; sorted++){
 			studentScoreTotal[sorted] = studentTotal[sorted];
 		}
-		Arrays.sort(studentScoreTotal);
+
+		studentScoreTotal.sort((a,b) => a-b);
+
 		for (let sorted = 0; sorted < students; sorted++){
 			sortedScores[sorted] = studentScoreTotal[sorted];
 		}
@@ -101,6 +103,5 @@ const prompt = require("prompt-sync")()
 		console.log(`Highest scoring student is :  Student ${highestStudent} scoring ${highestScore} \n`);
 		console.log(`Lowest scoring student is :  Student ${lowestStudent}  scoring ${LowestScore}\n`);
 		console.log(`Total score is: ${total} \nThe average score is: ${total / subjects} \n`);
-		console.log("Number of passes %d%nNumber of fails %d%n", pass, fail);
-		console.log("");
+		console.log(`Number of passes ${pass}\nNumber of fails ${fail}\n \n`);
 		}

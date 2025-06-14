@@ -1,5 +1,4 @@
-def sub_total(quantity_of_product):
-	(price_of_product, quantity_of_product)
+def sub_total(price_of_product, quantity_of_product):
 	total_amount = 0
 	for index in range(len(price_of_product)):
 		total_amount += price_of_product[index] * quantity_of_product[index]
@@ -18,8 +17,44 @@ def tax_to_pay(price_of_product, quantity_of_product):
 	tax_amount = (total / PERCENTAGE) * tax_percentage;
 	return tax_amount;
 
+def payment_amount(taxAmount, price_of_product, quantity_of_product):
+	#To determine the total payment amount by customer
+	totalAmount = 0
+	for index in range(len(price_of_product)):
+		totalAmount += price_of_product[index] * quantity_of_product[index]
+
+	amount_to_pay = totalAmount + taxAmount
+	return amount_to_pay;
+
+def purchase_discount(price_of_product, quantity_of_product):
+	#To calculate discount for purchase amount.
+	totalAmount = 0
+	for index in range(len(price_of_product)):
+		totalAmount += price_of_product[index] * quantity_of_product[index]
+
+	PERCENTAGE =100
+	discount_percentage = 3.8
+	
+	discount_amount = (totalAmount / PERCENTAGE) * discount_percentage;
+	return discount_amount;
+
+def customers_balance(customers_payment, amount_paid):
+	
+
+def store_details():
+	#To hold store details
+
+	StoreDetails = """
+	SEMICOLON STORES
+	MAIN BRANCH
+	LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
+	TEL: 03293828343
+	"""
+	return StoreDetails;
 
 	
+
+
 
 
 available_products = """
@@ -48,6 +83,8 @@ quantity_of_product = []
 
 print(available_products)
 
+
+
 purchase = int(input('Enter product to purchase: '))
 purchases.append(products[purchase - 1])
 price_of_product.append(prices[purchase - 1])
@@ -57,8 +94,13 @@ quantity_of_product.append(product_count)
 	
 users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
 
+customers_payment = payment_amount(taxAmount, price_of_product, quantity_of_product);
 
-print(sub_total(quantity_of_product))
+print(sub_total(price_of_product, quantity_of_product))
 print(tax_to_pay(price_of_product, quantity_of_product))
+
+amount_paid = input('How much did the customer pay: ')
+
+
 
 
