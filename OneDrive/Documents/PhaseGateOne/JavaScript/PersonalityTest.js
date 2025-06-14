@@ -14,46 +14,46 @@ function personalityType(introvert, extrovert, sensing, intuitive, thinking, fee
 
 function energyDetails(energy, introvert, extrovert){
 		
-		let choicesInEnergy = '';
+		let choicesInEnergy = "";
 
 		for (let item of energy){
-		choicesInEnergy += item + "\n";
+		choicesInEnergy += item + "\n"
 		}
-		choicesInEnergy += "Number of A selected: " + extrovert + "\n" + Number of B selected: " + introvert + "\n");
-	return choicesInEnergy
+		choicesInEnergy += "Number of A selected: " + extrovert + "\n" + "Number of B selected: " + introvert + "\n"
+	return choicesInEnergy;
 	};
 
 function mindDetails(mind, sensing, intuitive){
 		
-		let choicesInMind = '';
+		let choicesInMind = "";
 
 		for (let item of mind){
-		choicesInMind += item + "\n";
+		choicesInMind += item + "\n"
 		}
-		choicesInMind += ("Number of A selected: " + intuitive + "\n" + "Number of B selected: " + sensing + "\n");
-	return choicesInMind
+		choicesInMind += "Number of A selected: " + intuitive + "\n" + "Number of B selected: " + sensing + "\n"
+	return choicesInMind;
 	};
 
 function natureDetails(nature, thinking, feeling){
 		
-		let choicesInNature = '';
+		let choicesInNature = "";
 
 		for (let item of nature){
-		choicesInNature += item + "\n";
+		choicesInNature += item + "\n"
 		}
-		choicesInNature += "Number of A selected: " + thinking + "\n" + "Number of B selected: " + feeling + "\n";
-	return choicesInNature
+		choicesInNature += "Number of A selected: " + thinking + "\n" + "Number of B selected: " + feeling + "\n"
+	return choicesInNature;
 	};
 
 function tacticsDetails(tactics, judging, perception){
 		
-		let choicesInTactics = '';
+		let choicesInTactics = "";
 
 		for (let item of tactics){
-		choicesInTactics += item + "\n";
+		choicesInTactics += item + "\n"
 		}
-		choicesInTactics += "Number of A selected: " + judging + "\n" + "Number of B selected: " + perception + "\n";
-	return choicesInTactics
+		choicesInTactics += "Number of A selected: " + judging + "\n" + "Number of B selected: " + perception + "\n"
+	return choicesInTactics;
 	}
 
 function commander(){
