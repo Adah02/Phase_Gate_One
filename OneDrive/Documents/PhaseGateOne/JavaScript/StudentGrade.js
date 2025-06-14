@@ -1,10 +1,4 @@
-import java.util.Scanner;
-import java.util.Arrays;
-public class studentGrade {
-	public static void main(String[] args){
-
-	Scanner input = new Scanner(System.in);
-	studentGradeFunctions quiz = new studentGradeFunctions();
+const prompt = require("prompt-sync")()
 
 	System.out.println("How many students do you have? : ");
 	int students = input.nextInt();
@@ -12,14 +6,13 @@ public class studentGrade {
 	System.out.println("How many do they offer? : ");
 	int subjects = input.nextInt();
 
-	double[][] scores = new double[students][subjects];
+	let scores = [students][subjects];
 
-	for (int index = 0; index < scores.length; index++){
-		for (int count = 0; count < scores[index].length; count++){
-			boolean validScore = true;
+	for (let index = 0; index < scores.length; index++){
+		for (let count = 0; count < scores[index].length; count++){
+			let validScore = true;
 			while (validScore = true){
-				System.out.printf("Enter score for student %d%n Subject %d : ", index + 1,  count + 1);
-				double score = input.nextDouble();
+				let score = prompt("Enter score for student", ( index + 1), \n,"Subject ${count + 1}: ");
 				if (score >= 0 && score <= 100){
 					scores[index][count] = score;
 					validScore = false;    break;
@@ -29,22 +22,51 @@ public class studentGrade {
 					}
 				}
 			}
+		};
+		let studentTotal = [];
+		let studentAverage = [];
+
+		let sortedScores = [];
+		let positions = [];
+
+		int counter = 0;
+		for (int count =2000; count >= 0; count--){
+			for (int index = 0; index < students; index++){
+				if (studentTotal[index] == count){
+					sortedScores[counter] = studentTotal[index];
+					counter += 1;
+				} break;
+			}
 		}
-		double[] studentTotal = new double[students];
-		double[] studentAverage = new double[students];
-
-		double[] sortedScores = new double[students];
-		int[] positions = new int[students];
-
+/*
+		int position = 1;
+		for (int sorted = 0; sorted < students; sorted++){
+			for (int index = 0; index < students; index++){
+				if (sortedScores[sorted] == studentTotal[index]){
+					positions[index] = position;  
+					position += 1;
+					break;
+				} 
+  	else if (sortedScores[sorted] == studentTotal[index] && sorted > 1 && sortedScores[sorted] == sortedScores[sorted - 1]){
+					positions[index] = position - 1;
+					position += 1;
+					break;
+					} else {	positions[index] = position;
+							position += 1;
+							break;
+							}
+				}
+			}
+*/
 		for (int index = 0; index < scores.length; index++){
 			double total = 0; 
+			System.out.printf("Student %d \t", (index + 1));
 			for (int count = 0; count < scores[index].length; count++){
 				total += scores[index][count];
 			}
 			studentTotal[index] = total; 
 		studentAverage[index] = total / subjects;
 		}	
-
 		for (int header = 0; header < 1; header++){
 			System.out.print("\nSTUDENTS \t");
 			for (int subj = 0; subj < subjects; subj++){
@@ -53,35 +75,13 @@ public class studentGrade {
 		System.out.println("TOTAL \tAVERAGE\tPOSITION");
 		}
 
-		double[] studentScoreTotal = new double[studentTotal.length];
-		
-		for (int sorted = 0; sorted < students; sorted++){
-			studentScoreTotal[sorted] = studentTotal[sorted];
-		}
-		Arrays.sort(studentScoreTotal);
-		for (int sorted = 0; sorted < students; sorted++){
-			sortedScores[sorted] = studentScoreTotal[sorted];
-		}
-
-		int position = 1;
-		for (int  index = students - 1; index >= 0; index--){
-			for (int count = 0; count < students; count++){
-				if (sortedScores[index] == studentTotal[count]){
-					positions[count] = position;  
-					position += 1;
-					break;
-				}
-			}
-		} 
-
 		for (int index = 0; index < scores.length; index++){
 			System.out.printf("Student %d \t", (index + 1));
 			for (int count = 0; count < scores[index].length; count++){
 				System.out.printf("%.0f \t", (scores[index][count]));
 			}
-		System.out.printf("%.0f \t%.1f \t%d%n", studentTotal[index], studentAverage[index], positions[index]);
+		System.out.printf("%.0f \t%.1f \t%f%n", studentTotal[index], studentAverage[index], sortedScores[index]);
 		}
-		System.out.print(Arrays.toString(studentScoreTotal));
 
 		System.out.println("\n SUBJECT SUMMARY");
 		
@@ -104,11 +104,12 @@ public class studentGrade {
 				}
 			total += scores[score][subj];
 			}
-		System.out.printf("Highest scoring student is :  Student %d  scoring %.0f%n", highestStudent, highestScore);
-		System.out.printf("Lowest scoring student is :  Student %d  scoring %.0f%n", lowestStudent, LowestScore);
-		System.out.printf("Total score is: %.0f%nThe average score is: %.2f%n", total, (total / subjects));
-		System.out.printf("Number of passes %d%nNumber of fails %d%n", pass, fail);
-		System.out.println("");
+		console.log("Highest scoring student is :  Student %d  scoring %.0f%n", highestStudent, highestScore);
+		console.log("Lowest scoring student is :  Student %d  scoring %.0f%n", lowestStudent, LowestScore);
+		console.log("Total score is: %.0f%nThe average score is: %.2f%n", total, (total / subjects));
+		console.log("Number of passes %d%nNumber of fails %d%n", pass, fail);
+		console.log("");
 		}
+
 	}
 }
