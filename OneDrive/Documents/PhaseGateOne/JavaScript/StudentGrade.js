@@ -8,16 +8,11 @@ const prompt = require("prompt-sync")()
 
 	for (let index = 0; index < students; index++){
 		for (let count = 0; count < subjects; count++){
-			let validScore = true;
-			while (validScore = true){
-				let score = prompt("Enter score for student" + (index + 1) + "\n Subject" + (count + 1))
+				let score = prompt("Enter score for student" + (index + 1) + "\n Subject " + (count + 1) + ": ")
 				if (score >= 0 && score <= 100){
 					scores[index][count] = score;
-					validScore = false;
 				} else {
 					console.log("Enter a valid score between 0 and 100");
-					 validScore = true;
-					}
 				}
 			}
 		}
