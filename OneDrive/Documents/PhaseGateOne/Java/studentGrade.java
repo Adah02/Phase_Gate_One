@@ -66,7 +66,11 @@ public class studentGrade {
 		int position = 1;
 		for (int  index = students - 1; index >= 0; index--){
 			for (int count = 0; count < students; count++){
-				if (sortedScores[index] == studentTotal[count]){
+			if (sortedScores[index] == studentTotal[count] && index > 0 && sortedScores[index] == sortedScores[index - 1]){
+				positions[count] = position - 1;  
+				position += 1;
+				break;
+				}  else if (sortedScores[index] == studentTotal[count]){
 					positions[count] = position;  
 					position += 1;
 					break;
@@ -81,9 +85,8 @@ public class studentGrade {
 			}
 		System.out.printf("%.0f \t%.1f \t%d%n", studentTotal[index], studentAverage[index], positions[index]);
 		}
-		System.out.print(Arrays.toString(studentScoreTotal));
 
-		System.out.println("\n SUBJECT SUMMARY");
+		System.out.println("\n \t SUBJECT SUMMARY");
 		
 		for (int subj = 0; subj < scores[0].length; subj++){
 			System.out.println("Subject " + (subj + 1));
