@@ -49,7 +49,6 @@ public class CheckOutApp {
 		totalPurchase += (productPrice.get(index) * productQuantity.get(index));
 		}
 		double customersBalance = (amountPaid - totalPurchase);
-
 	return customersBalance;
 	}
 	

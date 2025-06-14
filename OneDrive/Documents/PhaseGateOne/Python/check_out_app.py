@@ -17,13 +17,10 @@ def tax_to_pay(price_of_product, quantity_of_product):
 	tax_amount = (total / PERCENTAGE) * tax_percentage;
 	return tax_amount;
 
-def payment_amount(taxAmount, price_of_product, quantity_of_product):
+def payment_amount(tax_to_pay, sub_total, purchase_discount):
 	#To determine the total payment amount by customer
-	totalAmount = 0
-	for index in range(len(price_of_product)):
-		totalAmount += price_of_product[index] * quantity_of_product[index]
 
-	amount_to_pay = totalAmount + taxAmount
+	amount_to_pay = (tax_to_pay, + sub_total, - purchase_discount)
 	return amount_to_pay;
 
 def purchase_discount(price_of_product, quantity_of_product):
@@ -38,12 +35,13 @@ def purchase_discount(price_of_product, quantity_of_product):
 	discount_amount = (totalAmount / PERCENTAGE) * discount_percentage;
 	return discount_amount;
 
-def customers_balance(customers_payment, amount_paid):
-	
+def customers_balance(bill, amount_paid):
+	balance = amount_paid - bill
+
+	return balance;
 
 def store_details():
 	#To hold store details
-
 	StoreDetails = """
 	SEMICOLON STORES
 	MAIN BRANCH
@@ -84,22 +82,34 @@ quantity_of_product = []
 print(available_products)
 
 
+while True:
+	purchase = int(input('Enter product to purchase: '))
+	purchases.append(products[purchase - 1])
+	price_of_product.append(prices[purchase - 1])
 
-purchase = int(input('Enter product to purchase: '))
-purchases.append(products[purchase - 1])
-price_of_product.append(prices[purchase - 1])
-
-product_count = int(input('How many do you want? : '))
-quantity_of_product.append(product_count)
+	product_count = int(input('How many do you want? : '))
+	quantity_of_product.append(product_count)
 	
-users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
+	users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
+	match users_choice:
+		case 0:
+			purchase = False
+			break;
+		case 1:
+			purchase = True
+			break;
+		case _:
+			purchase = True
+			break;
 
-customers_payment = payment_amount(taxAmount, price_of_product, quantity_of_product);
+
+
 
 print(sub_total(price_of_product, quantity_of_product))
 print(tax_to_pay(price_of_product, quantity_of_product))
 
 amount_paid = input('How much did the customer pay: ')
+print(payment_amount(tax_to_pay, sub_total, purchase_discount))
 
 
 

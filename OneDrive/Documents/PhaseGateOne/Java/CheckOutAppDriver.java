@@ -152,6 +152,7 @@ public class CheckOutAppDriver {
 		System.out.printf(" \t VAT@ 7.5%%:  %.2f%n", vat);
 
 		System.out.println(dashes);
+
 		double billTotal = (purchaseAmount + vat) - discount;
 		System.out.printf(" \t Bill Total: %.2f%n", billTotal);
 
@@ -164,6 +165,8 @@ public class CheckOutAppDriver {
 			System.out.println("How much did the customer pay? ");
 			double amountPaid = input.nextDouble(); 
 
+			double balance = ( amountPaid - billTotal);
+
 		System.out.println(dashes);
 		System.out.println(quiz.storeAddress());
 		System.out.println("Date: ");
@@ -174,7 +177,7 @@ public class CheckOutAppDriver {
 		System.out.println(dashes);
 
 			for (int count = 0; count < productPrice.size(); count++ ){
-			System.out.printf("%15s \t%d\t%.2f \t%.2f%n", purchasedproducts.get(count), productQuantity.get(count), productPrice.get(count), totalProductPrice.get(count));
+			System.out.printf("%15s\t%d\t%.2f \t%.2f%n", purchasedproducts.get(count), productQuantity.get(count), productPrice.get(count), totalProductPrice.get(count));
 			}
 		System.out.println(dashes);
 		System.out.printf(" \t Sub-Total: %.2f%n", purchaseAmount);
@@ -184,7 +187,12 @@ public class CheckOutAppDriver {
 
 		System.out.printf(" \t Bill Total:  \t %.2f%n", billTotal);
 		System.out.printf("\t Amount Paid: \t %.2f%n", amountPaid);
-		System.out.printf("\t Balance:   \t %.2f%n", ( amountPaid - billTotal));
+		if (balance < 0){
+			System.out.printf("\t Balance:   \t %.2f%n \t You still owe %.2f. Please, pay up%n", balance, (Math.abs(balance)));
+		} else {
+			System.out.printf("\t Balance:   \t %.2f%n", balance);
+			}
+		
 	
 		System.out.println(dashes);
 		System.out.println("  \t  THANKS FOR YOUR PATRONAGE");
