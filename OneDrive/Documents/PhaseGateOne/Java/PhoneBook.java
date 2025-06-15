@@ -60,10 +60,12 @@ public class PhoneBook {
 		while (activity == true){
 		System.out.print(activities);
 		System.out.print("Kindly enter your choice: ");
-		int usersChoice = input.nextInt();
+		String usersChoice = input.nextInt();
+		
+		if (usersChoice < )
 
 		switch(usersChoice){
-			case 1:{
+			case "1":{
 					System.out.println("Enter name: ");
 					String name = input.next();
 					nameStore(name);
@@ -81,10 +83,15 @@ public class PhoneBook {
 					emailStore(email);
 					} break;
 
-			case 2: {
+			case "2": {
 					System.out.println("Enter name or phone number of the contact to remove: ");
 					String remove  = input.nextLine();
+					
+					
 					} break;
+			case "3": {
+
+					}
 			}
 
 		}

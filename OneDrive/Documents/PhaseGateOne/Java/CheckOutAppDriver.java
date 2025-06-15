@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
 public class CheckOutAppDriver {
 
 	public static void main(String[] args){
@@ -80,35 +81,31 @@ public class CheckOutAppDriver {
 		""";
 
 	String cashiersName = "";
-	System.out.println(cashiers);
+	System.out.println("\n" + cashiers);
 
 	boolean cashier = true;
 	while(cashier == true){
 
 	System.out.println("Select name of cashier on duty: ");
-	cashiersName = input.nextLine(); 
+	cashiersName = input.next(); 
 
 	switch(cashiersName){
 		case "1":{
 				cashiersName = "Sikiru I. J";
 				cashier = false;
-				break;
-			}
+			} break;
 		case "2":{
 				cashiersName = "Emmanuel  K. A";
 				cashier = false;
-				break;
-			}
+			} break;
 		case "3":{
 				cashiersName = "Eze-Kiel C. A";
 				cashier = false;
-				break;
-			}
+			} break;
 		case "4":{
 				cashiersName = "Olawole R. O";
 				cashier = false;
-				break;
-			}
+			} break;
 		default : {
 				cashier = true;
 			}
@@ -124,9 +121,9 @@ public class CheckOutAppDriver {
 		totalProductPrice.add(productPrice.get(index) * productQuantity.get(index));
 		}
 
-		System.out.println(dashes);
-		System.out.println(quiz.storeAddress());
-		System.out.println("Date: ");
+		System.out.println("\n" + dashes);
+		System.out.print(quiz.storeAddress());
+		System.out.println("Date: " + quiz.currentDateAndTime());
 		System.out.println("Cashier: " + cashiersName);
 		System.out.println("Customers Name: " +customersName);
 		System.out.println(dashes);
@@ -167,9 +164,9 @@ public class CheckOutAppDriver {
 
 			double balance = ( amountPaid - billTotal);
 
-		System.out.println(dashes);
-		System.out.println(quiz.storeAddress());
-		System.out.println("Date: ");
+		System.out.println("\n" + dashes);
+		System.out.print(quiz.storeAddress());
+		System.out.println("Date: " + quiz.currentDateAndTime());
 		System.out.println("Cashier: " + cashiersName);
 		System.out.println("Customers Name: " +customersName);
 		System.out.println(dashes);
@@ -192,8 +189,6 @@ public class CheckOutAppDriver {
 		} else {
 			System.out.printf("\t Balance:   \t %.2f%n", balance);
 			}
-		
-	
 		System.out.println(dashes);
 		System.out.println("  \t  THANKS FOR YOUR PATRONAGE");
 		System.out.println(dashes);

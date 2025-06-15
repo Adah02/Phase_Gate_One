@@ -33,6 +33,12 @@ public class MenstrualCalculator {
 	return nextFlowDate;
 	}
 
+	public static String safePeriod(int prevDay, int menstMonth, int nextMenst){
+	
+
+
+	}
+
 	public static String ovulationDate (int prevDay, int menstMonth){
 	
 	Calendar calendar = Calendar.getInstance();
