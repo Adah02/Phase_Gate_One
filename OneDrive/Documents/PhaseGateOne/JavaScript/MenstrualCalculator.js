@@ -29,7 +29,6 @@ function ovulationPeriod(monthOfFlow, dayOfFlow){
 };
 
 
-
 let monthOfFlow = prompt("Enter month of last flow: ")
 let dayOfFlow = prompt("Enter day of last flow: ")
 let flowLength = prompt("Enter length of last flow: ")
