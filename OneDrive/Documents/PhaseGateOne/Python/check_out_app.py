@@ -17,10 +17,20 @@ def tax_to_pay(price_of_product, quantity_of_product):
 	tax_amount = (total / PERCENTAGE) * tax_percentage;
 	return tax_amount;
 
-def payment_amount(tax_to_pay, sub_total, purchase_discount):
+def payment_amount(price_of_product, quantity_of_product):
 	#To determine the total payment amount by customer
+	total_amount = 0
+	for index in range(len(price_of_product)):
+		total_amount += price_of_product[index] * quantity_of_product[index]
 
-	amount_to_pay = (tax_to_pay, + sub_total, - purchase_discount)
+	PERCENTAGE =100
+	discount_percentage = 3.8
+	tax_percentage = 7.5
+
+	discount_amount = (total_amount / PERCENTAGE) * discount_percentage;
+	tax_amount = (total_amount / PERCENTAGE) * tax_percentage;
+
+	amount_to_pay = (tax_amount + total_amount) - discount_amount
 	return amount_to_pay;
 
 def purchase_discount(price_of_product, quantity_of_product):
@@ -105,11 +115,9 @@ while True:
 
 
 
-print(sub_total(price_of_product, quantity_of_product))
-print(tax_to_pay(price_of_product, quantity_of_product))
-
 amount_paid = input('How much did the customer pay: ')
-print(payment_amount(tax_to_pay, sub_total, purchase_discount))
+print(payment_amount(price_of_product, quantity_of_product))
+print(tax_to_pay(price_of_product, quantity_of_product))
 
 
 

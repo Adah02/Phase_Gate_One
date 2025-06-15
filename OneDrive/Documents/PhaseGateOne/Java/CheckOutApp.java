@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Date;
-import java.time.LocalTime;
 import java.text.SimpleDateFormat;
 public class CheckOutApp {
 
