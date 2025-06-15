@@ -114,6 +114,7 @@ public class MenstrualCalculator {
 	System.out.println("Next ovulation is " + ovulationDate (prevDay, menstMonth));
 	System.out.println("Date of next menstruation is " + nextMenstCycle(menstMonth, prevDay, nextMenst));
 	System.out.printf("Safe period is from %s to %s to %s%n", previousFlowDate(menstMonth, prevDay), safePeriod(prevDay, menstMonth, nextMenst), nextMenstCycle(menstMonth, prevDay, nextMenst));
+
 	}
 }
 
