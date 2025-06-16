@@ -90,27 +90,25 @@ price_of_product = []
 quantity_of_product = []
 
 print(available_products)
-
-
-while True:
-	purchase = int(input('Enter product to purchase: '))
-	purchases.append(products[purchase - 1])
-	price_of_product.append(prices[purchase - 1])
-
-	product_count = int(input('How many do you want? : '))
-	quantity_of_product.append(product_count)
 	
-	users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
-	match users_choice:
-		case 0:
-			purchase = False
-			break;
-		case 1:
-			purchase = True
-			break;
-		case _:
-			purchase = True
-			break;
+
+purchase = int(input('Enter product to purchase: '))
+index = purchase - 1;
+product_at_index = products[index]
+price_at_index = prices[index]
+
+purchases.append(product_at_index)
+price_of_product.append(price_at_index)
+
+product_count = int(input('How many do you want? : '))
+quantity_of_product.append(product_count)
+	
+users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
+
+if users_choice == 1:
+	purchase = True
+else:
+	purchase = False
 
 
 
@@ -118,7 +116,4 @@ while True:
 amount_paid = input('How much did the customer pay: ')
 print(payment_amount(price_of_product, quantity_of_product))
 print(tax_to_pay(price_of_product, quantity_of_product))
-
-
-
 

@@ -1,9 +1,7 @@
-const {LocalDate} = require ('js-joda')
 const prompt = require ("prompt-sync")()
-const today = new Date();
 
 function nextFlowDate(monthOfFlow, dayOfFlow, flowLength, nextFlow){
-	const menstDate = LocalDate.of(2025, monthOfFlow, dayOfFlow);
+	const menstDate = new Date(2025, monthOfFlow, dayOfFlow);
 	let monthLength = menstDate.lengthOfMonth();
 	let remainingDaysOfMonth = monthLength - dayOfFlow;
 
@@ -12,7 +10,8 @@ function nextFlowDate(monthOfFlow, dayOfFlow, flowLength, nextFlow){
 	} else{
 		nextFlow += dayOfFlow;
 		}
-	console.log("Next menstruation is", nextFlow, "of", monthOfFlow)
+	menstDate = LocalDate.of(yyyy, monthOfFlow, nextFlow);
+	console.log("Next menstruation is", menstDate.toLocaleDateString())
 	return monthLength;
 };
 

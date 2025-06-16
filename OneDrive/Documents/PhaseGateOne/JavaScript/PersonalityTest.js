@@ -448,7 +448,7 @@ let choiceB = [ "B. Love being by yourself always",
 	let choicesInNature = console.log("Number of A selected: ", thinking, "\n", "Number of B selected: ", feeling, "\n");
 	let choicesInTactics = console.log("Number of A selected: ", judging, "\n", "Number of B selected: ", perception, "\n");
 	
-	console.log("\n Hello", myName ,"you selected the following;- \n");
+	console.log("\n Hello", myName ,", you selected the following;- \n");
 	console.log(energyDetails(energy, introvert, extrovert));
 	console.log(mindDetails(mind, sensing, intuitive));
 	console.log(natureDetails(nature, thinking, feeling));

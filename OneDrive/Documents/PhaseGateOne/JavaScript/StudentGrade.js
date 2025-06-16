@@ -1,18 +1,25 @@
-const prompt = require("prompt-sync")()
+const prompt = require('prompt-sync')();
 
 	let students = prompt("How many students do you have? : ");
 
 	let subjects = prompt("How many do they offer? : ");
 
-	let scores = [[],[]];
+	let scores = [[],[],[]];
+
 
 	for (let index = 0; index < students; index++){
 		for (let count = 0; count < subjects; count++){
-				let score = prompt("Enter score for student" + (index + 1) + "\n Subject " + (count + 1) + ": ")
+				validScore = true
+				while (validScore == true){
+				console.log("Enter score for student" + (index + 1))
+				let score = prompt("Subject " + (count + 1) + ": ")
 				if (score >= 0 && score <= 100){
 					scores[index][count] = score;
+					validScore = false
 				} else {
 					console.log("Enter a valid score between 0 and 100");
+					validScore = true
+					}
 				}
 			}
 		}
