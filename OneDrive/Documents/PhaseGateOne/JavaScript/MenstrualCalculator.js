@@ -2,7 +2,7 @@ const prompt = require ("prompt-sync")()
 
 function nextFlowDate(monthOfFlow, dayOfFlow, flowLength, nextFlow){
 	const menstDate = new Date(2025, monthOfFlow, dayOfFlow);
-	let monthLength = menstDate.lengthOfMonth();
+	let monthLength = menstDate.getMonth().length;
 	let remainingDaysOfMonth = monthLength - dayOfFlow;
 
 	if (nextFlow > remainingDaysOfMonth){
@@ -10,13 +10,13 @@ function nextFlowDate(monthOfFlow, dayOfFlow, flowLength, nextFlow){
 	} else{
 		nextFlow += dayOfFlow;
 		}
-	menstDate = LocalDate.of(yyyy, monthOfFlow, nextFlow);
+	menstDate = Date(2025, monthOfFlow, nextFlow);
 	console.log("Next menstruation is", menstDate.toLocaleDateString())
 	return monthLength;
 };
 
 function ovulationPeriod(monthOfFlow, dayOfFlow){
-	const menstDate = LocalDate.of(2025, monthOfFlow, dayOfFlow);
+	const menstDate = new Date(2025, monthOfFlow, dayOfFlow);
 	let ovulation = dayOfFlow + 14;
 	let daysLeft = menstDate.lengthOfMonth - dayOfFlow;
 	if (ovulation > daysLeft){
