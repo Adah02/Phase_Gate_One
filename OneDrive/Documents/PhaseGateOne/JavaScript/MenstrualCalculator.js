@@ -33,6 +33,7 @@ let dayOfFlow = prompt("Enter day of last flow: ")
 let flowLength = prompt("Enter length of last flow: ")
 let nextFlow = prompt("Enter of days until next flow: ")
 
-console.log(nextFlowDate(monthOfFlow, dayOfFlow, flowLength, nextFlow))
 console.log(ovulationPeriod(monthOfFlow, dayOfFlow))
+console.log(nextFlowDate(monthOfFlow, dayOfFlow, flowLength, nextFlow))
+
 
