@@ -9,10 +9,10 @@ for (let index = 1; index <= 10; index++){
 			}
 		} else {
 			for (let count = 1; count <= 5; count++){
-			console.log(Math.pow(index, count));
+			sum2 = Math.pow(index, count);
 			}
 		};
 	}
 	};
 
-console.log(sum1, " , sum2");
+console.log(sum1, " ", sum2)
