@@ -51,6 +51,18 @@ def customers_balance(bill, amount_paid):
 
 	return balance;
 
+def header():
+	headings = "		ITEM         QTY         PRICE         TOTAL"
+	
+	return headings
+
+def lines():
+	#Printing lines in receipt
+	line = "=" * 55
+	
+	return line;
+
+
 def store_details():
 	#To hold store details
 	StoreDetails = """
@@ -66,18 +78,20 @@ products = []
 price_of_product = []
 quantity_of_product = []	
 
+customers_name = str(input("Enter customer's name: "))
+
 trade = True
 while trade == True:
-	product = input('Enter product to purchase: ')
+	product = input('\n Enter name of product: ')
 	products.append(product )
 
-	price = float(input("Enter price of product: "))
+	price = float(input("\n Enter price of product: "))
 	price_of_product.append(price)
 
-	product_count = int(input('How many do you want? : '))
+	product_count = int(input('\n How many did the customer buy? : '))
 	quantity_of_product.append(product_count)
 	
-	users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
+	users_choice = int(input('\n Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
 
 	if users_choice == 1:
 		trade = True
@@ -87,7 +101,16 @@ while trade == True:
 
 
 
-amount_paid = input('How much did the customer pay: ')
+amount_paid = input('\n How much did the customer pay: ')
+cashiers_name = str(input("\n Enter cashier's name: "))
+
+print(lines())
+print(store_details())
+
+print(customers_name)
+print(cashiers_name)
+print(lines())
+
 print(payment_amount(price_of_product, quantity_of_product))
 print(tax_to_pay(price_of_product, quantity_of_product))
 
