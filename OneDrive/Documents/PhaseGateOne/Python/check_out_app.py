@@ -60,44 +60,19 @@ def store_details():
 	"""
 	return StoreDetails;
 
-	
 
-
-
-
-available_products = """
-===================================
-    Welcome to Semicolon Stores
-===================================
-    press the respective number
-        to purchase product.
-===================================
-             Press:-
-   1. Rice         2. Ice-Scream
-   3. Bread        4. Yogurt
-   5. Pringles     6. Vegetable-Oil
-   7. Eggs         8. Mash-mallow
-   9. Sadin        10. Table-water
-  11. Peak Milk    12. Snackers
-===================================
-"""
-
-products = ["Rice", "Ice-Scream", "Bread", "Yogurt", "Pringles", "Vegetable-Oil", "Eggs", "Mash-mallow", "Sadin", "Table-water", "Peak Milk", "Snackers"]
-prices = [40000, 2500, 1600, 4500, 3750, 6000, 1500, 3000, 1000, 1900, 7400, 2500]
-
-purchases = []
+products = []
 price_of_product = []
-quantity_of_product = []
+quantity_of_products = []	
 
-print(available_products)
-	
+product = input('Enter product to purchase: ')
+products.append(product )
 
-purchase = int(input('Enter product to purchase: '))
-purchases.append(products(purchase - 1))
-price_of_product.append(prices(purchase - 1))
+price = float(input("Enter price of product: "))
+price_of_product.append(price)
 
 product_count = int(input('How many do you want? : '))
-quantity_of_product.append(product_count(purchase - 1))
+quantity_of_product.append(product_count)
 	
 users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
 
