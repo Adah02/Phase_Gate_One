@@ -19,6 +19,7 @@ def tax_to_pay(price_of_product, quantity_of_product):
 
 def payment_amount(price_of_product, quantity_of_product):
 	#To determine the total payment amount by customer
+	
 	total_amount = 0
 	for index in range(len(price_of_product)):
 		total_amount += price_of_product[index] * quantity_of_product[index]
@@ -63,23 +64,25 @@ def store_details():
 
 products = []
 price_of_product = []
-quantity_of_products = []	
+quantity_of_product = []	
 
-product = input('Enter product to purchase: ')
-products.append(product )
+trade = True
+while trade == True:
+	product = input('Enter product to purchase: ')
+	products.append(product )
 
-price = float(input("Enter price of product: "))
-price_of_product.append(price)
+	price = float(input("Enter price of product: "))
+	price_of_product.append(price)
 
-product_count = int(input('How many do you want? : '))
-quantity_of_product.append(product_count)
+	product_count = int(input('How many do you want? : '))
+	quantity_of_product.append(product_count)
 	
-users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
+	users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
 
-if users_choice == 1:
-	purchase = True
-else:
-	purchase = False
+	if users_choice == 1:
+		trade = True
+	else:
+		trade = False
 
 
 
