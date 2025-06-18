@@ -52,7 +52,7 @@ def customers_balance(bill, amount_paid):
 	return balance;
 
 def header():
-	headings = "		ITEM         QTY         PRICE         TOTAL"
+	headings = "	ITEM         QTY      PRICE        TOTAL"
 	
 	return headings
 
@@ -65,12 +65,11 @@ def lines():
 
 def store_details():
 	#To hold store details
-	StoreDetails = """
-	SEMICOLON STORES
-	MAIN BRANCH
-	LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
-	TEL: 03293828343
-	"""
+	StoreDetails = """SEMICOLON STORES 
+MAIN BRANCH
+LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.
+TEL: 03293828343
+"""
 	return StoreDetails;
 
 
@@ -82,16 +81,16 @@ customers_name = str(input("Enter customer's name: "))
 
 trade = True
 while trade == True:
-	product = input('\n Enter name of product: ')
+	product = input('\nEnter name of product: ')
 	products.append(product )
 
-	price = float(input("\n Enter price of product: "))
+	price = float(input("\nEnter price of product: "))
 	price_of_product.append(price)
 
-	product_count = int(input('\n How many did the customer buy? : '))
+	product_count = int(input('\nHow many did the customer buy? : '))
 	quantity_of_product.append(product_count)
 	
-	users_choice = int(input('\n Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
+	users_choice = int(input('\nWould you like to add more? \nPress \"1\" > Yes or \"0\" > No: '))
 
 	if users_choice == 1:
 		trade = True
@@ -100,16 +99,18 @@ while trade == True:
 
 
 
-
-amount_paid = input('\n How much did the customer pay: ')
+amount_paid = input('\nHow much did the customer pay: ')
 cashiers_name = str(input("\n Enter cashier's name: "))
 
 print(lines())
 print(store_details())
 
-print(customers_name)
-print(cashiers_name)
+print("Customer's name: ",customers_name)
+print("Cashier's name",cashiers_name)
 print(lines())
+print(header())
+for item in range(len(products)):
+	print(f'   {products[item]}   {quantity_of_product[item]}  {price_of_product[item]}')
 
 print(payment_amount(price_of_product, quantity_of_product))
 print(tax_to_pay(price_of_product, quantity_of_product))
