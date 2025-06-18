@@ -93,15 +93,11 @@ print(available_products)
 	
 
 purchase = int(input('Enter product to purchase: '))
-index = purchase - 1;
-product_at_index = products[index]
-price_at_index = prices[index]
-
-purchases.append(product_at_index)
-price_of_product.append(price_at_index)
+purchases.append(products(purchase - 1))
+price_of_product.append(prices(purchase - 1))
 
 product_count = int(input('How many do you want? : '))
-quantity_of_product.append(product_count)
+quantity_of_product.append(product_count(purchase - 1))
 	
 users_choice = int(input('Would you like to add more? Press \"1\"  > Yes or \"0\" > No:'))
 
