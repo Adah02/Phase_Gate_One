@@ -6,7 +6,7 @@ def sub_total(price_of_product, quantity_of_product):
 	return total_amount;
 
 
-def tax_to_pay(price_of_product, quantity_of_product):
+def value_added_tax(price_of_product, quantity_of_product):
 	#To calculate the total tax amount to be paid.
 	total = 0
 	for index in range(len(price_of_product)):
@@ -62,7 +62,7 @@ def header():
 
 def lines():
 	#Printing lines in receipt
-	line = "=" * 55
+	line = "=" * 48
 	
 	return line;
 
@@ -119,12 +119,17 @@ print("Customer's name: ",customers_name)
 print("Cashier's name",cashiers_name)
 
 print(lines())
-print(header())
-print(lines())
+print(f'{header()} \n{lines()}')
 
 for item in range(len(products)):
 	print(f'\t {products[item]}  \t {quantity_of_product[item]:} \t {price_of_product[item]:.2f} \t {product_total_price[item]:.2f}')
 
 print(lines())
+
+print(f" \t Sub-total: {sub_total(price_of_product, quantity_of_product):.2f} \n \t Discount: { purchase_discount(price_of_product, quantity_of_product):.2f}")
+print(f" \t VAX @7.5% : {value_added_tax(price_of_product, quantity_of_product):.2f}\n{lines()}") 
+print(f"\t Bill Total: {payment_amount(price_of_product, quantity_of_product):.2f} \n{lines()}")
+print(f" THIS IS NOT A RECEIPT, KINDLY PAY {payment_amount(price_of_product, quantity_of_product):.2f} \n{lines()}")
+
 
 
