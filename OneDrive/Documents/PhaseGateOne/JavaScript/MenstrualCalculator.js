@@ -2,21 +2,21 @@ const prompt = require ("prompt-sync")()
 const moment = require ('moment');
 
 function nextFlowDate(monthOfFlow, dayOfFlow, flowLength, nextFlow){
-	let year = 2025
-	const date = new Date(year, monthOfFlow, dayOfFlow);
-	year = date.getFullYear();
-	let monthLength = date.getMonth().length;
-	let month = date.getDay();
-	let dayOfMonth = date.getDay();
-	let remainingDaysOfMonth = monthLength - dayOfFlow;
+	const date = new Date();
 
-	if (nextFlow > remainingDaysOfMonth){
-		nextFlow -= remainingDaysOfMonth; monthOfFlow += 1;
+	let year = date.getFullYear();
+	let monthLength = new Date(year, monthOfFlow + 1, 0).getDate;
+	let month = date.getMonth();
+	let dayOfMonth = date.getDay();
+	let remainingDaysInMonth = monthLength - dayOfFlow;
+
+	if (nextFlow > remainingDaysInMonth){
+		nextFlow -= remainingDaysInMonth; monthOfFlow += 1;
 	} else{
 		nextFlow += dayOfFlow;
 		}
 	menstDate = Date(year, monthOfFlow, nextFlow);
-	console.log("Next menstruation is", menstDate.toString())
+	console.log("Next menstruation is", monthLength.toLocaleDateString())
 	return monthLength;
 };
 

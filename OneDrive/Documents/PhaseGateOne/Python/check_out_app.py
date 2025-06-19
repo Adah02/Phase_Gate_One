@@ -5,6 +5,7 @@ def sub_total(price_of_product, quantity_of_product):
 
 	return total_amount;
 
+
 def tax_to_pay(price_of_product, quantity_of_product):
 	#To calculate the total tax amount to be paid.
 	total = 0
@@ -47,12 +48,15 @@ def purchase_discount(price_of_product, quantity_of_product):
 	return discount_amount;
 
 def customers_balance(bill, amount_paid):
+
 	balance = amount_paid - bill
+	if balance < 0:
+		balance = "You still owe {balance}, Please pay up"
 
 	return balance;
 
 def header():
-	headings = "	ITEM         QTY      PRICE        TOTAL"
+	headings = "	ITEM \t QTY \t PRICE \t TOTAL"
 	
 	return headings
 
@@ -102,16 +106,25 @@ while trade == True:
 amount_paid = input('\nHow much did the customer pay: ')
 cashiers_name = str(input("\n Enter cashier's name: "))
 
+
+product_total_price = []
+for index in range(len(price_of_product)):
+	product_total_price.append(price_of_product[index] * quantity_of_product[index])
+
+
 print(lines())
 print(store_details())
 
 print("Customer's name: ",customers_name)
 print("Cashier's name",cashiers_name)
+
 print(lines())
 print(header())
-for item in range(len(products)):
-	print(f'   {products[item]}   {quantity_of_product[item]}  {price_of_product[item]}')
+print(lines())
 
-print(payment_amount(price_of_product, quantity_of_product))
-print(tax_to_pay(price_of_product, quantity_of_product))
+for item in range(len(products)):
+	print(f'\t {products[item]}  \t {quantity_of_product[item]:} \t {price_of_product[item]:.2f} \t {product_total_price[item]:.2f}')
+
+print(lines())
+
 
