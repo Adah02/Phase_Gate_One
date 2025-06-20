@@ -4,6 +4,18 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 public class CheckOutApp {
 
+	public static double purchaseTotal(ArrayList<Double> productPrice, ArrayList<Integer> productQuantity){
+
+	double totalProductAmount = 0;
+
+	for (int index = 0; index < productPrice.size(); index++){
+		totalProductAmount +=  (productPrice.get(index) * productQuantity.get(index));
+		}
+
+	return totalProductAmount;
+	}
+
+
 	public static double[] productTotal(ArrayList<Double> productPrice, ArrayList<Integer> productQuantity){
 
 	double[] totalProductPrice = new double[productPrice.size()];
@@ -61,7 +73,12 @@ public class CheckOutApp {
 		for (int index = 0; index < productPrice.size(); index++){
 		totalPurchase += (productPrice.get(index) * productQuantity.get(index));
 		}
-		double customersBalance = (amountPaid - totalPurchase);
+
+	double taxPercentage = 7.5;
+	final double PERCENTAGE = 100;
+	double vat = (totalPurchase / PERCENTAGE) * taxPercentage;
+
+		double customersBalance = (amountPaid - (totalPurchase + vat));
 	return customersBalance;
 	}
 	
@@ -123,11 +140,13 @@ public class CheckOutApp {
 	System.out.println("Would you like to continue. Press \"1\" > Yes or \"0\" > No: ");
 	String usersChoice = input.next();
 	
-		if (usersChoice == "1"){
-			purchase = true;
-		} else {
-			purchase = false;
-		}
+		switch (usersChoice){
+			case "1": purchase = true; break;
+						
+			case "0": purchase = false; break;
+
+			default : purchase = false;  break;
+			}
 	}
 
 	System.out.print("Enter cashier's name: ");	
@@ -139,8 +158,7 @@ public class CheckOutApp {
 	}
 	
 		System.out.println("\n" + dashes);
-		System.out.print(storeAddress());
-		System.out.println("Date: " + currentDateAndTime());
+		System.out.printf("%sDate: %s%n", storeAddress(), currentDateAndTime());
 		System.out.println("Cashier: " + cashiersName);
 		System.out.println("Customers Name: " +customersName);
 		System.out.println(dashes);
@@ -150,21 +168,14 @@ public class CheckOutApp {
 		double[] productPriceTotal = productTotal(productPrice, productQuantity);
 
 		for (int count = 0; count < productPrice.size(); count++ ){
-		System.out.printf("%15s \t%d \t%.2f \t %.2f%n", purchasedproducts.get(count), productQuantity.get(count), productPrice.get(count), productPriceTotal[count]);
+		System.out.printf("%15s \t%d \t%.2f \t  %.2f%n", purchasedproducts.get(count), productQuantity.get(count), productPrice.get(count), productPriceTotal[count]);
 		}
-
-		System.out.println(dashes);		double purchaseAmount = 0;
-
-		for (int index = 0; index < productPrice.size(); index++){
-		purchaseAmount += (productPrice.get(index) * productQuantity.get(index));
-		}
-		System.out.printf(" \t Sub-Total: %.2f%n", purchaseAmount);
-
-		System.out.printf(" \t Discount:  %.2f%n", purchaseDiscount(productPrice, productQuantity));
-
-		System.out.printf(" \t VAT@ 7.5%%:  %.2f%n", valueAddedTax(productPrice, productQuantity));
 
 		System.out.println(dashes);
+		System.out.printf(" \t Sub-Total: %.2f%n", purchaseTotal(productPrice, productQuantity));
+
+		System.out.printf(" \t Discount:  %.2f%n", purchaseDiscount(productPrice, productQuantity));
+		System.out.printf(" \t VAT@ 7.5%%:  %.2f%n%s%n", valueAddedTax(productPrice, productQuantity), dashes);
 
 		System.out.printf(" \t Bill Total: %.2f%n", billTotal(productPrice, productQuantity));
 
@@ -177,22 +188,21 @@ public class CheckOutApp {
 			double amountPaid = input.nextDouble(); 
 
 		System.out.println("\n" + dashes);
-		System.out.print(storeAddress());
-		System.out.println("Date: " + currentDateAndTime());
-		System.out.println("Cashier: " + cashiersName);
-		System.out.println("Customers Name: " +customersName);
-		System.out.println(dashes);
+		System.out.printf("%sDate: %s%n", storeAddress(), currentDateAndTime());
+
+		System.out.printf("Cashier: %s%nCustomers Name:  %s%n%s%n", cashiersName, customersName, dashes);
+
 		System.out.printf("%15s %8s  %11s %15s%n", "ITEM", "QTY", "PRICE", "TOTAL(NGN)");
 		System.out.println(dashes);
 
 			for (int count = 0; count < productPrice.size(); count++ ){
-			System.out.printf("%15s \t%d\t%.2f \t %.2f%n", purchasedproducts.get(count), productQuantity.get(count), productPrice.get(count), productPriceTotal[count]);
+			System.out.printf("%15s \t%d\t%.2f \t  %.2f%n", purchasedproducts.get(count), productQuantity.get(count), productPrice.get(count), productPriceTotal[count]);
 			}
 
 		double balance = balance(productPrice, productQuantity, amountPaid);
 
 		System.out.println(dashes);
-		System.out.printf(" \t Sub-Total: %.2f%n", purchaseAmount);
+		System.out.printf(" \t Sub-Total: %.2f%n", purchaseTotal(productPrice, productQuantity));
 		System.out.printf(" \t Discount:  %.2f%n", purchaseDiscount(productPrice, productQuantity));
 		System.out.printf(" \t VAT@ 7.5%% : %.2f%n %s%n", valueAddedTax(productPrice, productQuantity), dashes);
 		
