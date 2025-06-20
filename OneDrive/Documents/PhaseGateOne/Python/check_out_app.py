@@ -1,3 +1,4 @@
+
 def sub_total(price_of_product, quantity_of_product):
 	total_amount = 0
 	for index in range(len(price_of_product)):
@@ -49,9 +50,7 @@ def purchase_discount(price_of_product, quantity_of_product):
 
 def customers_balance(bill, amount_paid):
 
-	balance = amount_paid - bill
-	if balance < 0:
-		balance = "You still owe {balance}, Please pay up"
+	balance = (amount_paid - bill)
 
 	return balance;
 
@@ -62,7 +61,7 @@ def header():
 
 def lines():
 	#Printing lines in receipt
-	line = "=" * 48
+	line = "=" * 55
 	
 	return line;
 
@@ -103,9 +102,9 @@ while trade == True:
 
 
 
-amount_paid = input('\nHow much did the customer pay: ')
-cashiers_name = str(input("\n Enter cashier's name: "))
 
+cashiers_name = str(input("\n Enter cashier's name: "))
+bill = float(payment_amount(price_of_product, quantity_of_product))
 
 product_total_price = []
 for index in range(len(price_of_product)):
@@ -116,13 +115,12 @@ print(lines())
 print(store_details())
 
 print("Customer's name: ",customers_name)
-print("Cashier's name",cashiers_name)
+print(f"Cashier's name: {cashiers_name} \n{lines()}")
 
-print(lines())
 print(f'{header()} \n{lines()}')
 
 for item in range(len(products)):
-	print(f'\t {products[item]}  \t {quantity_of_product[item]:} \t {price_of_product[item]:.2f} \t {product_total_price[item]:.2f}')
+	print(f'\t {products[item]}  \t {quantity_of_product[item]:} \t {price_of_product[item]:.2f} \t{product_total_price[item]:.2f}')
 
 print(lines())
 
@@ -130,6 +128,26 @@ print(f" \t Sub-total: {sub_total(price_of_product, quantity_of_product):.2f} \n
 print(f" \t VAX @7.5% : {value_added_tax(price_of_product, quantity_of_product):.2f}\n{lines()}") 
 print(f"\t Bill Total: {payment_amount(price_of_product, quantity_of_product):.2f} \n{lines()}")
 print(f" THIS IS NOT A RECEIPT, KINDLY PAY {payment_amount(price_of_product, quantity_of_product):.2f} \n{lines()}")
+
+amount_paid = float(input('\nHow much did the customer pay: '))
+
+balance = customers_balance(bill, amount_paid)
+
+print(f'{lines()} \n{header()} \n{lines()}')
+
+for item in range(len(products)):
+	print(f'\t {products[item]}  \t {quantity_of_product[item]:} \t {price_of_product[item]:.2f} \t{product_total_price[item]:.2f}')
+
+print(lines())
+
+print(f" \t Sub-total: {sub_total(price_of_product, quantity_of_product):.2f} \n \t Discount: { purchase_discount(price_of_product, quantity_of_product):.2f}")
+print(f" \t VAX @7.5% : {value_added_tax(price_of_product, quantity_of_product):.2f}\n{lines()}") 
+print(f"\t Bill Total: {payment_amount(price_of_product, quantity_of_product):.2f} \n  \tAmount Paid:  {amount_paid:.2f} \n \tBalance: {balance:.2f}\n")
+
+if balance < 0:
+	print(f"\tYou still owe {abs(balance):.2f}, Please pay up")
+
+print(f"{lines()}\n \t THANKS FOR YOUR PATRONAGE \n{lines()}")
 
 
 

@@ -16,6 +16,7 @@ public class studentGrade {
 	return studentTotal;
 	}
 
+
 	public static double[] studentsAverage (double[][] scores){
 	
 	double[] average = new double[scores.length];
@@ -29,6 +30,7 @@ public class studentGrade {
 		}
 	return average;
 	}
+
 
 	public static int[] studentPosition(double[] studentTotal){
 
@@ -44,7 +46,6 @@ public class studentGrade {
 		for (int sorted = 0; sorted < studentTotal.length; sorted++){
 			sortedScores[sorted] = studentScoreTotal[sorted];
 		}
-
 		int position = 1;
 		for (int  index = studentTotal.length - 1; index >= 0; index--){
 			for (int count = 0; count < studentTotal.length; count++){
