@@ -114,8 +114,8 @@ for index in range(len(price_of_product)):
 print(lines())
 print(store_details())
 
-print("Customer's name: ",customers_name)
-print(f"Cashier's name: {cashiers_name} \n{lines()}")
+print("CUSTOMER'S NAME: ",customers_name)
+print(f"CASHIER'S NAME: {cashiers_name} \n{lines()}")
 
 print(f'{header()} \n{lines()}')
 
@@ -133,7 +133,14 @@ amount_paid = float(input('\nHow much did the customer pay: '))
 
 balance = customers_balance(bill, amount_paid)
 
-print(f'{lines()} \n{header()} \n{lines()}')
+
+print(lines())
+print(store_details())
+
+print("CUSTOMER'S NAME: ",customers_name)
+print(f"CASHIER'S NAME: {cashiers_name} \n{lines()}")
+
+print(f'{header()} \n{lines()}')
 
 for item in range(len(products)):
 	print(f'\t {products[item]}  \t {quantity_of_product[item]:} \t {price_of_product[item]:.2f} \t{product_total_price[item]:.2f}')
