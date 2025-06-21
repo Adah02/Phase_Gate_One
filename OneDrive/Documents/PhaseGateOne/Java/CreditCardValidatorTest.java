@@ -60,6 +60,16 @@ public class CreditCardValidatorTest {
 	}
 
 	@Test
+	public void checkForValidDiscoverCardValidityStatus() {
+
+	String check = "655 676 879 989 89";
+	String expected = "Valid";
+
+	assertEquals(expected, quiz.validityStatus(check));
+	}
+
+
+	@Test
 	public void discoverCardCheck() {
 
 	String check = "6481 5760 1261 2463";

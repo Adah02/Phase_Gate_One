@@ -1,16 +1,31 @@
 def personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception):
 	
 	personality = ""
-	energy = (introvert > extrovert) ? (personality += "I") : (personality += "E");
-	mind = (sensing > intuitive) ? (personality += "S") : (personality += "N");
-	nature = (thinking > feeling) ? (personality += "T") : (personality += "F");
-	tactics = (judging > perception) ? (personality += "J") : (personality += "P");
+	if introvert > extrovert:
+		personality += "I"
+	else:
+		personality += "E"
+
+	if sensing > intuitive:
+		personality += "S"
+	else:
+		personality += "N"
+
+	if thinking > feeling:
+		personality += "T"
+	else:
+		personality += "F"
+
+	if judging > perception:
+		personality += "J"
+	else:
+		personality += "P"
 	 
 	return personality
 
 
 def energyDetails(energy, introvert, extrovert):
-	choices_in_energy = "";
+	choices_in_energy = ""
 
 	for item in energy:
 		choices_in_energy += item + "\n"
@@ -40,14 +55,13 @@ def natureDetails(nature, thinking, feeling):
 	return choices_in_nature
 
 
-def tacticsDetails(tactics, judging, perception){
-		
-	choices_in_tactics = "";
+def tacticsDetails(tactics, judging, perception):
+	choices_in_tactics = ""
 
-		for item in tactics:
-			choices_in_tactics += item + "\n"
+	for item in tactics:
+		choices_in_tactics += item + "\n"
 
-		choices_in_tactics += "Number of A selected: " + judging + "\n" + "Number of B selected: " + perception + "\n"
+	choices_in_tactics += "Number of A selected: " + judging + "\n" + "Number of B selected: " + perception + "\n"
 
 	return choices_in_tactics
 
@@ -69,7 +83,7 @@ def commander():
 	return entj
 
 
-def logician(){
+def logician():
 	intp = '''
 	INTP (Logician) is a personality type with the Introverted, Intuitive, Thinking, and Prospecting 
 	traits. These flexible thinkers enjoy taking an unconventional approach to many aspects of life. 
@@ -218,7 +232,7 @@ def protagonist():
 
 def campaigner():
 
-	let enfp = '''
+	enfp = '''
 	ENFP (Campaigner) is a personality type with the Extraverted, Intuitive, Feeling, and 
 	Prospecting traits. These people tend to embrace big ideas and actions that reflect their 
 	sense of hope and goodwill toward others. Their vibrant energy can flow in many directions.
@@ -291,7 +305,7 @@ def consul():
 	'''
 	return esfj;
 
-def personalityTrait(){
+def personalityTrait():
 	type = personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception);
 
 	trait = ""
@@ -309,15 +323,24 @@ def personalityTrait(){
 		trait = virtuoso()
 	elif type == "ESTP":
 		trait = entrepreneur()
-	} else if (type == "ESFP"){	trait = entertainer()
-	} else if (type == "INFJ"){	trait = advocate()
-	} else if (type == "INFP"){	trait = mediator()
-	} else if (type == "ENFJ"){	trait = protagonist()
-	} else if (type == "ENFP"){	trait = campaigner()
-	} else if (type == "ISTJ"){	trait = logistician()
-	} else if (type == "ESTJ"){	trait = executive()
-	} else if (type == "ISFJ"){	trait = defender()
-	} else if (type == "ESFJ"){	trait = consul()
+	elif (type == "ESFP"):
+		trait = entertainer()
+	elif (type == "INFJ"):
+		trait = advocate()
+	elif (type == "INFP"):
+		trait = mediator()
+	elif (type == "ENFJ"):
+		trait = protagonist()
+	elif (type == "ENFP"):
+		trait = campaigner()
+	elif (type == "ISTJ"):
+		trait = logistician()
+	elif (type == "ESTJ"):
+		trait = executive()
+	elif (type == "ISFJ"):
+		trait = defender()
+	elif (type == "ESFJ"):
+		trait = consul()
 
 	return trait;
 
@@ -366,61 +389,70 @@ choiceB = [ "B. Love being by yourself always",
 		"B. Stay calm under pressure",
 		"B. Not interested in discussions" ];
 
-	let energy = [];   		let mind = [];
-	let nature = [];		let tactics = [];
+energy = [];
+mind = [];
+nature = [];
+tactics = [];
 	
-	introvert = 0;   extrovert = 0; 		sensing = 0;   intuitive = 0;
-	thinking = 0; 	feeling = 0;		judging = 0;    perception = 0;
+introvert = 0;   extrovert = 0; 		sensing = 0;   intuitive = 0;
+thinking = 0; 	feeling = 0;		judging = 0;    perception = 0;
 
 for index in range(len(choiceA)):
 	optionA = (choiceA[index]);		 optionB = (choiceB[index])
 		
-options = true
-while options == true:
+options = True
+while options == True:
 	print( index + 1,".", optionA, "   " , optionB)
 	choice = input("Choose option A or B: ");
 
 	if choice == "a":
-		options = false
+		options = False
 	elif choice == "b":
-		options = false;
+		options = False;
 	else:
 		print("Enter a valid option")
-		options = true;
-				}
-		if (optionA == (choiceA[0])  && choice == "a" || optionA == (choiceA[4])  && choice == "a" ||
-		optionA == (choiceA[8])  && choice == "a" || optionA == (choiceA[12])  && choice == "a" || 
-		optionA == (choiceA[16])  && choice == "a"){  extrovert += 1;  energy.push(optionA)
-			} 
-		else if (optionA == (choiceA[0])  && choice == "b" || optionA == (choiceA[4])  && choice == "b" ||
-		optionA == (choiceA[8])  && choice == "b" || optionA == (choiceA[12])  && choice == "b" || 
-		optionA == (choiceA[16])  && choice == "b"){ introvert += 1;  energy.push(optionB);	};
+		options = True
 
-		if (optionA == (choiceA[1])  && choice == "a" || optionA == (choiceA[5])  && choice == "a" ||
-		optionA == (choiceA[9])  && choice == "a" || optionA == (choiceA[13])  && choice == "a" || 
-		optionA == (choiceA[17])  && choice == "a"){  intuitive += 1;	mind.push(optionA)	
-			} 
-		else if (optionA == (choiceA[1])  && choice == "b" || optionA == (choiceA[5])  && choice == "b" ||
-		optionA == (choiceA[9])  && choice == "b" || optionA == (choiceA[13])  && choice == "b" || 
-		optionA == (choiceA[17])  && choice == "b"){  sensing += 1; 	mind.push(optionB) 	};
+	if (optionA == (choiceA[0])  & choice == "a" | optionA == (choiceA[4])  & choice == "a" |
+		optionA == (choiceA[8])  & choice == "a" | optionA == (choiceA[12])  & choice == "a" |
+		optionA == (choiceA[16])  & choice == "a"):
+		extrovert += 1;  energy.push(optionA)
 
-		if (optionA == (choiceA[2])  && choice == "a" || optionA == (choiceA[6])  && choice == "a" ||
-		optionA == (choiceA[10])  && choice == "a" || optionA == (choiceA[14])  && choice == "a" || 
-		optionA == (choiceA[18])  && choice == "a"){  thinking += 1;	nature.push(optionA);
-			} 
-		else if (optionA == (choiceA[2])  && choice == "b" || optionA == (choiceA[6])  && choice == "b" ||
-		optionA == (choiceA[10])  && choice == "b" || optionA == (choiceA[14])  && choice == "b" || 
-		optionA == (choiceA[18])  && choice == "b"){ feeling += 1;	nature.push(optionB);	}
+	elif (optionA == (choiceA[0])  & choice == "b" | optionA == (choiceA[4])  &e choice == "b" |
+		optionA == (choiceA[8])  & choice == "b" | optionA == (choiceA[12])  & choice == "b" |
+		optionA == (choiceA[16])  & choice == "b"):
+		introvert += 1;  energy.push(optionB)
 
-		if (optionA == (choiceA[3])  && choice == "a" || optionA == (choiceA[7])  && choice == "a" ||
-		optionA == (choiceA[11])  && choice == "a" || optionA == (choiceA[15])  && choice == "a" || 
-		optionA == (choiceA[19])  && choice == "a"){  judging += 1;	tactics.push(optionA);
-			} 
-		else if (optionA == (choiceA[3])  && choice == "b" || optionA == (choiceA[7])  && choice == "b" ||
-		optionA == (choiceA[11])  && choice == "b" || optionA == (choiceA[15])  && choice == "b" || 
-		optionA == (choiceA[19])  && choice == "b"){ perception += 1;	tactics.push(optionB);	}
-			}
-		};
+	if (optionA == (choiceA[1])  & choice == "a" | optionA == (choiceA[5])  & choice == "a" |
+		optionA == (choiceA[9])  & choice == "a" | optionA == (choiceA[13])  & choice == "a" |
+		optionA == (choiceA[17])  & choice == "a"):
+		intuitive += 1;	mind.push(optionA)
+
+	elif (optionA == (choiceA[1])  & choice == "b" | optionA == (choiceA[5])  & choice == "b" |
+		optionA == (choiceA[9])  & choice == "b" | optionA == (choiceA[13])  & choice == "b" |
+		optionA == (choiceA[17])  & choice == "b"):
+		sensing += 1; 	mind.push(optionB)
+
+	if (optionA == (choiceA[2])  & choice == "a" | optionA == (choiceA[6])  & choice == "a" |
+		optionA == (choiceA[10])  & choice == "a" | optionA == (choiceA[14])  & choice == "a" |
+		optionA == (choiceA[18])  & choice == "a"):
+		thinking += 1;	nature.push(optionA)
+
+	elif (optionA == (choiceA[2])  & choice == "b" | optionA == (choiceA[6])  & choice == "b" |
+		optionA == (choiceA[10])  & choice == "b" | optionA == (choiceA[14])  & choice == "b" |
+		optionA == (choiceA[18])  & choice == "b"):
+		feeling += 1;	nature.push(optionB)
+
+	if (optionA == (choiceA[3])  & choice == "a" | optionA == (choiceA[7])  & choice == "a" |
+		optionA == (choiceA[11])  & choice == "a" | optionA == (choiceA[15])  & choice == "a" |
+		optionA == (choiceA[19])  & choice == "a"):
+		judging += 1;	tactics.push(optionA)
+
+	elif (optionA == (choiceA[3])  & choice == "b" | optionA == (choiceA[7])  & choice == "b" |
+		optionA == (choiceA[11])  & choice == "b" | optionA == (choiceA[15])  & choice == "b" |
+		optionA == (choiceA[19])  & choice == "b"):
+		perception += 1;	tactics.push(optionB)
+
 	choices_in_energy = print("Number of A selected: ",extrovert, "\n", "Number of B selected: ", introvert, "\n");
 	choices_in_mind = print("Number of A selected: ", intuitive, "\n" , "Number of B selected: ", sensing, "\n");
 	choices_in_nature = print("Number of A selected: ", thinking, "\n", "Number of B selected: ", feeling, "\n");

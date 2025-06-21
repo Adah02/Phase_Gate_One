@@ -83,7 +83,7 @@ function validityStatus(myCardNumber){
 			};
 		};
 	let total = sum + sumOdd;
-	let validator = (total % 10 == 0) ? "Valid" : "Invalid";
+	let validator = (total % 10 == 0 && total != 0) ? "Valid" : "Invalid";
 	return validator;
 	};
 
