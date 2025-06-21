@@ -16,7 +16,7 @@ def value_added_tax(price_of_product, quantity_of_product):
 	PERCENTAGE =100
 	tax_percentage = 7.5
 
-	tax_amount = (total / PERCENTAGE) * tax_percentage;
+	tax_amount = (total / PERCENTAGE) * tax_percentage
 	return tax_amount;
 
 def payment_amount(price_of_product, quantity_of_product):

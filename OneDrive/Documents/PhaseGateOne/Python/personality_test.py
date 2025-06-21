@@ -1,13 +1,12 @@
-def personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception){
+def personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception):
 	
 	personality = ""
-
-		energy = (introvert > extrovert) ? (personality += "I") : (personality += "E");
-		mind = (sensing > intuitive) ? (personality += "S") : (personality += "N");
-		nature = (thinking > feeling) ? (personality += "T") : (personality += "F");
-		tactics = (judging > perception) ? (personality += "J") : (personality += "P");
+	energy = (introvert > extrovert) ? (personality += "I") : (personality += "E");
+	mind = (sensing > intuitive) ? (personality += "S") : (personality += "N");
+	nature = (thinking > feeling) ? (personality += "T") : (personality += "F");
+	tactics = (judging > perception) ? (personality += "J") : (personality += "P");
 	 
-	return personality;
+	return personality
 
 
 def energyDetails(energy, introvert, extrovert):
@@ -15,14 +14,13 @@ def energyDetails(energy, introvert, extrovert):
 
 	for item in energy:
 		choices_in_energy += item + "\n"
-	
 	choices_in_energy += "Number of A selected: " + extrovert + "\n" + "Number of B selected: " + introvert + "\n"
 
 	return choices_in_energy
 
-def mindDetails(mind, sensing, intuitive){
+def mindDetails(mind, sensing, intuitive):
 		
-	choices_in_mind = "";
+	choices_in_mind = ""
 
 	for item in mind:
 		choices_in_mind += item + "\n"
@@ -32,13 +30,11 @@ def mindDetails(mind, sensing, intuitive){
 	return choices_in_mind
 
 
-def natureDetails(nature, thinking, feeling){
-		
-	choices_in_nature = "";
+def natureDetails(nature, thinking, feeling):
+	choices_in_nature = ""
 
 	for item in nature:
 		choices_in_nature += item + "\n"
-
 	choices_in_nature += "Number of A selected: " + thinking + "\n" + "Number of B selected: " + feeling + "\n"
 
 	return choices_in_nature
@@ -56,9 +52,8 @@ def tacticsDetails(tactics, judging, perception){
 	return choices_in_tactics
 
 
-def commander(){
-
-	let entj = '''
+def commander():
+	entj = '''
 	ENTJ (Commander) is a personality type with the Extraverted, Intuitive, Thinking, and
 	Judging traits. They are decisive people who love momentum and accomplishment. 
 	They gather information to construct their creative visions but rarely hesitate for long 
@@ -75,7 +70,6 @@ def commander(){
 
 
 def logician(){
-
 	intp = '''
 	INTP (Logician) is a personality type with the Introverted, Intuitive, Thinking, and Prospecting 
 	traits. These flexible thinkers enjoy taking an unconventional approach to many aspects of life. 
@@ -91,8 +85,7 @@ def logician(){
 	return intp
 
 def architect():
-
-	let intj = '''
+	intj = '''
 	INTJ (Architect) is a personality type with the Introverted, Intuitive, Thinking, and Judging traits. 
 	These thoughtful tacticians love perfecting the details of life, applying creativity and rationality 
 	to everything they do. Their inner world is often a private, complex one.
@@ -105,7 +98,6 @@ def architect():
 
 	
 def debater():
-
 	entp = '''
 	ENTP (Debater) is a personality type with the Extraverted, Intuitive, Thinking, and Prospecting 
 	traits. They tend to be bold and creative, deconstructing and rebuilding ideas with great mental 
@@ -117,10 +109,9 @@ def debater():
 	to think of ENTPs as disagreeable or mean-spirited. Instead, people with this personality type are 
 	knowledgeable and curious with a playful sense of humor, and they can be incredibly entertaining. 
 	'''
-	return entp;
+	return entp
 
 def adventurer():
-
 	isfp = '''
 	ISFP (Adventurer) is a personality type with the Introverted, Observant, Feeling, and Prospecting 
 	traits. They tend to have open minds, approaching life, new experiences, and people with grounded 
@@ -131,11 +122,9 @@ def adventurer():
 	individuals. With their exploratory spirit and their ability to find joy in everyday life, ISFPs can be 
 	among the most interesting people you’ll ever meet.
 	'''
-	return isfp;
-	}
+	return isfp
 
 def virtuoso():
-
 	istp = '''
 	ISTP (Virtuoso) is a personality type with the Introverted, Observant, Thinking, and Prospecting traits. 
 	They tend to have an individualistic mindset, pursuing goals without needing much external connection. 
@@ -152,8 +141,7 @@ def virtuoso():
 
 
 def entrepreneur():
-
-	let estp = '''
+	estp = '''
 	ESTP (Entrepreneur) is a personality type with the Extraverted, Observant, Thinking, and 
 	Prospecting traits. They tend to be energetic and action-oriented, deftly navigating whatever 
 	is in front of them. They love uncovering life’s opportunities, whether socializing with others 
@@ -169,8 +157,7 @@ def entrepreneur():
 
 
 def entertainer():
-
-	let esfp = '''
+	esfp = '''
 	ESFP (Entertainer) is a personality type with the Extraverted, Observant, Feeling, and Prospecting 
 	traits. These people love vibrant experiences, engaging in life eagerly and taking pleasure in 
 	discovering the unknown. They can be very social, often encouraging others into shared activities.
@@ -185,9 +172,8 @@ def entertainer():
 	return esfp
 
 
-function advocate(){
-
-	let infj = `
+def advocate():
+	infj = '''
 	INFJ (Advocate) is a personality type with the Introverted, Intuitive, Feeling, and Judging traits. 
 	They tend to approach life with deep thoughtfulness and imagination. Their inner vision, 
 	personal values, and a quiet, principled version of humanism guide them in all things.Idealistic 
@@ -197,13 +183,12 @@ function advocate(){
 	for good in the world. 
 	While they have lofty goals and ambitions, INFJs shouldn’t be mistaken for idle dreamers. People 
 	with this personality type care about integrity, and they’re rarely satisfied until they’ve done what 
-	they know to be right. `;
-	return infj;
-	}
+	they know to be right. 
+	'''
+	return infj
 
-function mediator(){
-
-	let infp = `
+def mediator():
+	infp = '''
 	INFP (Mediator) is a personality type with the Introverted, Intuitive, Feeling, and 
 	Prospecting traits. These rare personality types tend to be quiet, open-minded, 
 	and imaginative, and they apply a caring and creative approach to everything they 
@@ -214,13 +199,12 @@ function mediator(){
 	profound emotional responses to music, art, nature, and the people around them. 
 	They are known to be extremely sentimental and nostalgic, often holding onto special 
 	keepsakes and memorabilia that brighten their days and fill their heart with joy.
-	`;
-	return infp;
-	}
+	'''
+	return infp
 
-function protagonist(){
+def protagonist():
 
-	let enfj = `
+	enfj = '''
 	ENFJ (Protagonist) is a personality type with the Extraverted, Intuitive, Feeling, and
 	Judging traits. These warm, forthright types love helping others, and they tend to have 
 	strong ideas and values. They back their perspective with the creative energy to achieve 
@@ -229,13 +213,12 @@ function protagonist(){
 	them to inspire others not just in their careers but in every arena of their lives, including 
 	their relationships. Few things bring people with the ENFJ personality type a deeper sense 
 	of joy and fulfillment than guiding friends and loved ones to grow into their best selves.
-	`;
-	return enfj;
-	}
+	'''
+	return enfj
 
-function campaigner(){
+def campaigner():
 
-		let enfp = `
+	let enfp = '''
 	ENFP (Campaigner) is a personality type with the Extraverted, Intuitive, Feeling, and 
 	Prospecting traits. These people tend to embrace big ideas and actions that reflect their 
 	sense of hope and goodwill toward others. Their vibrant energy can flow in many directions.
@@ -244,13 +227,11 @@ function campaigner(){
 	in any crowd. But even though they can be the life of the party, they don’t just care about 
 	having a good time. These personalities have profound depths that are fueled by their intense 
 	desire for meaningful, emotional connections with others.
-	`;
-	return enfp;
-	};
+	'''
+	return enfp
 
-function logistician(){
-
-		let istj = `
+def logistician():
+	istj = '''
 	ISTJ (Logistician) is a personality type with the Introverted, Observant, Thinking, 
 	and Judging traits. These people tend to be reserved yet willful, with a rational 
 	outlook on life. They compose their actions carefully and carry them out with 
@@ -261,13 +242,11 @@ function logistician(){
 	surprising that ISTJ personalities also tend to have a deep respect for structure 
 	and tradition. They are often drawn to organizations, workplaces, and educational 
 	settings that offer clear hierarchies and expectations.
-	`;
+	'''
 	return istj
-	};
 
-function executive(){
-
-		let estj = `
+def executive():
+	estj = '''
 	ESTJ (Executive) is a personality type with the Extraverted, Observant, Thinking, and 
 	Judging traits. They possess great fortitude, emphatically following their own sensible 
 	judgment. They often serve as a stabilizing force among others, able to offer solid 
@@ -278,13 +257,11 @@ function executive(){
 	ESTJs are valued for their mentorship mindset and their ability to create and follow through 
 	on plans in a diligent and efficient manner. They will happily lead the way on difficult paths, 
 	and they won’t give up when things become stressful.
-	`;
-	return estj;
-	};
+	'''
+	return estj
 
-function defender(){
-
-		let isfj = `
+def defender():
+	isfj = '''
 	ISFJ (Defender) is a personality type with the Introverted, Observant, Feeling, and Judging 
 	traits. These people tend to be warm and unassuming in their own steady way. They’re 
 	efficient and responsible, giving careful attention to practical details in their daily lives.
@@ -295,13 +272,12 @@ function defender(){
 	occasions, uphold traditions, and shower their loved ones with gestures of care and support. 
 	But they rarely demand recognition for all that they do, preferring instead to operate behind 
 	the scenes.
-	`;
-	return isfj;
-	};
+	'''
+	return isfj
 
-function consul(){
 
-	let esfj = `
+def consul():
+	esfj = '''
 	ESFJ (Consul) is a personality type with the Extraverted, Observant, Feeling, and Judging traits. 
 	They are attentive and people-focused, and they enjoy taking part in their social community. 
 	Their achievements are guided by decisive values, and they willingly offer guidance to others.
@@ -312,39 +288,43 @@ function consul(){
 	 to form close bonds with people who share their same values and opinions. But regardless of other 
 	people’s beliefs, ESFJ personalities still strongly believe in the power of hospitality and good manners, 
 	and they tend to feel a sense of duty to those around them. 
-	`;
+	'''
 	return esfj;
-	};
 
-function personalityTrait(){
-	let type = personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception);
+def personalityTrait(){
+	type = personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception);
 
-	let trait = "";
-	
-		if (type == "ENTJ"){ 	trait = commander()
-		} else if (type == "INTP"){	trait = logician()
-		} else if (type == "INTJ"){	trait = architect()
-		} else if (type == "ENTP"){	trait = debater()
-		} else if (type == "ISFP"){	trait = adventurer()
-		} else if (type == "ISTP"){	trait = virtuoso()
-		} else if (type == "ESTP"){	trait = entrepreneur()
-		} else if (type == "ESFP"){	trait = entertainer()
-		} else if (type == "INFJ"){	trait = advocate()
-		} else if (type == "INFP"){	trait = mediator()
-		} else if (type == "ENFJ"){	trait = protagonist()
-		} else if (type == "ENFP"){	trait = campaigner()
-		} else if (type == "ISTJ"){	trait = logistician()
-		} else if (type == "ESTJ"){	trait = executive()
-		} else if (type == "ISFJ"){	trait = defender()
-		} else if (type == "ESFJ"){	trait = consul()  
-		};
+	trait = ""
+	if type == "ENTJ":
+		trait = commander()
+	elif type == "INTP":
+		trait = logician()
+	elif type == "INTJ":
+		trait = architect()
+	elif type == "ENTP":
+		trait = debater()
+	elif type == "ISFP":
+		trait = adventurer()
+	elif type == "ISTP":
+		trait = virtuoso()
+	elif type == "ESTP":
+		trait = entrepreneur()
+	} else if (type == "ESFP"){	trait = entertainer()
+	} else if (type == "INFJ"){	trait = advocate()
+	} else if (type == "INFP"){	trait = mediator()
+	} else if (type == "ENFJ"){	trait = protagonist()
+	} else if (type == "ENFP"){	trait = campaigner()
+	} else if (type == "ISTJ"){	trait = logistician()
+	} else if (type == "ESTJ"){	trait = executive()
+	} else if (type == "ISFJ"){	trait = defender()
+	} else if (type == "ESFJ"){	trait = consul()
 
 	return trait;
-	};
 
-let myName = prompt("what is your name? : ");
 
-let choiceA = ["A. Comfortable with walking to someone to start conversations", 
+myName = input("what is your name? : ");
+
+choiceA = ["A. Comfortable with walking to someone to start conversations",
 		"A. Not moved by past mistakes",
 		"A. Prioritizes facts in the course of actions",
 		"A. Often compare efforts to others",
@@ -365,7 +345,7 @@ let choiceA = ["A. Comfortable with walking to someone to start conversations",
 		"A. Highly unstable under pressure",
 		"A. Overly interested in discussing with others"];
 
-let choiceB = [ "B. Love being by yourself always", 
+choiceB = [ "B. Love being by yourself always",
 		"B. Little mistakes causes doubt in your abilities",
 		"B. Allow feelings drive decision makings",
 		"B. Not bothered by efforts of others",
@@ -389,24 +369,24 @@ let choiceB = [ "B. Love being by yourself always",
 	let energy = [];   		let mind = [];
 	let nature = [];		let tactics = [];
 	
-	let introvert = 0;   let extrovert = 0; 		let sensing = 0;   let intuitive = 0;
-	let thinking = 0; 	let feeling = 0;		let judging = 0;   let perception = 0;
+	introvert = 0;   extrovert = 0; 		sensing = 0;   intuitive = 0;
+	thinking = 0; 	feeling = 0;		judging = 0;    perception = 0;
 
-	for (let index = 0; index < choiceA.length; index++){
-		let optionA = (choiceA[index]);		 let optionB = (choiceB[index])
+for index in range(len(choiceA)):
+	optionA = (choiceA[index]);		 optionB = (choiceB[index])
 		
-		let options = true;
-		while (options == true){
-		console.log( index + 1,".", optionA, "   " , optionB);
-		let choice = prompt("Choose option A or B: ");
+options = true
+while options == true:
+	print( index + 1,".", optionA, "   " , optionB)
+	choice = input("Choose option A or B: ");
 
-		if (choice == "a"){
-			options = false;
-		} else if (choice == "b"){
-			options = false;
-		} else {
-				console.log("Enter a valid option")
-				options = true;
+	if choice == "a":
+		options = false
+	elif choice == "b":
+		options = false;
+	else:
+		print("Enter a valid option")
+		options = true;
 				}
 		if (optionA == (choiceA[0])  && choice == "a" || optionA == (choiceA[4])  && choice == "a" ||
 		optionA == (choiceA[8])  && choice == "a" || optionA == (choiceA[12])  && choice == "a" || 
@@ -441,15 +421,15 @@ let choiceB = [ "B. Love being by yourself always",
 		optionA == (choiceA[19])  && choice == "b"){ perception += 1;	tactics.push(optionB);	}
 			}
 		};
-	let choicesInEnergy = console.log("Number of A selected: ",extrovert, "\n", "Number of B selected: ", introvert, "\n");
-	let choicesInMind = console.log("Number of A selected: ", intuitive, "\n" , "Number of B selected: ", sensing, "\n");
-	let choicesInNature = console.log("Number of A selected: ", thinking, "\n", "Number of B selected: ", feeling, "\n");
-	let choicesInTactics = console.log("Number of A selected: ", judging, "\n", "Number of B selected: ", perception, "\n");
+	choices_in_energy = print("Number of A selected: ",extrovert, "\n", "Number of B selected: ", introvert, "\n");
+	choices_in_mind = print("Number of A selected: ", intuitive, "\n" , "Number of B selected: ", sensing, "\n");
+	choices_in_nature = print("Number of A selected: ", thinking, "\n", "Number of B selected: ", feeling, "\n");
+	choices_in_tactics = print("Number of A selected: ", judging, "\n", "Number of B selected: ", perception, "\n");
 	
-	console.log("\n Hello", myName ,", you selected the following;- \n");
-	console.log(energyDetails(energy, introvert, extrovert));
-	console.log(mindDetails(mind, sensing, intuitive));
-	console.log(natureDetails(nature, thinking, feeling));
-	console.log(tacticsDetails(tactics, judging, perception));
-	console.log("Your PersonalityType: ", personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception), "\n");
-	console.log(personalityTrait());
+	print("\n Hello", myName ,", you selected the following;- \n");
+	print(energyDetails(energy, introvert, extrovert));
+	print(mindDetails(mind, sensing, intuitive));
+	print(natureDetails(nature, thinking, feeling));
+	print(tacticsDetails(tactics, judging, perception));
+	print("Your PersonalityType: ", personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception), "\n");
+	print(personalityTrait());

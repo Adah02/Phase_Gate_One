@@ -5,7 +5,7 @@ public class CreditCardValidatorTest {
 	CreditCardValidator quiz = new CreditCardValidator();
 
 	@Test
-	public void checkForCardValidity() {
+	public void checkForValidCard() {
 
 	String check = "4773437473784656";
 	String expected = "Valid";
