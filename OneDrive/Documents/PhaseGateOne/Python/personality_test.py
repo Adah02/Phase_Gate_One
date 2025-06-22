@@ -401,8 +401,8 @@ for index in range(len(choiceA)):
 	optionA = (choiceA[index]);		 optionB = (choiceB[index])
 
 	options = True
-	while options == True:
-		print( index + 1,".", optionA, "   " , optionB)
+	while options != False:
+		print(f"{index + 1}. \t{optionA} \t{optionB}")
 		choice = str(input("Choose option A or B: "))
 
 		if choice == "a":
@@ -413,7 +413,7 @@ for index in range(len(choiceA)):
 			print("Enter a valid option")
 			options = True
 
-		if optionA == choiceA[0] and choice.lower() == 'a':
+		if optionA == choiceA[0] and choice.lower() == "a":
 			extrovert += 1;  energy.append(optionA)
 		elif optionA == (choiceA[4]) and choice.lower() == "a":
 			extrovert += 1; energy.append(optionA)
@@ -510,5 +510,5 @@ print(energy_details(energy, introvert, extrovert))
 print(mind_details(mind, sensing, intuitive))
 print(nature_details(nature, thinking, feeling))
 print(tactics_details(tactics, judging, perception))
-print(f"Your Personality Type: {personality_type(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception)} \n")
+print(f"Your Personality Type: {personality_type(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception)}")
 print(personality_trait())

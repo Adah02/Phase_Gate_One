@@ -16,7 +16,7 @@ def value_added_tax(price_of_product, quantity_of_product):
 	PERCENTAGE =100
 	tax_percentage = 7.5
 
-	tax_amount = (total / PERCENTAGE) * tax_percentage
+	tax_amount = (total / PERCENTAGE) * tax_percentage;
 	return tax_amount;
 
 def payment_amount(price_of_product, quantity_of_product):
@@ -114,8 +114,8 @@ for index in range(len(price_of_product)):
 print(lines())
 print(store_details())
 
-print("CUSTOMER'S NAME: ",customers_name)
-print(f"CASHIER'S NAME: {cashiers_name} \n{lines()}")
+print("Customer's name: ",customers_name)
+print(f"Cashier's name: {cashiers_name} \n{lines()}")
 
 print(f'{header()} \n{lines()}')
 
@@ -136,10 +136,8 @@ balance = customers_balance(bill, amount_paid)
 
 print(lines())
 print(store_details())
-
-print("CUSTOMER'S NAME: ",customers_name)
-print(f"CASHIER'S NAME: {cashiers_name} \n{lines()}")
-
+print("Customer's name: ",customers_name)
+print(f"Cashier's name: {cashiers_name} \n{lines()}")
 print(f'{header()} \n{lines()}')
 
 for item in range(len(products)):
