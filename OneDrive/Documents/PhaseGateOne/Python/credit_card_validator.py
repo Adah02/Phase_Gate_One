@@ -1,9 +1,9 @@
 def cardValidity(myCardNumber):
 	cardNumber = myCardNumber.replace(" ", "");
 	cardValid = false
-	if cardNumber[0] > '2' & cardNumber[0] < '7':
-		if len(cardNumber) >= '13' & len(cardNumber) <= '16':
-			if cardNumber[0] == '3' & cardNumber[1] != '7':
+	if cardNumber[0] > '2' and cardNumber[0] < '7':
+		if len(cardNumber) >= '13' and len(cardNumber) <= '16':
+			if cardNumber[0] == '3' and cardNumber[1] != '7':
 				cardValid = false;
 			else:
 				cardValid = true;
@@ -34,14 +34,14 @@ def creditCardType(myCardNumber):
 	cardType = "";
 	cardNumber = myCardNumber.replace(" ", "");
 
-	if len(cardNumber) >= 13 & len(cardNumber) <= 16:
+	if len(cardNumber) >= 13 and len(cardNumber) <= 16:
 		if cardNumber[0] == '4':
 			cardType = "VisaCard";
 		elif cardNumber[0] == '5':
 			cardType = "MasterCard"
 		elif cardNumber[0] == '6':
 			cardType = "DiscoverCard"
-		elif cardNumber[0] == '3' & cardNumber[1] == '7':
+		elif cardNumber[0] == '3' and cardNumber[1] == '7':
 			cardType = "AmericanExpressCard";
 		else:
 			cardType = "Invalid Card"

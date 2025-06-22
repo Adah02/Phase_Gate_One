@@ -76,7 +76,7 @@ public class CreditCardValidator {
 		for (int index = cardNumber.length() - 1; index >= 0; index--){
 				sumOfOdd += Integer.parseInt(String.valueOf(cardNumber.charAt(index)));
 	
-				if (index > 0){ index -= 1; }
+				if (index > 0) index -= 1;
 				int multiple = Integer.parseInt(String.valueOf(cardNumber.charAt(index))) * 2;
 
 				if (multiple > 9){

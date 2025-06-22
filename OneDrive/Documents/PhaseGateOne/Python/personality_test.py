@@ -1,4 +1,4 @@
-def personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception):
+def personality_type(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception):
 	
 	personality = ""
 	if introvert > extrovert:
@@ -24,44 +24,44 @@ def personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling,
 	return personality
 
 
-def energyDetails(energy, introvert, extrovert):
+def energy_details(energy, introvert, extrovert):
 	choices_in_energy = ""
 
 	for item in energy:
 		choices_in_energy += item + "\n"
-	choices_in_energy += "Number of A selected: " + extrovert + "\n" + "Number of B selected: " + introvert + "\n"
+	choices_in_energy += f"Number of A selected: {extrovert} \nNumber of B selected: {introvert}\n"
 
 	return choices_in_energy
 
-def mindDetails(mind, sensing, intuitive):
+def mind_details(mind, sensing, intuitive):
 		
 	choices_in_mind = ""
 
 	for item in mind:
-		choices_in_mind += item + "\n"
+		choices_in_mind += f"{item}\n"
 	
-	choices_in_mind += "Number of A selected: " + intuitive + "\n" + "Number of B selected: " + sensing + "\n"
+	choices_in_mind += f"Number of A selected: {intuitive} \nNumber of B selected: {sensing}\n"
 
 	return choices_in_mind
 
 
-def natureDetails(nature, thinking, feeling):
+def nature_details(nature, thinking, feeling):
 	choices_in_nature = ""
 
 	for item in nature:
 		choices_in_nature += item + "\n"
-	choices_in_nature += "Number of A selected: " + thinking + "\n" + "Number of B selected: " + feeling + "\n"
+	choices_in_nature += f"Number of A selected: {thinking} \nNumber of B selected: {feeling}\n"
 
 	return choices_in_nature
 
 
-def tacticsDetails(tactics, judging, perception):
+def tactics_details(tactics, judging, perception):
 	choices_in_tactics = ""
 
 	for item in tactics:
 		choices_in_tactics += item + "\n"
 
-	choices_in_tactics += "Number of A selected: " + judging + "\n" + "Number of B selected: " + perception + "\n"
+	choices_in_tactics += f"Number of A selected: {judging}\nNumber of B selected: {perception}\n"
 
 	return choices_in_tactics
 
@@ -108,7 +108,7 @@ def architect():
 	ality, and self-improvement. They consistently work toward enhancing intellectual abilities and 
 	are often driven by an intense desire to master any and every topic that piques their interest.
 	'''
-	return intj;
+	return intj
 
 	
 def debater():
@@ -303,10 +303,10 @@ def consul():
 	people’s beliefs, ESFJ personalities still strongly believe in the power of hospitality and good manners, 
 	and they tend to feel a sense of duty to those around them. 
 	'''
-	return esfj;
+	return esfj
 
-def personalityTrait():
-	type = personalityType(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception);
+def personality_trait():
+	type = personality_type(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception)
 
 	trait = ""
 	if type == "ENTJ":
@@ -323,29 +323,29 @@ def personalityTrait():
 		trait = virtuoso()
 	elif type == "ESTP":
 		trait = entrepreneur()
-	elif (type == "ESFP"):
+	elif type == "ESFP":
 		trait = entertainer()
-	elif (type == "INFJ"):
+	elif type == "INFJ":
 		trait = advocate()
-	elif (type == "INFP"):
+	elif type == "INFP":
 		trait = mediator()
-	elif (type == "ENFJ"):
+	elif type == "ENFJ":
 		trait = protagonist()
-	elif (type == "ENFP"):
+	elif type == "ENFP":
 		trait = campaigner()
-	elif (type == "ISTJ"):
+	elif type == "ISTJ":
 		trait = logistician()
-	elif (type == "ESTJ"):
+	elif type == "ESTJ":
 		trait = executive()
-	elif (type == "ISFJ"):
+	elif type == "ISFJ":
 		trait = defender()
-	elif (type == "ESFJ"):
+	elif type == "ESFJ":
 		trait = consul()
 
-	return trait;
+	return trait
 
 
-myName = input("what is your name? : ");
+myName = input("what is your name? : ")
 
 choiceA = ["A. Comfortable with walking to someone to start conversations",
 		"A. Not moved by past mistakes",
@@ -361,18 +361,18 @@ choiceA = ["A. Comfortable with walking to someone to start conversations",
 		"A. Empathical and accommodating",
 		"A. Enjoy networking and promoting yourself around people",
 		"A. Work according to schedule",
-		"A. Love eploring unfamiliar ideas & viewpoints",
+		"A. Love eploring unfamiliar ideas and viewpoints",
 		"A. Complete task before deadline",
 		"A. Not observant",
 		"A. Do chores before relaxation",
 		"A. Highly unstable under pressure",
-		"A. Overly interested in discussing with others"];
+		"A. Overly interested in discussing with others"]
 
 choiceB = [ "B. Love being by yourself always",
 		"B. Little mistakes causes doubt in your abilities",
 		"B. Allow feelings drive decision makings",
 		"B. Not bothered by efforts of others",
-		"B. Highly productive alone", 
+		"B. Highly productive alone",
 		"B. Prioritizes making good impressions",
 		"B. Worried for negative outcomes",
 		"B. Do things based on emotional impressions",
@@ -387,81 +387,128 @@ choiceB = [ "B. Love being by yourself always",
 		"B. A good listener & highly observant",
 		"B. Allow things come in the way",
 		"B. Stay calm under pressure",
-		"B. Not interested in discussions" ];
+		"B. Not interested in discussions" ]
 
-energy = [];
-mind = [];
-nature = [];
-tactics = [];
-	
-introvert = 0;   extrovert = 0; 		sensing = 0;   intuitive = 0;
-thinking = 0; 	feeling = 0;		judging = 0;    perception = 0;
+energy = []
+mind = []
+nature = []
+tactics = []
+
+introvert = 0;   extrovert = 0; 		sensing = 0;   intuitive = 0
+thinking = 0; 	feeling = 0;		judging = 0;    perception = 0
 
 for index in range(len(choiceA)):
 	optionA = (choiceA[index]);		 optionB = (choiceB[index])
-		
-options = True
-while options == True:
-	print( index + 1,".", optionA, "   " , optionB)
-	choice = input("Choose option A or B: ");
 
-	if choice == "a":
-		options = False
-	elif choice == "b":
-		options = False;
-	else:
-		print("Enter a valid option")
-		options = True
+	options = True
+	while options == True:
+		print( index + 1,".", optionA, "   " , optionB)
+		choice = str(input("Choose option A or B: "))
 
-	if (optionA == (choiceA[0])  & choice == "a" | optionA == (choiceA[4])  & choice == "a" |
-		optionA == (choiceA[8])  & choice == "a" | optionA == (choiceA[12])  & choice == "a" |
-		optionA == (choiceA[16])  & choice == "a"):
-		extrovert += 1;  energy.push(optionA)
+		if choice == "a":
+			options = False
+		elif choice == "b":
+			options = False
+		else:
+			print("Enter a valid option")
+			options = True
 
-	elif (optionA == (choiceA[0])  & choice == "b" | optionA == (choiceA[4])  &e choice == "b" |
-		optionA == (choiceA[8])  & choice == "b" | optionA == (choiceA[12])  & choice == "b" |
-		optionA == (choiceA[16])  & choice == "b"):
-		introvert += 1;  energy.push(optionB)
+		if optionA == choiceA[0] and choice.lower() == 'a':
+			extrovert += 1;  energy.append(optionA)
+		elif optionA == (choiceA[4]) and choice.lower() == "a":
+			extrovert += 1; energy.append(optionA)
+		elif optionA == (choiceA[8]) and choice.lower() == "a":
+			extrovert += 1;  energy.append(optionA)
+		elif optionA == (choiceA[12]) and choice.lower() == "a":
+			extrovert += 1; energy.append(optionA)
+		elif optionA == (choiceA[16]) and choice.lower() == "a":
+			extrovert += 1; energy.append(optionA)
+		elif optionA == (choiceA[0]) and choice.lower() == "b":
+			introvert += 1; energy.append(optionB)
+		elif optionA == (choiceA[4]) and choice.lower() == "b":
+			introvert += 1; energy.append(optionB)
+		elif optionA == (choiceA[8]) and choice.lower() == "b":
+			introvert += 1; energy.append(optionB)
+		elif optionA == (choiceA[12])  and choice.lower() == "b":
+			introvert += 1; energy.append(optionB)
+		elif optionA == (choiceA[16])  and choice.lower() == "b":
+			introvert += 1;  energy.append(optionB)
 
-	if (optionA == (choiceA[1])  & choice == "a" | optionA == (choiceA[5])  & choice == "a" |
-		optionA == (choiceA[9])  & choice == "a" | optionA == (choiceA[13])  & choice == "a" |
-		optionA == (choiceA[17])  & choice == "a"):
-		intuitive += 1;	mind.push(optionA)
 
-	elif (optionA == (choiceA[1])  & choice == "b" | optionA == (choiceA[5])  & choice == "b" |
-		optionA == (choiceA[9])  & choice == "b" | optionA == (choiceA[13])  & choice == "b" |
-		optionA == (choiceA[17])  & choice == "b"):
-		sensing += 1; 	mind.push(optionB)
+		if optionA == (choiceA[1]) and choice.lower() == "a":
+			intuitive += 1; mind.append(optionA)
+		elif optionA == (choiceA[5]) and choice.lower() == "a":
+			intuitive += 1;  mind.append(optionA)
+		elif optionA == (choiceA[9]) and choice.lower() == "a":
+			intuitive += 1;  mind.append(optionA)
+		elif optionA == (choiceA[13]) and choice.lower() == "a":
+			intuitive += 1;  mind.append(optionA)
+		elif optionA == (choiceA[17]) and choice.lower() == "a":
+			intuitive += 1;	mind.append(optionA)
+		elif optionA == (choiceA[1]) and choice.lower() == "b":
+			sensing += 1;  mind.append(optionB)
+		elif optionA == (choiceA[5]) and choice.lower() == "b":
+			sensing += 1; mind.append(optionB)
+		elif optionA == (choiceA[9]) and choice.lower() == "b":
+			sensing += 1;  mind.append(optionB)
+		elif optionA == (choiceA[13]) and choice.lower() == "b":
+			sensing += 1;  mind.append(optionB)
+		elif optionA == (choiceA[17])  and choice.lower() == "b":
+			sensing += 1; 	mind.append(optionB)
 
-	if (optionA == (choiceA[2])  & choice == "a" | optionA == (choiceA[6])  & choice == "a" |
-		optionA == (choiceA[10])  & choice == "a" | optionA == (choiceA[14])  & choice == "a" |
-		optionA == (choiceA[18])  & choice == "a"):
-		thinking += 1;	nature.push(optionA)
 
-	elif (optionA == (choiceA[2])  & choice == "b" | optionA == (choiceA[6])  & choice == "b" |
-		optionA == (choiceA[10])  & choice == "b" | optionA == (choiceA[14])  & choice == "b" |
-		optionA == (choiceA[18])  & choice == "b"):
-		feeling += 1;	nature.push(optionB)
+		if optionA == (choiceA[2]) and choice.lower() == "a":
+			thinking += 1;  nature.append(optionA)
+		elif optionA == (choiceA[6]) and choice.lower() == "a":
+			thinking += 1;  nature.append(optionA)
+		elif optionA == (choiceA[10]) and choice.lower() == "a":
+			thinking += 1;  nature.append(optionA)
+		elif optionA == (choiceA[14]) and choice.lower() == "a":
+			thinking += 1; nature.append(optionA)
+		elif optionA == (choiceA[18]) and choice.lower() == "a":
+			thinking += 1;	nature.append(optionA)
+		elif optionA == (choiceA[2])  and choice.lower() == "b":
+			feeling += 1; nature.append(optionB)
+		elif optionA == (choiceA[6])  and choice.lower() == "b":
+			feeling += 1; nature.append(optionB)
+		elif optionA == (choiceA[10])  and choice.lower() == "b":
+			feeling += 1; nature.append(optionB)
+		elif optionA == (choiceA[14])  and choice.lower() == "b":
+			feeling += 1; nature.append(optionB)
+		elif optionA == (choiceA[18])  and choice.lower() == "b":
+			feeling += 1;	nature.append(optionB)
 
-	if (optionA == (choiceA[3])  & choice == "a" | optionA == (choiceA[7])  & choice == "a" |
-		optionA == (choiceA[11])  & choice == "a" | optionA == (choiceA[15])  & choice == "a" |
-		optionA == (choiceA[19])  & choice == "a"):
-		judging += 1;	tactics.push(optionA)
 
-	elif (optionA == (choiceA[3])  & choice == "b" | optionA == (choiceA[7])  & choice == "b" |
-		optionA == (choiceA[11])  & choice == "b" | optionA == (choiceA[15])  & choice == "b" |
-		optionA == (choiceA[19])  & choice == "b"):
-		perception += 1;	tactics.push(optionB)
+		if optionA == (choiceA[3]) and choice.lower() == "a":
+			judging += 1;    tactics.append(optionA)
+		elif optionA == (choiceA[7]) and choice.lower() == "a":
+			judging += 1;    tactics.append(optionA)
+		elif optionA == (choiceA[11]) and choice.lower() == "a":
+			judging += 1;  tactics.append(optionA)
+		elif optionA == (choiceA[15]) and choice.lower() == "a":
+			judging += 1;  tactics.append(optionA)
+		elif optionA == (choiceA[19]) and choice.lower() == "a":
+			judging += 1;	tactics.append(optionA)
+		elif optionA == (choiceA[3])  and choice.lower() == "b":
+			perception += 1;  tactics.append(optionB)
+		elif optionA == (choiceA[7])  and choice.lower() == "b":
+			perception += 1;  tactics.append(optionB)
+		elif optionA == (choiceA[11])  and choice.lower() == "b":
+			perception += 1;  tactics.append(optionB)
+		elif optionA == (choiceA[15])  and choice.lower() == "b":
+			perception += 1;  tactics.append(optionB)
+		elif optionA == (choiceA[19])  and choice.lower() == "b":
+			perception += 1;	tactics.append(optionB)
 
-	choices_in_energy = print("Number of A selected: ",extrovert, "\n", "Number of B selected: ", introvert, "\n");
-	choices_in_mind = print("Number of A selected: ", intuitive, "\n" , "Number of B selected: ", sensing, "\n");
-	choices_in_nature = print("Number of A selected: ", thinking, "\n", "Number of B selected: ", feeling, "\n");
-	choices_in_tactics = print("Number of A selected: ", judging, "\n", "Number of B selected: ", perception, "\n");
+choices_in_energy = f"Number of A selected: {extrovert} \nNumber of B selected: {introvert}\n"
+choices_in_mind = f"Number of A selected: {intuitive} \nNumber of B selected: {sensing}\n"
+choices_in_nature = f"Number of A selected: {thinking} \nNumber of B selected: {feeling}\n"
+choices_in_tactics = f"Number of A selected: {judging} \nNumber of B selected: {perception}\n"
 	
-	print("\n Hello", myName ,", you selected the following;- \n");
-	print(energyDetails(energy, introvert, extrovert));
-	print(mindDetails(mind, sensing, intuitive));
-	print(natureDetails(nature, thinking, feeling));
-	print(tacticsDetails(tactics, judging, perception));
-	print("Your PersonalityType: ", personalityType(introvert,  extrovert, sensing, intuitive, thinking, feeling, judging, perception), "\n");
-	print(personalityTrait());
+print(f"\n Hello {myName} you selected the following;- \n")
+print(energy_details(energy, introvert, extrovert))
+print(mind_details(mind, sensing, intuitive))
+print(nature_details(nature, thinking, feeling))
+print(tactics_details(tactics, judging, perception))
+print(f"Your Personality Type: {personality_type(introvert, extrovert, sensing, intuitive, thinking, feeling, judging, perception)} \n")
+print(personality_trait())
