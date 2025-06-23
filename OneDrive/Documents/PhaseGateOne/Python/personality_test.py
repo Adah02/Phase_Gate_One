@@ -355,13 +355,13 @@ choiceA = ["A. Comfortable with walking to someone to start conversations",
 		"A. Not worried of making impressions", 
 		"A. Not worried of things taking negative turns",
 		"A. Base choices on objectives",
-		"A. Loud and outgoing",
+		"A. Loud, outgoing",
 		"A. Authority over honesty",
-		"A. Prioritizes proving points over feelings",
-		"A. Empathical and accommodating",
+		"A. Prioritizes proof over feelings",
+		"A. Empathical, accommodating",
 		"A. Enjoy networking and promoting yourself around people",
-		"A. Work according to schedule",
-		"A. Love eploring unfamiliar ideas and viewpoints",
+		"A. Work with schedule",
+		"A. Love exploring unfamiliar ideas & viewpoints",
 		"A. Complete task before deadline",
 		"A. Not observant",
 		"A. Do chores before relaxation",
@@ -401,7 +401,7 @@ for index in range(len(choiceA)):
 	optionA = (choiceA[index]);		 optionB = (choiceB[index])
 
 	options = True
-	while options != False:
+	while options:
 		print(f"{index + 1}. \t{optionA} \t{optionB}")
 		choice = str(input("Choose option A or B: "))
 
