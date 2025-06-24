@@ -491,13 +491,13 @@ for index in range(len(choiceA)):
 			judging += 1;	tactics.append(optionA)
 		elif optionA == (choiceA[3])  and choice.lower() == "b":
 			perception += 1;  tactics.append(optionB)
-		elif optionA == (choiceA[7])  and choice.lower() == "b":
+		elif optionA == (choiceA[7])  and choice.upper() == "b":
 			perception += 1;  tactics.append(optionB)
-		elif optionA == (choiceA[11])  and choice.lower() == "b":
+		elif optionA == (choiceA[11])  and choice.upper() == "b":
 			perception += 1;  tactics.append(optionB)
-		elif optionA == (choiceA[15])  and choice.lower() == "b":
+		elif optionA == (choiceA[15])  and choice.upper() == "b":
 			perception += 1;  tactics.append(optionB)
-		elif optionA == (choiceA[19])  and choice.lower() == "b":
+		elif optionA == (choiceA[19])  and choice.upper() == "b":
 			perception += 1;	tactics.append(optionB)
 
 choices_in_energy = f"Number of A selected: {extrovert} \nNumber of B selected: {introvert}\n"

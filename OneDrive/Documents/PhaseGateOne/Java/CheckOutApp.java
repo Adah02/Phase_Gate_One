@@ -206,7 +206,6 @@ public class CheckOutApp {
 		System.out.printf(" \t Discount:  %.2f%n", purchaseDiscount(productPrice, productQuantity));
 		System.out.printf(" \t VAT@ 7.5%% : %.2f%n %s%n", valueAddedTax(productPrice, productQuantity), dashes);
 		
-
 		System.out.printf(" \t Bill Total:  \t %.2f%n", billTotal(productPrice, productQuantity));
 		System.out.printf("\t Amount Paid: \t %.2f%n", amountPaid);
 		if (balance < 0){
