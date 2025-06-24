@@ -14,4 +14,4 @@ for (let index = 1; index <= 10; index++){
 	}
 	};
 
-console.log(Math.pow(sum)
+console.log(Math.pow(sum, 2))
