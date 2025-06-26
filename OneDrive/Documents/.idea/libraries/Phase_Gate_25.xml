@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Phase Gate 25">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/JavaScript Files/Phase Gate 25/junit-jupiter-api-5.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/JavaScript Files/Phase Gate 25/junit-platform-console-standalone-1.9.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
